@@ -7,6 +7,7 @@ Field models used in robot evaluation tasks of Japan Virtual Robotics Challenge
 
 ## How to setup
 Do followings:  
-  $ git clone https://github.com/m-shimizu/JVRC_task_models
-  $ mv JVRC_O* JVRC_R* ~/.gazebo/models
+
+  $ git clone https://github.com/m-shimizu/JVRC_task_models  
+  $ mv JVRC_O* JVRC_R* ~/.gazebo/models  
   
