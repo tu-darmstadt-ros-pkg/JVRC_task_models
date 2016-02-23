@@ -1,0 +1,38 @@
+When x1 original
+
+Mesh Bounding Box Size 0.197942 0.670000 0.306023
+Mesh Bounding Box Diag 0.762713 
+Mesh Volume is -nan
+Mesh Surface is 0.400451
+Thin shell barycenter 2.262395 1.796172 1.244847
+Center of Mass is -nan -nan -nan
+Inertia Tensor is :
+| -nan -nan -nan |
+| -nan -nan -nan |
+| -nan -nan -nan |
+Principal axes are :
+| 1.000000 0.000000 0.000000 |
+| 0.000000 1.000000 0.000000 |
+| 0.000000 0.000000 1.000000 |
+axis momenta are :
+| -nan -nan -nan |
+
+When x1 4initial 
+
+Mesh Bounding Box Size 0.146168 0.659913 0.240441
+Mesh Bounding Box Diag 0.717399 
+Mesh Volume is 0.008493
+Mesh Surface is 0.388657
+Thin shell barycenter 2.263002 1.837702 1.230992
+Center of Mass is 2.263002 1.840704 1.241542
+Inertia Tensor is :
+| 0.000261 0.000000 0.000000 |
+| 0.000000 0.000035 0.000022 |
+| 0.000000 0.000022 0.000253 |
+Principal axes are :
+| 1.000000 -0.000005 -0.000101 |
+| 0.000015 0.995003 0.099848 |
+| 0.000100 -0.099848 0.995003 |
+axis momenta are :
+| 0.000261 0.000032 0.000255 |
+

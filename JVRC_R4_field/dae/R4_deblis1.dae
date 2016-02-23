@@ -1,0 +1,143 @@
+<?xml version="1.0" encoding="utf-8"?>
+<COLLADA xmlns="http://www.collada.org/2005/11/COLLADASchema" version="1.4.1">
+  <asset>
+    <contributor>
+      <author>Blender User</author>
+      <authoring_tool>Blender 2.72.0 commit date:2014-10-21, commit time:11:38, hash:9e963ae</authoring_tool>
+    </contributor>
+    <created>2015-07-14T20:33:00</created>
+    <modified>2015-07-14T20:33:00</modified>
+    <unit name="meter" meter="1"/>
+    <up_axis>Z_UP</up_axis>
+  </asset>
+  <library_images/>
+  <library_effects>
+    <effect id="_14-effect">
+      <profile_COMMON>
+        <technique sid="common">
+          <phong>
+            <emission>
+              <color sid="emission">0 0 0 1</color>
+            </emission>
+            <ambient>
+              <color sid="ambient">0 0 0 1</color>
+            </ambient>
+            <diffuse>
+              <color sid="diffuse">0 0.8 0 1</color>
+            </diffuse>
+            <specular>
+              <color sid="specular">0.1647059 0.1647059 0.1647059 1</color>
+            </specular>
+            <shininess>
+              <float sid="shininess">50</float>
+            </shininess>
+            <index_of_refraction>
+              <float sid="index_of_refraction">1</float>
+            </index_of_refraction>
+          </phong>
+        </technique>
+      </profile_COMMON>
+    </effect>
+  </library_effects>
+  <library_materials>
+    <material id="_14-material" name="_14">
+      <instance_effect url="#_14-effect"/>
+    </material>
+  </library_materials>
+  <library_geometries>
+    <geometry id="Group1_017-mesh" name="Group1.017">
+      <mesh>
+        <source id="Group1_017-mesh-positions">
+          <float_array id="Group1_017-mesh-positions-array" count="93">4.857992 6.059783 0.862 5.565099 5.352677 0.362 4.857992 6.059783 0.362 5.565099 5.352677 0.862 4.857992 6.059783 0.862 4.857992 5.352677 0.862 5.565099 5.352677 0.862 3.797332 4.999123 0.862 4.857992 6.059783 0.862 3.797332 4.999123 0.362 3.797332 4.999123 0.862 4.857992 6.059783 0.362 4.857992 6.059783 0.362 4.857992 5.352677 0.362 5.565099 5.352677 0.362 5.211545 4.999123 0.362 5.565099 5.352677 0.362 5.211545 4.999123 0.862 5.211545 4.999123 0.362 5.565099 5.352677 0.862 5.211545 4.999123 0.862 4.857992 5.352677 0.362 4.857992 5.352677 0.862 4.150886 4.64557 0.862 4.857992 5.352677 0.362 4.857992 5.352677 0.862 4.150886 4.64557 0.362 4.150886 4.64557 0.862 4.150886 4.64557 0.362 4.150886 4.64557 0.862 4.150886 4.64557 0.362</float_array>
+          <technique_common>
+            <accessor source="#Group1_017-mesh-positions-array" count="31" stride="3">
+              <param name="X" type="float"/>
+              <param name="Y" type="float"/>
+              <param name="Z" type="float"/>
+            </accessor>
+          </technique_common>
+        </source>
+        <source id="Group1_017-mesh-normals">
+          <float_array id="Group1_017-mesh-normals-array" count="30">0.7071071 -0.7071066 0 -0.7071066 -0.7071071 0 0 0 1 -0.7071069 0.7071067 0 -0.7071073 -0.7071064 0 0 0 1 0.7071073 -0.7071064 0 0 0 -1 0.7071068 0.7071068 0 0 0 -1</float_array>
+          <technique_common>
+            <accessor source="#Group1_017-mesh-normals-array" count="10" stride="3">
+              <param name="X" type="float"/>
+              <param name="Y" type="float"/>
+              <param name="Z" type="float"/>
+            </accessor>
+          </technique_common>
+        </source>
+        <source id="Group1_017-mesh-map-0">
+          <float_array id="Group1_017-mesh-map-0-array" count="80">0 19.68504 0 0 39.37008 0 39.37008 19.68504 19.68504 19.68504 0 19.68504 0 0 19.68504 0 19.68504 39.37008 39.37008 39.37008 39.37008 59.05512 0 59.05512 -59.05512 19.68504 -59.05512 0 0 0 0 19.68504 19.68504 0 39.37008 0 39.37008 19.68504 19.68504 19.68504 19.68504 0 19.68504 39.37008 0 59.05512 0 0 59.05512 0 59.05512 19.68504 39.37008 19.68504 39.37008 0 -39.37008 59.05512 -39.37008 39.37008 -19.68504 39.37008 0 59.05512 0 19.68504 -39.37008 19.68504 -39.37008 0 0 0 -19.68504 0 0 0 0 59.05512 -19.68504 39.37008</float_array>
+          <technique_common>
+            <accessor source="#Group1_017-mesh-map-0-array" count="40" stride="2">
+              <param name="S" type="float"/>
+              <param name="T" type="float"/>
+            </accessor>
+          </technique_common>
+        </source>
+        <vertices id="Group1_017-mesh-vertices">
+          <input semantic="POSITION" source="#Group1_017-mesh-positions"/>
+        </vertices>
+        <polylist material="_14-material" count="10">
+          <input semantic="VERTEX" source="#Group1_017-mesh-vertices" offset="0"/>
+          <input semantic="NORMAL" source="#Group1_017-mesh-normals" offset="1"/>
+          <input semantic="TEXCOORD" source="#Group1_017-mesh-map-0" offset="2" set="0"/>
+          <vcount>4 4 4 4 4 4 4 4 4 4 </vcount>
+          <p>23 0 0 26 0 1 24 0 2 25 0 3 27 1 4 10 1 5 9 1 6 28 1 7 5 2 8 20 2 9 6 2 10 4 2 11 8 3 12 11 3 13 9 3 14 10 3 15 21 4 16 18 4 17 17 4 18 22 4 19 29 5 20 5 5 21 4 5 22 7 5 23 16 6 24 19 6 25 17 6 26 18 6 27 14 7 28 15 7 29 13 7 30 12 7 31 0 8 32 3 8 33 1 8 34 2 8 35 30 9 36 9 9 37 12 9 38 13 9 39</p>
+        </polylist>
+      </mesh>
+    </geometry>
+    <geometry id="Model_016-mesh" name="Model.016">
+      <mesh>
+        <source id="Model_016-mesh-positions">
+          <float_array id="Model_016-mesh-positions-array" count="0"/>
+          <technique_common>
+            <accessor source="#Model_016-mesh-positions-array" count="0" stride="3">
+              <param name="X" type="float"/>
+              <param name="Y" type="float"/>
+              <param name="Z" type="float"/>
+            </accessor>
+          </technique_common>
+        </source>
+        <source id="Model_016-mesh-normals">
+          <float_array id="Model_016-mesh-normals-array" count="0"/>
+          <technique_common>
+            <accessor source="#Model_016-mesh-normals-array" count="0" stride="3">
+              <param name="X" type="float"/>
+              <param name="Y" type="float"/>
+              <param name="Z" type="float"/>
+            </accessor>
+          </technique_common>
+        </source>
+        <vertices id="Model_016-mesh-vertices">
+          <input semantic="POSITION" source="#Model_016-mesh-positions"/>
+        </vertices>
+      </mesh>
+    </geometry>
+  </library_geometries>
+  <library_controllers/>
+  <library_visual_scenes>
+    <visual_scene id="Scene" name="Scene">
+      <node id="Model_002" name="Model_002" type="NODE">
+        <matrix sid="transform">1 0 0 0 0 1 0 0 0 0 1 0 0 0 0 1</matrix>
+        <instance_geometry url="#Model_016-mesh"/>
+        <node id="Group1_002" name="Group1_002" type="NODE">
+          <matrix sid="transform">1 0 0 0 0 1 0 0 0 0 1 0 0 0 0 1</matrix>
+          <instance_geometry url="#Group1_017-mesh">
+            <bind_material>
+              <technique_common>
+                <instance_material symbol="_14-material" target="#_14-material">
+                  <bind_vertex_input semantic="UVMap" input_semantic="TEXCOORD" input_set="0"/>
+                </instance_material>
+              </technique_common>
+            </bind_material>
+          </instance_geometry>
+        </node>
+      </node>
+    </visual_scene>
+  </library_visual_scenes>
+  <scene>
+    <instance_visual_scene url="#Scene"/>
+  </scene>
+</COLLADA>

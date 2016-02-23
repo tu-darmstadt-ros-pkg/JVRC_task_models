@@ -1,0 +1,334 @@
+<?xml version="1.0" encoding="utf-8"?>
+<COLLADA xmlns="http://www.collada.org/2005/11/COLLADASchema" version="1.4.1">
+  <asset>
+    <contributor>
+      <author>Blender User</author>
+      <authoring_tool>Blender 2.75.0 commit date:2015-07-07, commit time:14:56, hash:c27589e</authoring_tool>
+    </contributor>
+    <created>2015-08-02T18:13:04</created>
+    <modified>2015-08-02T18:13:04</modified>
+    <unit name="meter" meter="1"/>
+    <up_axis>Z_UP</up_axis>
+  </asset>
+  <library_images>
+    <image id="__png" name="__png">
+      <init_from>1.png</init_from>
+    </image>
+    <image id="__png2" name="__png2">
+      <init_from>2.png</init_from>
+    </image>
+  </library_images>
+  <library_effects>
+    <effect id="_5-effect">
+      <profile_COMMON>
+        <technique sid="common">
+          <phong>
+            <emission>
+              <color sid="emission">0 0 0 1</color>
+            </emission>
+            <ambient>
+              <color sid="ambient">0 0 0 1</color>
+            </ambient>
+            <diffuse>
+              <color sid="diffuse">0 0 0.8 1</color>
+            </diffuse>
+            <specular>
+              <color sid="specular">0.1647059 0.1647059 0.1647059 1</color>
+            </specular>
+            <shininess>
+              <float sid="shininess">50</float>
+            </shininess>
+            <index_of_refraction>
+              <float sid="index_of_refraction">1</float>
+            </index_of_refraction>
+          </phong>
+        </technique>
+      </profile_COMMON>
+    </effect>
+    <effect id="_8-effect">
+      <profile_COMMON>
+        <technique sid="common">
+          <phong>
+            <emission>
+              <color sid="emission">0 0 0 1</color>
+            </emission>
+            <ambient>
+              <color sid="ambient">0 0 0 1</color>
+            </ambient>
+            <diffuse>
+              <color sid="diffuse">0.7215686 0.7215686 0.7215686 1</color>
+            </diffuse>
+            <specular>
+              <color sid="specular">0.1647059 0.1647059 0.1647059 1</color>
+            </specular>
+            <shininess>
+              <float sid="shininess">50</float>
+            </shininess>
+            <index_of_refraction>
+              <float sid="index_of_refraction">1</float>
+            </index_of_refraction>
+          </phong>
+        </technique>
+      </profile_COMMON>
+    </effect>
+    <effect id="FrontCol-effect">
+      <profile_COMMON>
+        <technique sid="common">
+          <phong>
+            <emission>
+              <color sid="emission">0 0 0 1</color>
+            </emission>
+            <ambient>
+              <color sid="ambient">0 0 0 1</color>
+            </ambient>
+            <diffuse>
+              <color sid="diffuse">0.8 0.8 0.8 1</color>
+            </diffuse>
+            <specular>
+              <color sid="specular">0.1647059 0.1647059 0.1647059 1</color>
+            </specular>
+            <shininess>
+              <float sid="shininess">50</float>
+            </shininess>
+            <index_of_refraction>
+              <float sid="index_of_refraction">1</float>
+            </index_of_refraction>
+          </phong>
+        </technique>
+      </profile_COMMON>
+    </effect>
+    <effect id="_6-effect">
+      <profile_COMMON>
+        <technique sid="common">
+          <phong>
+            <emission>
+              <color sid="emission">0 0 0 1</color>
+            </emission>
+            <ambient>
+              <color sid="ambient">0 0 0 1</color>
+            </ambient>
+            <diffuse>
+              <color sid="diffuse">0.8 0 0 1</color>
+            </diffuse>
+            <specular>
+              <color sid="specular">0.1647059 0.1647059 0.1647059 1</color>
+            </specular>
+            <shininess>
+              <float sid="shininess">50</float>
+            </shininess>
+            <index_of_refraction>
+              <float sid="index_of_refraction">1</float>
+            </index_of_refraction>
+          </phong>
+        </technique>
+      </profile_COMMON>
+    </effect>
+    <effect id="_-effect">
+      <profile_COMMON>
+        <newparam sid="__png-surface">
+          <surface type="2D">
+            <init_from>__png</init_from>
+          </surface>
+        </newparam>
+        <newparam sid="__png-sampler">
+          <sampler2D>
+            <source>__png-surface</source>
+          </sampler2D>
+        </newparam>
+        <technique sid="common">
+          <phong>
+            <emission>
+              <color sid="emission">0 0 0 1</color>
+            </emission>
+            <ambient>
+              <color sid="ambient">0 0 0 1</color>
+            </ambient>
+            <diffuse>
+              <texture texture="__png-sampler" texcoord="UVMap"/>
+            </diffuse>
+            <specular>
+              <color sid="specular">0.1647059 0.1647059 0.1647059 1</color>
+            </specular>
+            <shininess>
+              <float sid="shininess">50</float>
+            </shininess>
+            <index_of_refraction>
+              <float sid="index_of_refraction">1</float>
+            </index_of_refraction>
+          </phong>
+        </technique>
+      </profile_COMMON>
+    </effect>
+    <effect id="_2-effect">
+      <profile_COMMON>
+        <newparam sid="__png2-surface">
+          <surface type="2D">
+            <init_from>__png2</init_from>
+          </surface>
+        </newparam>
+        <newparam sid="__png2-sampler">
+          <sampler2D>
+            <source>__png2-surface</source>
+          </sampler2D>
+        </newparam>
+        <technique sid="common">
+          <phong>
+            <emission>
+              <color sid="emission">0 0 0 1</color>
+            </emission>
+            <ambient>
+              <color sid="ambient">0 0 0 1</color>
+            </ambient>
+            <diffuse>
+              <texture texture="__png2-sampler" texcoord="UVMap"/>
+            </diffuse>
+            <specular>
+              <color sid="specular">0.1647059 0.1647059 0.1647059 1</color>
+            </specular>
+            <shininess>
+              <float sid="shininess">50</float>
+            </shininess>
+            <index_of_refraction>
+              <float sid="index_of_refraction">1</float>
+            </index_of_refraction>
+          </phong>
+        </technique>
+      </profile_COMMON>
+    </effect>
+  </library_effects>
+  <library_materials>
+    <material id="_5-material" name="_5">
+      <instance_effect url="#_5-effect"/>
+    </material>
+    <material id="_8-material" name="_8">
+      <instance_effect url="#_8-effect"/>
+    </material>
+    <material id="FrontCol-material" name="FrontCol">
+      <instance_effect url="#FrontCol-effect"/>
+    </material>
+    <material id="_6-material" name="_6">
+      <instance_effect url="#_6-effect"/>
+    </material>
+    <material id="_-material" name="_">
+      <instance_effect url="#_-effect"/>
+    </material>
+    <material id="_2-material" name="_2">
+      <instance_effect url="#_2-effect"/>
+    </material>
+  </library_materials>
+  <library_geometries>
+    <geometry id="Group5-mesh" name="Group5">
+      <mesh>
+        <source id="Group5-mesh-positions">
+          <float_array id="Group5-mesh-positions-array" count="672">6.029215 3.256397 2.366 6.029215 3.056397 1.366 6.029215 3.056397 2.366 6.029215 3.256397 1.366 6.029215 3.256397 2.366 6.229216 3.256397 1.366 6.029215 3.256397 1.366 6.229216 3.256397 2.366 6.029215 3.256397 2.366 6.229216 3.056397 2.366 6.229216 3.256397 2.366 6.029215 3.056397 2.366 6.229216 3.056397 2.366 6.229216 3.056397 1.366 6.029215 3.056397 0.366 6.229216 3.056397 0.366 6.229216 3.256397 0.366 6.229216 3.056397 0.366 6.029215 3.256397 0.366 6.029215 3.256397 0.366 6.229216 3.056397 1.366 6.029215 3.256397 1.366 6.029215 3.056397 1.366 6.229216 3.256397 1.366 6.229216 3.256397 1.366 6.229216 3.056397 2.366 6.229216 3.056397 1.366 6.229216 3.256397 2.366 6.229216 3.256397 0.366 6.229216 3.056397 0.366 6.229216 3.256397 0.366 6.029215 3.256397 0.366 3.129215 3.256397 2.366 3.129215 3.056397 1.366 3.129215 3.056397 2.366 3.129215 3.256397 1.366 3.129215 3.256397 2.366 3.329216 3.256397 1.366 3.129215 3.256397 1.366 3.329216 3.256397 2.366 3.129215 3.256397 2.366 3.329216 3.056397 2.366 3.329216 3.256397 2.366 3.129215 3.056397 2.366 3.329216 3.056397 2.366 3.329216 3.056397 1.366 3.129215 3.056397 0.366 3.329216 3.056397 0.366 3.329216 3.256397 0.366 3.329216 3.056397 0.366 3.129215 3.256397 0.366 3.129215 3.256397 0.366 3.329216 3.056397 1.366 3.129215 3.256397 1.366 3.129215 3.056397 1.366 3.329216 3.256397 1.366 3.329216 3.256397 1.366 3.329216 3.056397 2.366 3.329216 3.056397 1.366 3.329216 3.256397 2.366 3.329216 3.256397 0.366 3.329216 3.056397 0.366 3.329216 3.256397 0.366 3.129215 3.256397 0.366 5.529215 3.206397 1.866 6.029215 3.206397 2.366 6.029215 3.206397 1.866 5.529215 3.206397 2.366 5.529215 3.106397 1.866 5.529215 3.206397 2.366 5.529215 3.206397 1.866 5.529215 3.106397 2.366 5.529215 3.106397 1.866 6.029215 3.106397 2.366 5.529215 3.106397 2.366 6.029215 3.106397 1.866 5.529215 3.206397 1.866 6.029215 3.106397 1.866 5.529215 3.106397 1.866 6.029215 3.206397 1.866 6.029215 3.206397 2.366 6.029215 3.106397 1.866 6.029215 3.206397 1.866 6.029215 3.106397 2.366 6.029215 3.206397 2.366 5.529215 3.106397 2.366 6.029215 3.106397 2.366 5.529215 3.206397 2.366 3.329216 3.206397 1.866 3.829216 3.206397 2.366 3.829216 3.206397 1.866 3.329216 3.206397 2.366 3.329216 3.106397 1.866 3.329216 3.206397 2.366 3.329216 3.206397 1.866 3.329216 3.106397 2.366 3.329216 3.106397 1.866 3.829216 3.106397 2.366 3.329216 3.106397 2.366 3.829216 3.106397 1.866 3.329216 3.206397 1.866 3.829216 3.106397 1.866 3.329216 3.106397 1.866 3.829216 3.206397 1.866 3.829216 3.206397 2.366 3.829216 3.106397 1.866 3.829216 3.206397 1.866 3.829216 3.106397 2.366 3.829216 3.206397 2.366 3.329216 3.106397 2.366 3.829216 3.106397 2.366 3.329216 3.206397 2.366 6.029215 18.0564 2.366 6.029215 17.8564 1.366 6.029215 17.8564 2.366 6.029215 18.0564 1.366 6.029215 18.0564 2.366 6.229216 18.0564 1.366 6.029215 18.0564 1.366 6.229216 18.0564 2.366 6.029215 18.0564 2.366 6.229216 17.8564 2.366 6.229216 18.0564 2.366 6.029215 17.8564 2.366 6.229216 17.8564 2.366 6.229216 17.8564 1.366 6.029215 17.8564 0.366 6.229216 17.8564 0.366 6.229216 18.0564 0.366 6.229216 17.8564 0.366 6.029215 18.0564 0.366 6.029215 18.0564 0.366 6.229216 17.8564 1.366 6.029215 18.0564 1.366 6.029215 17.8564 1.366 6.229216 18.0564 1.366 6.229216 18.0564 1.366 6.229216 17.8564 2.366 6.229216 17.8564 1.366 6.229216 18.0564 2.366 6.229216 18.0564 0.366 6.229216 17.8564 0.366 6.229216 18.0564 0.366 6.029215 18.0564 0.366 3.129215 18.0564 2.366 3.129215 17.8564 1.366 3.129215 17.8564 2.366 3.129215 18.0564 1.366 3.129215 18.0564 2.366 3.329216 18.0564 1.366 3.129215 18.0564 1.366 3.329216 18.0564 2.366 3.129215 18.0564 2.366 3.329216 17.8564 2.366 3.329216 18.0564 2.366 3.129215 17.8564 2.366 3.329216 17.8564 2.366 3.329216 17.8564 1.366 3.129215 17.8564 0.366 3.329216 17.8564 0.366 3.329216 18.0564 0.366 3.329216 17.8564 0.366 3.129215 18.0564 0.366 3.129215 18.0564 0.366 3.329216 17.8564 1.366 3.129215 18.0564 1.366 3.129215 17.8564 1.366 3.329216 18.0564 1.366 3.329216 18.0564 1.366 3.329216 17.8564 2.366 3.329216 17.8564 1.366 3.329216 18.0564 2.366 3.329216 18.0564 0.366 3.329216 17.8564 0.366 3.329216 18.0564 0.366 3.129215 18.0564 0.366 3.329216 18.0064 1.866 3.829216 18.0064 2.366 3.829216 18.0064 1.866 3.329216 18.0064 2.366 3.329216 17.9064 1.866 3.329216 18.0064 2.366 3.329216 18.0064 1.866 3.329216 17.9064 2.366 3.329216 17.9064 1.866 3.829216 17.9064 2.366 3.329216 17.9064 2.366 3.829216 17.9064 1.866 3.329216 18.0064 1.866 3.829216 17.9064 1.866 3.329216 17.9064 1.866 3.829216 18.0064 1.866 3.829216 18.0064 2.366 3.829216 17.9064 1.866 3.829216 18.0064 1.866 3.829216 17.9064 2.366 3.829216 18.0064 2.366 3.329216 17.9064 2.366 3.829216 17.9064 2.366 3.329216 18.0064 2.366 5.529215 18.0064 1.866 6.029215 18.0064 2.366 6.029215 18.0064 1.866 5.529215 18.0064 2.366 5.529215 17.9064 1.866 5.529215 18.0064 2.366 5.529215 18.0064 1.866 5.529215 17.9064 2.366 5.529215 17.9064 1.866 6.029215 17.9064 2.366 5.529215 17.9064 2.366 6.029215 17.9064 1.866 5.529215 18.0064 1.866 6.029215 17.9064 1.866 5.529215 17.9064 1.866 6.029215 18.0064 1.866 6.029215 18.0064 2.366 6.029215 17.9064 1.866 6.029215 18.0064 1.866 6.029215 17.9064 2.366 6.029215 18.0064 2.366 5.529215 17.9064 2.366 6.029215 17.9064 2.366 5.529215 18.0064 2.366</float_array>
+          <technique_common>
+            <accessor source="#Group5-mesh-positions-array" count="224" stride="3">
+              <param name="X" type="float"/>
+              <param name="Y" type="float"/>
+              <param name="Z" type="float"/>
+            </accessor>
+          </technique_common>
+        </source>
+        <source id="Group5-mesh-normals">
+          <float_array id="Group5-mesh-normals-array" count="18">0 0 1 0 0 -1 1 0 0 0 1 0 0 -1 0 -1 0 0</float_array>
+          <technique_common>
+            <accessor source="#Group5-mesh-normals-array" count="6" stride="3">
+              <param name="X" type="float"/>
+              <param name="Y" type="float"/>
+              <param name="Z" type="float"/>
+            </accessor>
+          </technique_common>
+        </source>
+        <source id="Group5-mesh-map-0">
+          <float_array id="Group5-mesh-map-0-array" count="544">0 7.874016 0 0 7.874016 0 7.874016 7.874016 0 0 0 7.874016 -7.874016 7.874016 -7.874016 0 7.874016 39.37008 7.874016 78.74016 0 78.74016 0 39.37008 -7.874016 0 0 0 0 39.37008 -7.874016 39.37008 0 39.37008 7.874016 39.37008 7.874016 78.74016 0 78.74016 0 0 0 39.37008 -7.874016 39.37008 -7.874016 0 7.874016 0 7.874016 7.874016 0 7.874016 0 0 -7.874016 78.74016 -7.874016 39.37008 0 39.37008 0 78.74016 0 0 7.874016 0 7.874016 39.37008 0 39.37008 0 78.74016 -7.874016 78.74016 -7.874016 39.37008 0 39.37008 0 39.37008 0 0 7.874016 0 7.874016 39.37008 0 3.937008 -19.68504 3.937008 -19.68504 0 0 0 0 0 0 7.874016 -7.874016 7.874016 -7.874016 0 7.874016 39.37008 7.874016 78.74016 0 78.74016 0 39.37008 -7.874016 0 0 0 0 39.37008 -7.874016 39.37008 0 39.37008 7.874016 39.37008 7.874016 78.74016 0 78.74016 0 0 0 39.37008 -7.874016 39.37008 -7.874016 0 7.874016 0 7.874016 7.874016 0 7.874016 0 0 -7.874016 78.74016 -7.874016 39.37008 0 39.37008 0 78.74016 0 0 7.874016 0 7.874016 39.37008 0 39.37008 0 78.74016 -7.874016 78.74016 -7.874016 39.37008 0 39.37008 0 39.37008 0 0 7.874016 0 7.874016 39.37008 0 3.937008 -19.68504 3.937008 -19.68504 0 0 0 0 0 0 1 -1 1 -1 0 0 0 0 19.68504 -3.937008 19.68504 -3.937008 0 19.68504 3.937008 0 3.937008 0 0 19.68504 0 0 0 1 0 1 1 0 1 3.937008 19.68504 0 19.68504 0 0 3.937008 0 0 7.874016 0 0 7.874016 0 7.874016 7.874016 0 0 0 1 -1 1 -1 0 0 0 0 19.68504 -3.937008 19.68504 -3.937008 0 19.68504 3.937008 0 3.937008 0 0 19.68504 0 0 0 1 0 1 1 0 1 3.937008 19.68504 0 19.68504 0 0 3.937008 0 0 7.874016 0 0 7.874016 0 7.874016 7.874016 0 0 0 7.874016 -7.874016 7.874016 -7.874016 0 7.874016 39.37008 7.874016 78.74016 0 78.74016 0 39.37008 -7.874016 0 0 0 0 39.37008 -7.874016 39.37008 0 39.37008 7.874016 39.37008 7.874016 78.74016 0 78.74016 0 0 0 39.37008 -7.874016 39.37008 -7.874016 0 7.874016 0 7.874016 7.874016 0 7.874016 0 0 -7.874016 78.74016 -7.874016 39.37008 0 39.37008 0 78.74016 0 0 7.874016 0 7.874016 39.37008 0 39.37008 0 78.74016 -7.874016 78.74016 -7.874016 39.37008 0 39.37008 0 39.37008 0 0 7.874016 0 7.874016 39.37008 0 3.937008 -19.68504 3.937008 -19.68504 0 0 0 0 0 0 7.874016 -7.874016 7.874016 -7.874016 0 7.874016 39.37008 7.874016 78.74016 0 78.74016 0 39.37008 -7.874016 0 0 0 0 39.37008 -7.874016 39.37008 0 39.37008 7.874016 39.37008 7.874016 78.74016 0 78.74016 0 0 0 39.37008 -7.874016 39.37008 -7.874016 0 7.874016 0 7.874016 7.874016 0 7.874016 0 0 -7.874016 78.74016 -7.874016 39.37008 0 39.37008 0 78.74016 0 0 7.874016 0 7.874016 39.37008 0 39.37008 0 78.74016 -7.874016 78.74016 -7.874016 39.37008 0 39.37008 0 39.37008 0 0 7.874016 0 7.874016 39.37008 0 3.937008 -19.68504 3.937008 -19.68504 0 0 0 0 0 0 1 -1 1 -1 0 0 0 0 19.68504 -3.937008 19.68504 -3.937008 0 19.68504 3.937008 0 3.937008 0 0 19.68504 0 0 0 1 0 1 1 0 1 3.937008 19.68504 0 19.68504 0 0 3.937008 0 0 0 0 1 -1 1 -1 0 0 0 0 19.68504 -3.937008 19.68504 -3.937008 0 19.68504 3.937008 0 3.937008 0 0 19.68504 0 0 0 1 0 1 1 0 1 3.937008 19.68504 0 19.68504 0 0 3.937008 0 0 7.874016 0 0 7.874016 0 7.874016 7.874016</float_array>
+          <technique_common>
+            <accessor source="#Group5-mesh-map-0-array" count="272" stride="2">
+              <param name="S" type="float"/>
+              <param name="T" type="float"/>
+            </accessor>
+          </technique_common>
+        </source>
+        <vertices id="Group5-mesh-vertices">
+          <input semantic="POSITION" source="#Group5-mesh-positions"/>
+        </vertices>
+        <polylist material="_5-material" count="10">
+          <input semantic="VERTEX" source="#Group5-mesh-vertices" offset="0"/>
+          <input semantic="NORMAL" source="#Group5-mesh-normals" offset="1"/>
+          <input semantic="TEXCOORD" source="#Group5-mesh-map-0" offset="2" set="0"/>
+          <vcount>4 4 4 4 4 4 4 4 4 4 </vcount>
+          <p>40 0 0 43 0 1 41 0 2 42 0 3 56 2 52 59 2 53 57 2 54 58 2 55 33 4 60 45 4 61 44 4 62 34 4 63 32 5 72 35 5 73 33 5 74 34 5 75 36 3 80 39 3 81 37 3 82 38 3 83 152 0 136 155 0 137 153 0 138 154 0 139 168 2 188 171 2 189 169 2 190 170 2 191 145 4 196 157 4 197 156 4 198 146 4 199 144 5 208 147 5 209 145 5 210 146 5 211 148 3 216 151 3 217 149 3 218 150 3 219</p>
+        </polylist>
+        <polylist material="_8-material" count="16">
+          <input semantic="VERTEX" source="#Group5-mesh-vertices" offset="0"/>
+          <input semantic="NORMAL" source="#Group5-mesh-normals" offset="1"/>
+          <input semantic="TEXCOORD" source="#Group5-mesh-map-0" offset="2" set="0"/>
+          <vcount>4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 </vcount>
+          <p>30 3 12 31 3 13 6 3 14 5 3 15 14 5 20 1 5 21 3 5 22 19 5 23 14 4 32 15 4 33 13 4 34 1 4 35 26 2 40 29 2 41 28 2 42 24 2 43 62 3 56 63 3 57 38 3 58 37 3 59 46 5 64 33 5 65 35 5 66 51 5 67 46 4 76 47 4 77 45 4 78 33 4 79 58 2 84 61 2 85 60 2 86 56 2 87 142 3 148 143 3 149 118 3 150 117 3 151 126 5 156 113 5 157 115 5 158 131 5 159 126 4 168 127 4 169 125 4 170 113 4 171 138 2 176 141 2 177 140 2 178 136 2 179 174 3 192 175 3 193 150 3 194 149 3 195 158 5 200 145 5 201 147 5 202 163 5 203 158 4 212 159 4 213 157 4 214 145 4 215 170 2 220 173 2 221 172 2 222 168 2 223</p>
+        </polylist>
+        <polylist material="FrontCol-material" count="24">
+          <input semantic="VERTEX" source="#Group5-mesh-vertices" offset="0"/>
+          <input semantic="NORMAL" source="#Group5-mesh-normals" offset="1"/>
+          <input semantic="TEXCOORD" source="#Group5-mesh-map-0" offset="2" set="0"/>
+          <vcount>4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 </vcount>
+          <p>14 1 4 18 1 5 16 1 6 17 1 7 20 0 24 23 0 25 21 0 26 22 0 27 76 1 44 79 1 45 77 1 46 78 1 47 46 1 48 50 1 49 48 1 50 49 1 51 52 0 68 55 0 69 53 0 70 54 0 71 100 1 88 103 1 89 101 1 90 102 1 91 68 5 96 71 5 97 69 5 98 70 5 99 84 0 100 87 0 101 85 0 102 86 0 103 80 2 108 83 2 109 81 2 110 82 2 111 92 5 120 95 5 121 93 5 122 94 5 123 108 0 124 111 0 125 109 0 126 110 0 127 104 2 132 107 2 133 105 2 134 106 2 135 126 1 140 130 1 141 128 1 142 129 1 143 132 0 160 135 0 161 133 0 162 134 0 163 188 1 180 191 1 181 189 1 182 190 1 183 158 1 184 162 1 185 160 1 186 161 1 187 164 0 204 167 0 205 165 0 206 166 0 207 212 1 224 215 1 225 213 1 226 214 1 227 180 5 232 183 5 233 181 5 234 182 5 235 196 0 236 199 0 237 197 0 238 198 0 239 192 2 244 195 2 245 193 2 246 194 2 247 204 5 252 207 5 253 205 5 254 206 5 255 220 0 256 223 0 257 221 0 258 222 0 259 216 2 264 219 2 265 217 2 266 218 2 267</p>
+        </polylist>
+        <polylist material="_6-material" count="10">
+          <input semantic="VERTEX" source="#Group5-mesh-vertices" offset="0"/>
+          <input semantic="NORMAL" source="#Group5-mesh-normals" offset="1"/>
+          <input semantic="TEXCOORD" source="#Group5-mesh-map-0" offset="2" set="0"/>
+          <vcount>4 4 4 4 4 4 4 4 4 4 </vcount>
+          <p>24 2 8 27 2 9 25 2 10 26 2 11 1 4 16 13 4 17 12 4 18 2 4 19 0 5 28 3 5 29 1 5 30 2 5 31 4 3 36 7 3 37 5 3 38 6 3 39 120 0 112 123 0 113 121 0 114 122 0 115 136 2 144 139 2 145 137 2 146 138 2 147 113 4 152 125 4 153 124 4 154 114 4 155 112 5 164 115 5 165 113 5 166 114 5 167 116 3 172 119 3 173 117 3 174 118 3 175 8 0 268 11 0 269 9 0 270 10 0 271</p>
+        </polylist>
+        <polylist material="_-material" count="4">
+          <input semantic="VERTEX" source="#Group5-mesh-vertices" offset="0"/>
+          <input semantic="NORMAL" source="#Group5-mesh-normals" offset="1"/>
+          <input semantic="TEXCOORD" source="#Group5-mesh-map-0" offset="2" set="0"/>
+          <vcount>4 4 4 4 </vcount>
+          <p>64 3 92 67 3 93 65 3 94 66 3 95 72 4 104 75 4 105 73 4 106 74 4 107 88 3 116 91 3 117 89 3 118 90 3 119 96 4 128 99 4 129 97 4 130 98 4 131</p>
+        </polylist>
+        <polylist material="_2-material" count="4">
+          <input semantic="VERTEX" source="#Group5-mesh-vertices" offset="0"/>
+          <input semantic="NORMAL" source="#Group5-mesh-normals" offset="1"/>
+          <input semantic="TEXCOORD" source="#Group5-mesh-map-0" offset="2" set="0"/>
+          <vcount>4 4 4 4 </vcount>
+          <p>176 3 228 179 3 229 177 3 230 178 3 231 184 4 240 187 4 241 185 4 242 186 4 243 200 3 248 203 3 249 201 3 250 202 3 251 208 4 260 211 4 261 209 4 262 210 4 263</p>
+        </polylist>
+      </mesh>
+    </geometry>
+  </library_geometries>
+  <library_controllers/>
+  <library_visual_scenes>
+    <visual_scene id="Scene" name="Scene">
+      <node id="Group5" name="Group5" type="NODE">
+        <matrix sid="transform">1 0 0 0 0 1 0 0 0 0 1 0 0 0 0 1</matrix>
+        <instance_geometry url="#Group5-mesh" name="Group5">
+          <bind_material>
+            <technique_common>
+              <instance_material symbol="_5-material" target="#_5-material">
+                <bind_vertex_input semantic="UVMap" input_semantic="TEXCOORD" input_set="0"/>
+              </instance_material>
+              <instance_material symbol="_8-material" target="#_8-material">
+                <bind_vertex_input semantic="UVMap" input_semantic="TEXCOORD" input_set="0"/>
+              </instance_material>
+              <instance_material symbol="FrontCol-material" target="#FrontCol-material">
+                <bind_vertex_input semantic="UVMap" input_semantic="TEXCOORD" input_set="0"/>
+              </instance_material>
+              <instance_material symbol="_6-material" target="#_6-material">
+                <bind_vertex_input semantic="UVMap" input_semantic="TEXCOORD" input_set="0"/>
+              </instance_material>
+              <instance_material symbol="_-material" target="#_-material">
+                <bind_vertex_input semantic="UVMap" input_semantic="TEXCOORD" input_set="0"/>
+              </instance_material>
+              <instance_material symbol="_2-material" target="#_2-material">
+                <bind_vertex_input semantic="UVMap" input_semantic="TEXCOORD" input_set="0"/>
+              </instance_material>
+            </technique_common>
+          </bind_material>
+        </instance_geometry>
+      </node>
+    </visual_scene>
+  </library_visual_scenes>
+  <scene>
+    <instance_visual_scene url="#Scene"/>
+  </scene>
+</COLLADA>

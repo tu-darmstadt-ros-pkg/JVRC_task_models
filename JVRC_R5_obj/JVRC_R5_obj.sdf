@@ -1,0 +1,4429 @@
+<?xml version="1.0" ?>
+<sdf version="1.5">
+  <model name="JVRC_R5_obj">
+<!-- ====================================================  -->
+<!-- ====================================================  -->
+    <link name="nozzle">
+      <pose>0.03 0 -0.73 0 0 0</pose>
+      <inertial>
+        <!-- SET COORDINATE in LOCAL(This link's coordinate) -->
+        <pose>0.537751 7.101726 2.198399 0 0 0</pose>
+        <mass>1.0</mass>
+        <inertia>
+          <ixx>0.11840050</ixx>
+          <ixy>0.0000000000</ixy>
+          <ixz>0.0000000000</ixz>
+          <iyy>0.00404786</iyy>
+          <iyz>-0.00097855</iyz>
+          <izz>0.11828189</izz>
+        </inertia>
+      </inertial>
+      <visual name="visual">
+        <geometry>
+          <mesh>
+            <uri>model://JVRC_R5_obj/dae/R5_nozzle_0820.dae</uri>
+          </mesh>
+        </geometry>
+      </visual>
+      <collision name="collision">
+        <geometry>
+          <mesh>
+            <uri>model://JVRC_R5_obj/dae/R5_nozzle_0820.dae</uri>
+          </mesh>
+        </geometry>
+        <surface>
+          <friction>
+            <ode>
+              <mu>0.7</mu>
+              <mu2>0.7</mu2>
+              <slip1>1.0</slip1>
+              <slip2>1.0</slip2>
+            </ode>
+          </friction>
+        </surface>
+      </collision>
+      <self_collide>1</self_collide>
+      <kinematic>1</kinematic>
+      <gravity>1</gravity>
+    </link>
+
+<!-- ====================================================  -->
+<!-- ====================================================  -->
+    <link name="door">
+      <pose>0.685 7.24 1.297 0 0 0</pose>
+			<!-- <pose>0.655 7.24 2.047 0 0 0</pose> -->
+      <inertial>
+        <pose>0 0 0 0 0 0</pose>
+        <mass>0.5</mass>
+        <inertia>
+          <ixx> 0.0567</ixx>
+          <ixy>-0.0</ixy>
+          <ixz>-0.0</ixz>
+          <iyy> 0.0131</iyy>
+          <iyz> 0.0</iyz>
+          <izz> 0.0436</izz>
+        </inertia>
+      </inertial>
+      <visual name="visual1">
+        <pose>0.0025 0 0 0 0 0</pose>
+        <geometry>
+          <box> <size>0.005 0.91 0.495</size> </box>
+        </geometry>
+        <material>
+        	<ambient>0.8 0 0 1</ambient> 
+        	<diffuse>0.8 0 0 1</diffuse> 
+       	</material>
+      </visual>
+      <visual name="visual2">
+        <pose>-0.0025 0 0 0 0 0</pose>
+        <geometry>
+          <box> <size>0.005 0.91 0.495</size> </box>
+        </geometry>
+        <material>
+        	<ambient>0.8 0.8 0.8 1</ambient> 
+        	<diffuse>0.8 0.8 0.8 1</diffuse> 
+       	</material>
+      </visual>
+      <collision name="collision">
+        <max_contacts>10</max_contacts>
+        <geometry>
+          <box> <size>0.01 0.91 0.495</size> </box>
+        </geometry>
+        <surface>
+          <bounce>
+            <restitution_coefficient>0.5</restitution_coefficient>
+            <threshold>1000000000.0</threshold>
+          </bounce>
+          <friction>
+            <ode>
+              <mu>0.7</mu>
+              <mu2>0.7</mu2>
+<!--              <slip1>0.1</slip1>
+              <slip2>0.1</slip2> -->
+            </ode>
+          </friction>
+          <contact>
+          </contact>
+        </surface>
+      </collision>
+      <self_collide>1</self_collide>
+      <kinematic>1</kinematic>
+      <gravity>1</gravity>
+    </link>
+<!--
+Mesh Bounding Box Size 0.013000 0.926000 0.507000
+Mesh Bounding Box Diag 1.055791 
+Mesh Volume is 0.006102
+Mesh Surface is 0.976474
+Thin shell barycenter 0.657729 7.238004 2.045815
+Center of Mass is 0.657728 7.238000 2.045717
+Inertia Tensor is :
+| 0.000567 -0.000000 -0.000000 |
+| -0.000000 0.000131 -0.000000 |
+| -0.000000 -0.000000 0.000436 |
+Principal axes are :
+| 1.000000 0.000000 0.000004 |
+| -0.000000 1.000000 -0.000027 |
+| -0.000004 0.000027 1.000000 |
+axis momenta are :
+| 0.000567 0.000131 0.000436 |
+-->
+    <joint name="hinge_door" type="revolute">
+      <parent>world</parent>
+      <child>door</child>
+      <pose>0 0 -0.2495 0 0 0</pose>
+      <axis>
+        <xyz>0 1 0</xyz>
+        <limit>
+          <lower>0.0</lower>
+          <upper>1.54</upper>
+        </limit>
+        <dynamics>
+          <damping>1.0</damping>
+          <friction>1.57</friction>
+        </dynamics>
+      </axis>
+      <physics>
+        <ode>
+          <cfm_damping>1</cfm_damping>
+        </ode>
+      </physics>
+    </joint>
+
+<!-- ====================================================  -->
+<!-- ====================================================  -->
+    <link name="doornobu">
+      <pose>0.692253 7.2537 1.5374 0 0 0</pose>
+      <inertial>
+        <pose>0.021672 0.020665 -0.003527 0 0 0</pose>
+        <mass>0.1</mass>
+        <inertia>
+          <ixx>0.00005510</ixx>
+          <ixy>-0.00001167</ixy>
+          <ixz>0.00000104</ixz>
+          <iyy>0.00001455</iyy>
+          <iyz>0.00000068</iyz>
+          <izz>0.00006483</izz>
+        </inertia>
+      </inertial>
+      <visual name="visual">
+        <geometry>
+          <mesh>
+            <uri>model://JVRC_R5_obj/dae/R5_doornobu.dae</uri>
+          </mesh>
+        </geometry>
+      </visual>
+      <collision name="collision">
+        <geometry>
+          <mesh>
+            <uri>model://JVRC_R5_obj/dae/R5_doornobu.dae</uri>
+          </mesh>
+        </geometry>
+        <surface>
+          <friction>
+            <ode>
+              <mu>0.7</mu>
+              <mu2>0.7</mu2>
+              <slip1>1.0</slip1>
+              <slip2>1.0</slip2>
+            </ode>
+          </friction>
+        </surface>
+      </collision>
+      <self_collide>1</self_collide>
+      <kinematic>1</kinematic>
+      <gravity>1</gravity>
+    </link>
+<!--
+X10
+Mesh Bounding Box Size 0.657218 1.225213 0.432080
+Mesh Bounding Box Diag 1.455945 
+Mesh Volume is 0.039000
+Mesh Surface is 1.312210
+Thin shell barycenter 0.184937 0.175380 -0.030207
+Center of Mass is 0.216724 0.206647 -0.035271
+Inertia Tensor is :
+| 0.005510 -0.001167 0.000104 |
+| -0.001167 0.001455 0.000068 |
+| 0.000104 0.000068 0.006483 |
+Principal axes are :
+| 0.958162 0.258431 0.123045 |
+| -0.258562 0.965875 -0.015180 |
+| -0.122769 -0.017270 0.992285 |
+axis momenta are :
+| 0.005811 0.001142 0.006495 |
+-->
+    <joint name="hinge_doornobu" type="revolute">
+      <parent>door</parent>
+      <child>doornobu</child>
+      <pose> 0 -0.015436 -0.0048502 0 0 0</pose>
+      <axis>
+        <xyz>-1 0 0</xyz>
+        <limit>
+          <lower>0</lower>
+          <upper>1.57</upper>
+        </limit>
+        <dynamics>
+          <damping>1.0</damping>
+          <friction>1.57</friction>
+        </dynamics>
+      </axis>
+      <physics>
+        <ode>
+          <cfm_damping>1</cfm_damping>
+        </ode>
+      </physics>
+    </joint>
+
+<!-- ====================================================  -->
+<!-- ====================================================  -->
+    <link name="valve">
+      <pose>0.5789 7.528 1.4783 0 0 0</pose>
+      <inertial>
+        <mass>0.1</mass>
+        <pose>0 0 0 0 0 0</pose>
+        <inertia>
+          <ixx>1</ixx>
+          <ixy>0</ixy>
+          <ixz>0</ixz>
+          <iyy>1</iyy>
+          <iyz>0</iyz>
+          <izz>1</izz>
+        </inertia>
+<!--
+        <pose>0.5476363 7.6434 2.2506 0 0 0</pose>
+        <inertia>
+          <ixx> 0.52302</ixx>
+          <ixy>-0.31117</ixy>
+          <ixz> 0.0</ixz>
+          <iyy> 0.99571</iyy>
+          <iyz> 0.0</iyz>
+          <izz> 1.30941</izz>
+        </inertia>
+-->
+      </inertial>
+      <visual name="visual">
+        <geometry>
+          <mesh>
+            <uri>model://JVRC_R5_obj/dae/R5_valbu.dae</uri>
+          </mesh>
+        </geometry>
+      </visual>
+      <collision name="collision">
+        <max_contacts>4</max_contacts>
+        <geometry>
+          <mesh>
+            <uri>model://JVRC_R5_obj/dae/R5_valbu.dae</uri>
+          </mesh>
+        </geometry>
+        <surface>
+          <bounce>
+            <restitution_coefficient>0.5</restitution_coefficient>
+            <threshold>1000000000.0</threshold>
+          </bounce>
+          <friction>
+            <ode>
+              <mu>0.7</mu>
+              <mu2>0.7</mu2>
+<!--              <slip1>0.1</slip1>
+              <slip2>0.1</slip2> -->
+            </ode>
+          </friction>
+          <contact>
+          </contact>
+        </surface>
+      </collision>
+      <self_collide>1</self_collide>
+      <kinematic>1</kinematic>
+      <gravity>1</gravity>
+    </link>
+    <joint name="hinge_valve" type="revolute">
+      <parent>world</parent>
+      <child>valve</child>
+      <pose>0 0 0  0 0 0</pose>
+      <axis>
+        <xyz>0 -1 0</xyz>
+        <limit>
+          <lower>0</lower>
+          <upper>6.28</upper>
+        </limit>
+        <dynamics>
+          <damping>1.0</damping>
+          <friction>3</friction>
+        </dynamics>
+      </axis>
+      <physics>
+        <ode>
+          <cfm_damping>1</cfm_damping>
+        </ode>
+      </physics>
+    </joint>
+
+<!-- =======================================================  -->
+<!-- ======================================================== -->
+<!-- ======================================================== -->
+<!-- ======================================================== -->
+    <link name="FirstPart">
+      <!-- SET COORDINATE in GLOBAL -->
+      <pose>0.5776464 7.6434 1.4206 0 0 0</pose>
+			<inertial>
+			  <mass>0.1</mass>
+			</inertial>
+      <visual name="visual">
+        <!-- SET COORDINATE in LOCAL(This link's coordinate) -->
+        <pose>0 0 0 0 0 0</pose>
+        <geometry>
+          <mesh>
+            <uri>model://JVRC_R5_obj/dae/R5_hose_1unit_no_dorm.dae</uri>
+          </mesh>
+        </geometry>
+      </visual>
+      <collision name="collision">
+        <!-- SET COORDINATE in LOCAL(This link's coordinate) -->
+        <pose>0 0 0 0 0 0</pose>
+        <geometry>
+          <mesh>
+            <uri>model://JVRC_R5_obj/dae/R5_hose_1unit_no_dorm.dae</uri>
+          </mesh>
+        </geometry>
+      </collision>
+      <self_collide>0</self_collide>
+      <kinematic>0</kinematic>
+      <gravity>0</gravity>
+    </link>
+<!-- ======================================================== -->
+<!-- ======================================================== -->
+<!-- ======================================================== -->
+    <link name="L11WD">
+      <!-- SET COORDINATE in GLOBAL -->
+      <pose>0.5776464 7.6434 1.3206 0 0 0</pose>
+      <inertial>
+        <!-- SET COORDINATE in LOCAL(This link's coordinate) -->
+        <pose>0 0 0.03304461 0 0 0</pose>
+        <mass>0.01375</mass>
+        <inertia>
+          <ixx>0.0620273193</ixx>
+          <ixy>0.0000000001</ixy>
+          <ixz>0.0000000044</ixz>
+          <iyy>0.0620273438</iyy>
+          <iyz>0.00000000</iyz>
+          <izz>0.0334274017</izz>
+        </inertia>
+      </inertial>
+      <visual name="visual">
+        <!-- SET COORDINATE in LOCAL(This link's coordinate) -->
+        <pose>0 0 0 0 0 0</pose>
+        <geometry>
+          <mesh>
+            <uri>model://JVRC_R5_obj/dae/R5_hose_1unit.dae</uri>
+          </mesh>
+        </geometry>
+      </visual>
+      <collision name="collision">
+        <!-- SET COORDINATE in LOCAL(This link's coordinate) -->
+        <pose>0 0 0 0 0 0</pose>
+        <geometry>
+          <mesh>
+            <uri>model://JVRC_R5_obj/dae/R5_hose_1unit.dae</uri>
+          </mesh>
+        </geometry>
+        <max_contacts>10</max_contacts>
+        <surface>
+          <bounce>
+            <restitution_coefficient>0.0</restitution_coefficient>
+            <threshold>1000000000.0</threshold>
+          </bounce>
+          <friction>
+            <ode>
+              <mu>0.2</mu>
+              <mu2>0.2</mu2>
+              <slip1>0.1</slip1>
+              <slip2>0.1</slip2>
+            </ode>
+          </friction>
+          <contact>
+          </contact>
+        </surface>
+      </collision>
+      <self_collide>1</self_collide>
+      <gravity>1</gravity>
+    </link>
+<!-- ======================================================== -->
+    <link name="L11ND">
+      <!-- SET COORDINATE in GLOBAL -->
+      <pose>0.5776464 7.6434 1.3206 0 0 0</pose>
+      <inertial>
+        <!-- SET COORDINATE in LOCAL(This link's coordinate) -->
+        <pose>0.000000 -0.000000 -0.025018 0 0 0</pose>
+        <mass>0.01375</mass>
+        <inertia>
+          <ixx>0.0326216797</ixx>
+          <ixy>0.00000000</ixy>
+          <ixz>0.00000000</ixz>
+          <iyy>0.0326217041</iyy>
+          <iyz>0.00000000</iyz>
+          <izz>0.0268928284</izz>
+        </inertia>
+      </inertial>
+      <visual name="visual">
+        <!-- SET COORDINATE in LOCAL(This link's coordinate) -->
+        <pose>0 0 0 0 0 0</pose>
+        <geometry>
+          <mesh>
+            <uri>model://JVRC_R5_obj/dae/R5_hose_1unit_no_dorm.dae</uri>
+          </mesh>
+        </geometry>
+      </visual>
+      <collision name="collision">
+        <!-- SET COORDINATE in LOCAL(This link's coordinate) -->
+        <pose>0 0 0 0 0 0</pose>
+        <geometry>
+          <mesh>
+            <uri>model://JVRC_R5_obj/dae/R5_hose_1unit_no_dorm.dae</uri>
+          </mesh>
+        </geometry>
+        <max_contacts>10</max_contacts>
+        <surface>
+          <bounce>
+            <restitution_coefficient>0.0</restitution_coefficient>
+            <threshold>1000000000.0</threshold>
+          </bounce>
+          <friction>
+            <ode>
+              <mu>0.2</mu>
+              <mu2>0.2</mu2>
+              <slip1>0.1</slip1>
+              <slip2>0.1</slip2>
+            </ode>
+          </friction>
+          <contact>
+          </contact>
+        </surface>
+      </collision>
+      <self_collide>1</self_collide>
+      <gravity>1</gravity>
+    </link>
+<!-- ======================================================== -->
+    <joint name="hinge_1st2L11WD" type="revolute">
+      <parent>FirstPart</parent>
+      <child>L11WD</child>
+      <pose>0 0 0.05 0 0 0</pose>
+      <axis>
+        <xyz>1 0 0</xyz>
+        <limit>
+          <lower>-2.1</lower>
+          <upper>2.1</upper>
+        </limit>
+        <dynamics>
+          <damping>1.0</damping>
+          <friction>0</friction>
+        </dynamics>
+      </axis>
+      <physics>
+        <ode>
+          <cfm_damping>1</cfm_damping>
+        </ode>
+      </physics>
+    </joint>
+<!-- ======================================================== -->
+    <joint name="hinge_L11WD2L11ND" type="revolute">
+      <parent>L11WD</parent>
+      <child>L11ND</child>
+      <pose>0 0 0 0 0 0</pose>
+      <axis>
+        <xyz>0 0 1</xyz>
+        <dynamics>
+          <damping>1.0</damping>
+          <friction>0</friction>
+        </dynamics>
+      </axis>
+      <physics>
+        <ode>
+          <cfm_damping>1</cfm_damping>
+        </ode>
+      </physics>
+    </joint>
+
+<!-- ======================================================== -->
+<!-- ======================================================== -->
+<!-- ======================================================== -->
+    <link name="L12WD">
+      <!-- SET COORDINATE in GLOBAL -->
+      <pose>0.5776464 7.6434 1.2206 0 0 0</pose>
+      <inertial>
+        <!-- SET COORDINATE in LOCAL(This link's coordinate) -->
+        <pose>0 0 0.03304461 0 0 0</pose>
+        <mass>0.01375</mass>
+        <inertia>
+          <ixx>0.0620273193</ixx>
+          <ixy>0.0000000001</ixy>
+          <ixz>0.0000000044</ixz>
+          <iyy>0.0620273438</iyy>
+          <iyz>0.00000000</iyz>
+          <izz>0.0334274017</izz>
+        </inertia>
+      </inertial>
+      <visual name="visual">
+        <!-- SET COORDINATE in LOCAL(This link's coordinate) -->
+        <pose>0 0 0 0 0 0</pose>
+        <geometry>
+          <mesh>
+            <uri>model://JVRC_R5_obj/dae/R5_hose_1unit.dae</uri>
+          </mesh>
+        </geometry>
+      </visual>
+      <collision name="collision">
+        <!-- SET COORDINATE in LOCAL(This link's coordinate) -->
+        <pose>0 0 0 0 0 0</pose>
+        <geometry>
+          <mesh>
+            <uri>model://JVRC_R5_obj/dae/R5_hose_1unit.dae</uri>
+          </mesh>
+        </geometry>
+        <max_contacts>10</max_contacts>
+        <surface>
+          <bounce>
+            <restitution_coefficient>0.0</restitution_coefficient>
+            <threshold>1000000000.0</threshold>
+          </bounce>
+          <friction>
+            <ode>
+              <mu>0.2</mu>
+              <mu2>0.2</mu2>
+              <slip1>0.1</slip1>
+              <slip2>0.1</slip2>
+            </ode>
+          </friction>
+          <contact>
+          </contact>
+        </surface>
+      </collision>
+      <self_collide>1</self_collide>
+      <gravity>1</gravity>
+    </link>
+<!-- ======================================================== -->
+    <link name="L12ND">
+      <!-- SET COORDINATE in GLOBAL -->
+      <pose>0.5776464 7.6434 1.2206 0 0 0</pose>
+      <inertial>
+        <!-- SET COORDINATE in LOCAL(This link's coordinate) -->
+        <pose>0.000000 -0.000000 -0.025018 0 0 0</pose>
+        <mass>0.01375</mass>
+        <inertia>
+          <ixx>0.0326216797</ixx>
+          <ixy>0.00000000</ixy>
+          <ixz>0.00000000</ixz>
+          <iyy>0.0326217041</iyy>
+          <iyz>0.00000000</iyz>
+          <izz>0.0268928284</izz>
+        </inertia>
+      </inertial>
+      <visual name="visual">
+        <!-- SET COORDINATE in LOCAL(This link's coordinate) -->
+        <pose>0 0 0 0 0 0</pose>
+        <geometry>
+          <mesh>
+            <uri>model://JVRC_R5_obj/dae/R5_hose_1unit_no_dorm.dae</uri>
+          </mesh>
+        </geometry>
+      </visual>
+      <collision name="collision">
+        <!-- SET COORDINATE in LOCAL(This link's coordinate) -->
+        <pose>0 0 0 0 0 0</pose>
+        <geometry>
+          <mesh>
+            <uri>model://JVRC_R5_obj/dae/R5_hose_1unit_no_dorm.dae</uri>
+          </mesh>
+        </geometry>
+        <max_contacts>10</max_contacts>
+        <surface>
+          <bounce>
+            <restitution_coefficient>0.0</restitution_coefficient>
+            <threshold>1000000000.0</threshold>
+          </bounce>
+          <friction>
+            <ode>
+              <mu>0.2</mu>
+              <mu2>0.2</mu2>
+              <slip1>0.1</slip1>
+              <slip2>0.1</slip2>
+            </ode>
+          </friction>
+          <contact>
+          </contact>
+        </surface>
+      </collision>
+      <self_collide>1</self_collide>
+      <gravity>1</gravity>
+    </link>
+<!-- ======================================================== -->
+    <joint name="hinge_L11ND2L12WD" type="revolute">
+      <parent>L11ND</parent>
+      <child>L12WD</child>
+      <pose>0 0 0.05 0 0 0</pose>
+      <axis>
+        <xyz>1 0 0</xyz>
+        <limit>
+          <lower>-2.1</lower>
+          <upper>2.1</upper>
+        </limit>
+        <dynamics>
+          <damping>1.0</damping>
+          <friction>0</friction>
+        </dynamics>
+      </axis>
+      <physics>
+        <ode>
+          <cfm_damping>1</cfm_damping>
+        </ode>
+      </physics>
+    </joint>
+<!-- ======================================================== -->
+    <joint name="hinge_L12WD2L12ND" type="revolute">
+      <parent>L12WD</parent>
+      <child>L12ND</child>
+      <pose>0 0 0 0 0 0</pose>
+      <axis>
+        <xyz>0 0 1</xyz>
+        <dynamics>
+          <damping>1.0</damping>
+          <friction>0</friction>
+        </dynamics>
+      </axis>
+      <physics>
+        <ode>
+          <cfm_damping>1</cfm_damping>
+        </ode>
+      </physics>
+    </joint>
+
+<!-- ======================================================== -->
+<!-- ======================================================== -->
+<!-- ======================================================== -->
+    <link name="L13WD">
+      <!-- SET COORDINATE in GLOBAL -->
+      <pose>0.5776464 7.6434 1.1206 0 0 0</pose>
+      <inertial>
+        <!-- SET COORDINATE in LOCAL(This link's coordinate) -->
+        <pose>0 0 0.03304461 0 0 0</pose>
+        <mass>0.01375</mass>
+        <inertia>
+          <ixx>0.0620273193</ixx>
+          <ixy>0.0000000001</ixy>
+          <ixz>0.0000000044</ixz>
+          <iyy>0.0620273438</iyy>
+          <iyz>0.00000000</iyz>
+          <izz>0.0334274017</izz>
+        </inertia>
+      </inertial>
+      <visual name="visual">
+        <!-- SET COORDINATE in LOCAL(This link's coordinate) -->
+        <pose>0 0 0 0 0 0</pose>
+        <geometry>
+          <mesh>
+            <uri>model://JVRC_R5_obj/dae/R5_hose_1unit.dae</uri>
+          </mesh>
+        </geometry>
+      </visual>
+      <collision name="collision">
+        <!-- SET COORDINATE in LOCAL(This link's coordinate) -->
+        <pose>0 0 0 0 0 0</pose>
+        <geometry>
+          <mesh>
+            <uri>model://JVRC_R5_obj/dae/R5_hose_1unit.dae</uri>
+          </mesh>
+        </geometry>
+        <max_contacts>10</max_contacts>
+        <surface>
+          <bounce>
+            <restitution_coefficient>0.0</restitution_coefficient>
+            <threshold>1000000000.0</threshold>
+          </bounce>
+          <friction>
+            <ode>
+              <mu>0.2</mu>
+              <mu2>0.2</mu2>
+              <slip1>0.1</slip1>
+              <slip2>0.1</slip2>
+            </ode>
+          </friction>
+          <contact>
+          </contact>
+        </surface>
+      </collision>
+      <self_collide>1</self_collide>
+      <gravity>1</gravity>
+    </link>
+<!-- ======================================================== -->
+    <link name="L13ND">
+      <!-- SET COORDINATE in GLOBAL -->
+      <pose>0.5776464 7.6434 1.1206 0 0 0</pose>
+      <inertial>
+        <!-- SET COORDINATE in LOCAL(This link's coordinate) -->
+        <pose>0.000000 -0.000000 -0.025018 0 0 0</pose>
+        <mass>0.01375</mass>
+        <inertia>
+          <ixx>0.0326216797</ixx>
+          <ixy>0.00000000</ixy>
+          <ixz>0.00000000</ixz>
+          <iyy>0.0326217041</iyy>
+          <iyz>0.00000000</iyz>
+          <izz>0.0268928284</izz>
+        </inertia>
+      </inertial>
+      <visual name="visual">
+        <!-- SET COORDINATE in LOCAL(This link's coordinate) -->
+        <pose>0 0 0 0 0 0</pose>
+        <geometry>
+          <mesh>
+            <uri>model://JVRC_R5_obj/dae/R5_hose_1unit_no_dorm.dae</uri>
+          </mesh>
+        </geometry>
+      </visual>
+      <collision name="collision">
+        <!-- SET COORDINATE in LOCAL(This link's coordinate) -->
+        <pose>0 0 0 0 0 0</pose>
+        <geometry>
+          <mesh>
+            <uri>model://JVRC_R5_obj/dae/R5_hose_1unit_no_dorm.dae</uri>
+          </mesh>
+        </geometry>
+        <max_contacts>10</max_contacts>
+        <surface>
+          <bounce>
+            <restitution_coefficient>0.0</restitution_coefficient>
+            <threshold>1000000000.0</threshold>
+          </bounce>
+          <friction>
+            <ode>
+              <mu>0.2</mu>
+              <mu2>0.2</mu2>
+              <slip1>0.1</slip1>
+              <slip2>0.1</slip2>
+            </ode>
+          </friction>
+          <contact>
+          </contact>
+        </surface>
+      </collision>
+      <self_collide>1</self_collide>
+      <gravity>1</gravity>
+    </link>
+<!-- ======================================================== -->
+    <joint name="hinge_L12ND2L13WD" type="revolute">
+      <parent>L12ND</parent>
+      <child>L13WD</child>
+      <pose>0 0 0.05 0 0 0</pose>
+      <axis>
+        <xyz>1 0 0</xyz>
+        <limit>
+          <lower>-2.1</lower>
+          <upper>2.1</upper>
+        </limit>
+        <dynamics>
+          <damping>1.0</damping>
+          <friction>0</friction>
+        </dynamics>
+      </axis>
+      <physics>
+        <ode>
+          <cfm_damping>1</cfm_damping>
+        </ode>
+      </physics>
+    </joint>
+<!-- ======================================================== -->
+    <joint name="hinge_L13WD2L13ND" type="revolute">
+      <parent>L13WD</parent>
+      <child>L13ND</child>
+      <pose>0 0 0 0 0 0</pose>
+      <axis>
+        <xyz>0 0 1</xyz>
+        <dynamics>
+          <damping>1.0</damping>
+          <friction>0</friction>
+        </dynamics>
+      </axis>
+      <physics>
+        <ode>
+          <cfm_damping>1</cfm_damping>
+        </ode>
+      </physics>
+    </joint>
+
+<!-- ======================================================== -->
+<!-- ======================================================== -->
+<!-- ======================================================== -->
+    <link name="S1WD">
+      <!-- SET COORDINATE in GLOBAL -->
+      <pose>0.5776464 7.5934 1.0706 -1.57079638 0 0</pose>
+      <inertial>
+        <!-- SET COORDINATE in LOCAL(This link's coordinate) -->
+        <pose>0 0 0.03304461 0 0 0</pose>
+        <mass>0.01375</mass>
+        <inertia>
+          <ixx>0.0620273193</ixx>
+          <ixy>0.0000000001</ixy>
+          <ixz>0.0000000044</ixz>
+          <iyy>0.0620273438</iyy>
+          <iyz>0.00000000</iyz>
+          <izz>0.0334274017</izz>
+        </inertia>
+      </inertial>
+      <visual name="visual">
+        <!-- SET COORDINATE in LOCAL(This link's coordinate) -->
+        <pose>0 0 0 0 0 0</pose>
+        <geometry>
+          <mesh>
+            <uri>model://JVRC_R5_obj/dae/R5_hose_1unit.dae</uri>
+          </mesh>
+        </geometry>
+      </visual>
+      <collision name="collision">
+        <!-- SET COORDINATE in LOCAL(This link's coordinate) -->
+        <pose>0 0 0 0 0 0</pose>
+        <geometry>
+          <mesh>
+            <uri>model://JVRC_R5_obj/dae/R5_hose_1unit.dae</uri>
+          </mesh>
+        </geometry>
+        <max_contacts>10</max_contacts>
+        <surface>
+          <bounce>
+            <restitution_coefficient>0.0</restitution_coefficient>
+            <threshold>1000000000.0</threshold>
+          </bounce>
+          <friction>
+            <ode>
+              <mu>0.2</mu>
+              <mu2>0.2</mu2>
+              <slip1>0.1</slip1>
+              <slip2>0.1</slip2>
+            </ode>
+          </friction>
+          <contact>
+          </contact>
+        </surface>
+      </collision>
+      <self_collide>1</self_collide>
+      <gravity>1</gravity>
+    </link>
+<!-- ======================================================== -->
+    <link name="S1ND">
+      <!-- SET COORDINATE in GLOBAL -->
+      <pose>0.5776464 7.5934 1.0706 -1.57079638 0 0</pose>
+      <inertial>
+        <!-- SET COORDINATE in LOCAL(This link's coordinate) -->
+        <pose>0.000000 -0.000000 -0.025018 0 0 0</pose>
+        <mass>0.01375</mass>
+        <inertia>
+          <ixx>0.0326216797</ixx>
+          <ixy>0.00000000</ixy>
+          <ixz>0.00000000</ixz>
+          <iyy>0.0326217041</iyy>
+          <iyz>0.00000000</iyz>
+          <izz>0.0268928284</izz>
+        </inertia>
+      </inertial>
+      <visual name="visual">
+        <!-- SET COORDINATE in LOCAL(This link's coordinate) -->
+        <pose>0 0 0 0 0 0</pose>
+        <geometry>
+          <mesh>
+            <uri>model://JVRC_R5_obj/dae/R5_hose_1unit_no_dorm.dae</uri>
+          </mesh>
+        </geometry>
+      </visual>
+      <collision name="collision">
+        <!-- SET COORDINATE in LOCAL(This link's coordinate) -->
+        <pose>0 0 0 0 0 0</pose>
+        <geometry>
+          <mesh>
+            <uri>model://JVRC_R5_obj/dae/R5_hose_1unit_no_dorm.dae</uri>
+          </mesh>
+        </geometry>
+        <max_contacts>10</max_contacts>
+        <surface>
+          <bounce>
+            <restitution_coefficient>0.0</restitution_coefficient>
+            <threshold>1000000000.0</threshold>
+          </bounce>
+          <friction>
+            <ode>
+              <mu>0.2</mu>
+              <mu2>0.2</mu2>
+              <slip1>0.1</slip1>
+              <slip2>0.1</slip2>
+            </ode>
+          </friction>
+          <contact>
+          </contact>
+        </surface>
+      </collision>
+      <self_collide>1</self_collide>
+      <gravity>1</gravity>
+    </link>
+<!-- ======================================================== -->
+    <joint name="hinge_L13ND2S1WD" type="revolute">
+      <parent>L13ND</parent>
+      <child>S1WD</child>
+      <pose>0 0 0.05 0 0 0</pose>
+      <axis>
+        <xyz>1 0 0</xyz>
+        <limit>
+          <lower>-0.53</lower>
+          <upper>3.67</upper>
+        </limit>
+        <dynamics>
+          <damping>1.0</damping>
+          <friction>0</friction>
+        </dynamics>
+      </axis>
+      <physics>
+        <ode>
+          <cfm_damping>1</cfm_damping>
+        </ode>
+      </physics>
+    </joint>
+<!-- ======================================================== -->
+    <joint name="hinge_S1WD2S1ND" type="revolute">
+      <parent>S1WD</parent>
+      <child>S1ND</child>
+      <pose>0 0 0 0 0 0</pose>
+      <axis>
+        <xyz>0 0 1</xyz>
+        <dynamics>
+          <damping>1.0</damping>
+          <friction>0</friction>
+        </dynamics>
+      </axis>
+      <physics>
+        <ode>
+          <cfm_damping>1</cfm_damping>
+        </ode>
+      </physics>
+    </joint>
+
+<!-- ======================================================== -->
+<!-- ======================================================== -->
+<!-- ======================================================== -->
+<!-- ======================================================== -->
+<!-- ======================================================== -->
+<!-- ======================================================== -->
+    <link name="L21WD">
+      <!-- SET COORDINATE in GLOBAL -->
+      <pose>0.5776464 7.5434 1.1206 3.14159265 0 0</pose>
+      <inertial>
+        <!-- SET COORDINATE in LOCAL(This link's coordinate) -->
+        <pose>0 0 0.03304461 0 0 0</pose>
+        <mass>0.01375</mass>
+        <inertia>
+          <ixx>0.0620273193</ixx>
+          <ixy>0.0000000001</ixy>
+          <ixz>0.0000000044</ixz>
+          <iyy>0.0620273438</iyy>
+          <iyz>0.00000000</iyz>
+          <izz>0.0334274017</izz>
+        </inertia>
+      </inertial>
+      <visual name="visual">
+        <!-- SET COORDINATE in LOCAL(This link's coordinate) -->
+        <pose>0 0 0 0 0 0</pose>
+        <geometry>
+          <mesh>
+            <uri>model://JVRC_R5_obj/dae/R5_hose_1unit.dae</uri>
+          </mesh>
+        </geometry>
+      </visual>
+      <collision name="collision">
+        <!-- SET COORDINATE in LOCAL(This link's coordinate) -->
+        <pose>0 0 0 0 0 0</pose>
+        <geometry>
+          <mesh>
+            <uri>model://JVRC_R5_obj/dae/R5_hose_1unit.dae</uri>
+          </mesh>
+        </geometry>
+        <max_contacts>10</max_contacts>
+        <surface>
+          <bounce>
+            <restitution_coefficient>0.0</restitution_coefficient>
+            <threshold>1000000000.0</threshold>
+          </bounce>
+          <friction>
+            <ode>
+              <mu>0.2</mu>
+              <mu2>0.2</mu2>
+              <slip1>0.1</slip1>
+              <slip2>0.1</slip2>
+            </ode>
+          </friction>
+          <contact>
+          </contact>
+        </surface>
+      </collision>
+      <self_collide>1</self_collide>
+      <gravity>1</gravity>
+    </link>
+<!-- ======================================================== -->
+    <link name="L21ND">
+      <!-- SET COORDINATE in GLOBAL -->
+      <pose>0.5776464 7.5434 1.1206 3.14159265 0 0</pose>
+      <inertial>
+        <!-- SET COORDINATE in LOCAL(This link's coordinate) -->
+        <pose>0.000000 -0.000000 -0.025018 0 0 0</pose>
+        <mass>0.01375</mass>
+        <inertia>
+          <ixx>0.0326216797</ixx>
+          <ixy>0.00000000</ixy>
+          <ixz>0.00000000</ixz>
+          <iyy>0.0326217041</iyy>
+          <iyz>0.00000000</iyz>
+          <izz>0.0268928284</izz>
+        </inertia>
+      </inertial>
+      <visual name="visual">
+        <!-- SET COORDINATE in LOCAL(This link's coordinate) -->
+        <pose>0 0 0 0 0 0</pose>
+        <geometry>
+          <mesh>
+            <uri>model://JVRC_R5_obj/dae/R5_hose_1unit_no_dorm.dae</uri>
+          </mesh>
+        </geometry>
+      </visual>
+      <collision name="collision">
+        <!-- SET COORDINATE in LOCAL(This link's coordinate) -->
+        <pose>0 0 0 0 0 0</pose>
+        <geometry>
+          <mesh>
+            <uri>model://JVRC_R5_obj/dae/R5_hose_1unit_no_dorm.dae</uri>
+          </mesh>
+        </geometry>
+        <max_contacts>10</max_contacts>
+        <surface>
+          <bounce>
+            <restitution_coefficient>0.0</restitution_coefficient>
+            <threshold>1000000000.0</threshold>
+          </bounce>
+          <friction>
+            <ode>
+              <mu>0.2</mu>
+              <mu2>0.2</mu2>
+              <slip1>0.1</slip1>
+              <slip2>0.1</slip2>
+            </ode>
+          </friction>
+          <contact>
+          </contact>
+        </surface>
+      </collision>
+      <self_collide>1</self_collide>
+      <gravity>1</gravity>
+    </link>
+<!-- ======================================================== -->
+    <joint name="hinge_S1ND2L21WD" type="revolute">
+      <parent>S1ND</parent>
+      <child>L21WD</child>
+      <pose>0 0 0.05 0 0 0</pose>
+      <axis>
+        <xyz>1 0 0</xyz>
+        <limit>
+          <lower>-0.53</lower>
+          <upper>3.67</upper>
+        </limit>
+        <dynamics>
+          <damping>1.0</damping>
+          <friction>0</friction>
+        </dynamics>
+      </axis>
+      <physics>
+        <ode>
+          <cfm_damping>1</cfm_damping>
+        </ode>
+      </physics>
+    </joint>
+<!-- ======================================================== -->
+    <joint name="hinge_L21WD2L21ND" type="revolute">
+      <parent>L21WD</parent>
+      <child>L21ND</child>
+      <pose>0 0 0 0 0 0</pose>
+      <axis>
+        <xyz>0 0 1</xyz>
+        <dynamics>
+          <damping>1.0</damping>
+          <friction>0</friction>
+        </dynamics>
+      </axis>
+      <physics>
+        <ode>
+          <cfm_damping>1</cfm_damping>
+        </ode>
+      </physics>
+    </joint>
+
+<!-- ======================================================== -->
+<!-- ======================================================== -->
+<!-- ======================================================== -->
+    <link name="L22WD">
+      <!-- SET COORDINATE in GLOBAL -->
+      <pose>0.5776464 7.5434 1.2206 3.14159265 0 0</pose>
+      <inertial>
+        <!-- SET COORDINATE in LOCAL(This link's coordinate) -->
+        <pose>0 0 0.03304461 0 0 0</pose>
+        <mass>0.01375</mass>
+        <inertia>
+          <ixx>0.0620273193</ixx>
+          <ixy>0.0000000001</ixy>
+          <ixz>0.0000000044</ixz>
+          <iyy>0.0620273438</iyy>
+          <iyz>0.00000000</iyz>
+          <izz>0.0334274017</izz>
+        </inertia>
+      </inertial>
+      <visual name="visual">
+        <!-- SET COORDINATE in LOCAL(This link's coordinate) -->
+        <pose>0 0 0 0 0 0</pose>
+        <geometry>
+          <mesh>
+            <uri>model://JVRC_R5_obj/dae/R5_hose_1unit.dae</uri>
+          </mesh>
+        </geometry>
+      </visual>
+      <collision name="collision">
+        <!-- SET COORDINATE in LOCAL(This link's coordinate) -->
+        <pose>0 0 0 0 0 0</pose>
+        <geometry>
+          <mesh>
+            <uri>model://JVRC_R5_obj/dae/R5_hose_1unit.dae</uri>
+          </mesh>
+        </geometry>
+        <max_contacts>10</max_contacts>
+        <surface>
+          <bounce>
+            <restitution_coefficient>0.0</restitution_coefficient>
+            <threshold>1000000000.0</threshold>
+          </bounce>
+          <friction>
+            <ode>
+              <mu>0.2</mu>
+              <mu2>0.2</mu2>
+              <slip1>0.1</slip1>
+              <slip2>0.1</slip2>
+            </ode>
+          </friction>
+          <contact>
+          </contact>
+        </surface>
+      </collision>
+      <self_collide>1</self_collide>
+      <gravity>1</gravity>
+    </link>
+<!-- ======================================================== -->
+    <link name="L22ND">
+      <!-- SET COORDINATE in GLOBAL -->
+      <pose>0.5776464 7.5434 1.2206 3.14159265 0 0</pose>
+      <inertial>
+        <!-- SET COORDINATE in LOCAL(This link's coordinate) -->
+        <pose>0.000000 -0.000000 -0.025018 0 0 0</pose>
+        <mass>0.01375</mass>
+        <inertia>
+          <ixx>0.0326216797</ixx>
+          <ixy>0.00000000</ixy>
+          <ixz>0.00000000</ixz>
+          <iyy>0.0326217041</iyy>
+          <iyz>0.00000000</iyz>
+          <izz>0.0268928284</izz>
+        </inertia>
+      </inertial>
+      <visual name="visual">
+        <!-- SET COORDINATE in LOCAL(This link's coordinate) -->
+        <pose>0 0 0 0 0 0</pose>
+        <geometry>
+          <mesh>
+            <uri>model://JVRC_R5_obj/dae/R5_hose_1unit_no_dorm.dae</uri>
+          </mesh>
+        </geometry>
+      </visual>
+      <collision name="collision">
+        <!-- SET COORDINATE in LOCAL(This link's coordinate) -->
+        <pose>0 0 0 0 0 0</pose>
+        <geometry>
+          <mesh>
+            <uri>model://JVRC_R5_obj/dae/R5_hose_1unit_no_dorm.dae</uri>
+          </mesh>
+        </geometry>
+        <max_contacts>10</max_contacts>
+        <surface>
+          <bounce>
+            <restitution_coefficient>0.0</restitution_coefficient>
+            <threshold>1000000000.0</threshold>
+          </bounce>
+          <friction>
+            <ode>
+              <mu>0.2</mu>
+              <mu2>0.2</mu2>
+              <slip1>0.1</slip1>
+              <slip2>0.1</slip2>
+            </ode>
+          </friction>
+          <contact>
+          </contact>
+        </surface>
+      </collision>
+      <self_collide>1</self_collide>
+      <gravity>1</gravity>
+    </link>
+<!-- ======================================================== -->
+    <joint name="hinge_L21ND2L22WD" type="revolute">
+      <parent>L21ND</parent>
+      <child>L22WD</child>
+      <pose>0 0 0.05 0 0 0</pose>
+      <axis>
+        <xyz>1 0 0</xyz>
+        <limit>
+          <lower>-2.1</lower>
+          <upper>2.1</upper>
+        </limit>
+        <dynamics>
+          <damping>1.0</damping>
+          <friction>0</friction>
+        </dynamics>
+      </axis>
+      <physics>
+        <ode>
+          <cfm_damping>1</cfm_damping>
+        </ode>
+      </physics>
+    </joint>
+<!-- ======================================================== -->
+    <joint name="hinge_L22WD2L22ND" type="revolute">
+      <parent>L22WD</parent>
+      <child>L22ND</child>
+      <pose>0 0 0 0 0 0</pose>
+      <axis>
+        <xyz>0 0 1</xyz>
+        <dynamics>
+          <damping>1.0</damping>
+          <friction>0</friction>
+        </dynamics>
+      </axis>
+      <physics>
+        <ode>
+          <cfm_damping>1</cfm_damping>
+        </ode>
+      </physics>
+    </joint>
+
+<!-- ======================================================== -->
+<!-- ======================================================== -->
+<!-- ======================================================== -->
+    <link name="L23WD">
+      <!-- SET COORDINATE in GLOBAL -->
+      <pose>0.5776464 7.5434 1.3206 3.14159265 0 0</pose>
+      <inertial>
+        <!-- SET COORDINATE in LOCAL(This link's coordinate) -->
+        <pose>0 0 0.03304461 0 0 0</pose>
+        <mass>0.01375</mass>
+        <inertia>
+          <ixx>0.0620273193</ixx>
+          <ixy>0.0000000001</ixy>
+          <ixz>0.0000000044</ixz>
+          <iyy>0.0620273438</iyy>
+          <iyz>0.00000000</iyz>
+          <izz>0.0334274017</izz>
+        </inertia>
+      </inertial>
+      <visual name="visual">
+        <!-- SET COORDINATE in LOCAL(This link's coordinate) -->
+        <pose>0 0 0 0 0 0</pose>
+        <geometry>
+          <mesh>
+            <uri>model://JVRC_R5_obj/dae/R5_hose_1unit.dae</uri>
+          </mesh>
+        </geometry>
+      </visual>
+      <collision name="collision">
+        <!-- SET COORDINATE in LOCAL(This link's coordinate) -->
+        <pose>0 0 0 0 0 0</pose>
+        <geometry>
+          <mesh>
+            <uri>model://JVRC_R5_obj/dae/R5_hose_1unit.dae</uri>
+          </mesh>
+        </geometry>
+        <max_contacts>10</max_contacts>
+        <surface>
+          <bounce>
+            <restitution_coefficient>0.0</restitution_coefficient>
+            <threshold>1000000000.0</threshold>
+          </bounce>
+          <friction>
+            <ode>
+              <mu>0.2</mu>
+              <mu2>0.2</mu2>
+              <slip1>0.1</slip1>
+              <slip2>0.1</slip2>
+            </ode>
+          </friction>
+          <contact>
+          </contact>
+        </surface>
+      </collision>
+      <self_collide>1</self_collide>
+      <gravity>1</gravity>
+    </link>
+<!-- ======================================================== -->
+    <link name="L23ND">
+      <!-- SET COORDINATE in GLOBAL -->
+      <pose>0.5776464 7.5434 1.3206 3.14159265 0 0</pose>
+      <inertial>
+        <!-- SET COORDINATE in LOCAL(This link's coordinate) -->
+        <pose>0.000000 -0.000000 -0.025018 0 0 0</pose>
+        <mass>0.01375</mass>
+        <inertia>
+          <ixx>0.0326216797</ixx>
+          <ixy>0.00000000</ixy>
+          <ixz>0.00000000</ixz>
+          <iyy>0.0326217041</iyy>
+          <iyz>0.00000000</iyz>
+          <izz>0.0268928284</izz>
+        </inertia>
+      </inertial>
+      <visual name="visual">
+        <!-- SET COORDINATE in LOCAL(This link's coordinate) -->
+        <pose>0 0 0 0 0 0</pose>
+        <geometry>
+          <mesh>
+            <uri>model://JVRC_R5_obj/dae/R5_hose_1unit_no_dorm.dae</uri>
+          </mesh>
+        </geometry>
+      </visual>
+      <collision name="collision">
+        <!-- SET COORDINATE in LOCAL(This link's coordinate) -->
+        <pose>0 0 0 0 0 0</pose>
+        <geometry>
+          <mesh>
+            <uri>model://JVRC_R5_obj/dae/R5_hose_1unit_no_dorm.dae</uri>
+          </mesh>
+        </geometry>
+        <max_contacts>10</max_contacts>
+        <surface>
+          <bounce>
+            <restitution_coefficient>0.0</restitution_coefficient>
+            <threshold>1000000000.0</threshold>
+          </bounce>
+          <friction>
+            <ode>
+              <mu>0.2</mu>
+              <mu2>0.2</mu2>
+              <slip1>0.1</slip1>
+              <slip2>0.1</slip2>
+            </ode>
+          </friction>
+          <contact>
+          </contact>
+        </surface>
+      </collision>
+      <self_collide>1</self_collide>
+      <gravity>1</gravity>
+    </link>
+<!-- ======================================================== -->
+    <joint name="hinge_L22ND2L23WD" type="revolute">
+      <parent>L22ND</parent>
+      <child>L23WD</child>
+      <pose>0 0 0.05 0 0 0</pose>
+      <axis>
+        <xyz>1 0 0</xyz>
+        <limit>
+          <lower>-2.1</lower>
+          <upper>2.1</upper>
+        </limit>
+        <dynamics>
+          <damping>1.0</damping>
+          <friction>0</friction>
+        </dynamics>
+      </axis>
+      <physics>
+        <ode>
+          <cfm_damping>1</cfm_damping>
+        </ode>
+      </physics>
+    </joint>
+<!-- ======================================================== -->
+    <joint name="hinge_L23WD2L23ND" type="revolute">
+      <parent>L23WD</parent>
+      <child>L23ND</child>
+      <pose>0 0 0 0 0 0</pose>
+      <axis>
+        <xyz>0 0 1</xyz>
+        <dynamics>
+          <damping>1.0</damping>
+          <friction>0</friction>
+        </dynamics>
+      </axis>
+      <physics>
+        <ode>
+          <cfm_damping>1</cfm_damping>
+        </ode>
+      </physics>
+    </joint>
+
+<!-- ======================================================== -->
+<!-- ======================================================== -->
+<!-- ======================================================== -->
+    <link name="S2WD">
+      <!-- SET COORDINATE in GLOBAL -->
+      <pose>0.5776464 7.4934 1.3706 -1.57079638 0 0</pose>
+      <inertial>
+        <!-- SET COORDINATE in LOCAL(This link's coordinate) -->
+        <pose>0 0 0.03304461 0 0 0</pose>
+        <mass>0.01375</mass>
+        <inertia>
+          <ixx>0.0620273193</ixx>
+          <ixy>0.0000000001</ixy>
+          <ixz>0.0000000044</ixz>
+          <iyy>0.0620273438</iyy>
+          <iyz>0.00000000</iyz>
+          <izz>0.0334274017</izz>
+        </inertia>
+      </inertial>
+      <visual name="visual">
+        <!-- SET COORDINATE in LOCAL(This link's coordinate) -->
+        <pose>0 0 0 0 0 0</pose>
+        <geometry>
+          <mesh>
+            <uri>model://JVRC_R5_obj/dae/R5_hose_1unit.dae</uri>
+          </mesh>
+        </geometry>
+      </visual>
+      <collision name="collision">
+        <!-- SET COORDINATE in LOCAL(This link's coordinate) -->
+        <pose>0 0 0 0 0 0</pose>
+        <geometry>
+          <mesh>
+            <uri>model://JVRC_R5_obj/dae/R5_hose_1unit.dae</uri>
+          </mesh>
+        </geometry>
+        <max_contacts>10</max_contacts>
+        <surface>
+          <bounce>
+            <restitution_coefficient>0.0</restitution_coefficient>
+            <threshold>1000000000.0</threshold>
+          </bounce>
+          <friction>
+            <ode>
+              <mu>0.2</mu>
+              <mu2>0.2</mu2>
+              <slip1>0.1</slip1>
+              <slip2>0.1</slip2>
+            </ode>
+          </friction>
+          <contact>
+          </contact>
+        </surface>
+      </collision>
+      <self_collide>1</self_collide>
+      <gravity>1</gravity>
+    </link>
+<!-- ======================================================== -->
+    <link name="S2ND">
+      <!-- SET COORDINATE in GLOBAL -->
+      <pose>0.5776464 7.4934 1.3706 -1.57079638 0 0</pose>
+      <inertial>
+        <!-- SET COORDINATE in LOCAL(This link's coordinate) -->
+        <pose>0.000000 -0.000000 -0.025018 0 0 0</pose>
+        <mass>0.01375</mass>
+        <inertia>
+          <ixx>0.0326216797</ixx>
+          <ixy>0.00000000</ixy>
+          <ixz>0.00000000</ixz>
+          <iyy>0.0326217041</iyy>
+          <iyz>0.00000000</iyz>
+          <izz>0.0268928284</izz>
+        </inertia>
+      </inertial>
+      <visual name="visual">
+        <!-- SET COORDINATE in LOCAL(This link's coordinate) -->
+        <pose>0 0 0 0 0 0</pose>
+        <geometry>
+          <mesh>
+            <uri>model://JVRC_R5_obj/dae/R5_hose_1unit_no_dorm.dae</uri>
+          </mesh>
+        </geometry>
+      </visual>
+      <collision name="collision">
+        <!-- SET COORDINATE in LOCAL(This link's coordinate) -->
+        <pose>0 0 0 0 0 0</pose>
+        <geometry>
+          <mesh>
+            <uri>model://JVRC_R5_obj/dae/R5_hose_1unit_no_dorm.dae</uri>
+          </mesh>
+        </geometry>
+        <max_contacts>10</max_contacts>
+        <surface>
+          <bounce>
+            <restitution_coefficient>0.0</restitution_coefficient>
+            <threshold>1000000000.0</threshold>
+          </bounce>
+          <friction>
+            <ode>
+              <mu>0.2</mu>
+              <mu2>0.2</mu2>
+              <slip1>0.1</slip1>
+              <slip2>0.1</slip2>
+            </ode>
+          </friction>
+          <contact>
+          </contact>
+        </surface>
+      </collision>
+      <self_collide>1</self_collide>
+      <gravity>1</gravity>
+    </link>
+<!-- ======================================================== -->
+    <joint name="hinge_L23ND2S2WD" type="revolute">
+      <parent>L23ND</parent>
+      <child>S2WD</child>
+      <pose>0 0 0.05 0 0 0</pose>
+      <axis>
+        <xyz>1 0 0</xyz>
+        <limit>
+          <lower>-3.67</lower>
+          <upper>0.53</upper>
+        </limit>
+        <dynamics>
+          <damping>1.0</damping>
+          <friction>0</friction>
+        </dynamics>
+      </axis>
+      <physics>
+        <ode>
+          <cfm_damping>1</cfm_damping>
+        </ode>
+      </physics>
+    </joint>
+<!-- ======================================================== -->
+    <joint name="hinge_S2WD2S2ND" type="revolute">
+      <parent>S2WD</parent>
+      <child>S2ND</child>
+      <pose>0 0 0 0 0 0</pose>
+      <axis>
+        <xyz>0 0 1</xyz>
+        <dynamics>
+          <damping>1.0</damping>
+          <friction>0</friction>
+        </dynamics>
+      </axis>
+      <physics>
+        <ode>
+          <cfm_damping>1</cfm_damping>
+        </ode>
+      </physics>
+    </joint>
+
+<!-- ======================================================== -->
+<!-- ======================================================== -->
+<!-- ======================================================== -->
+<!-- ======================================================== -->
+<!-- ======================================================== -->
+<!-- ======================================================== -->
+<!-- ======================================================== -->
+<!-- ======================================================== -->
+<!-- ======================================================== -->
+
+<!-- ======================================================== -->
+<!-- ======================================================== -->
+<!-- ======================================================== -->
+<!-- ======================================================== -->
+<!-- ======================================================== -->
+<!-- ======================================================== -->
+<!-- ======================================================== -->
+<!-- ======================================================== -->
+<!-- ======================================================== -->
+    <link name="L31WD">
+      <!-- SET COORDINATE in GLOBAL -->
+      <pose>0.5776464 7.4434 1.3206 0 0 0</pose>
+      <inertial>
+        <!-- SET COORDINATE in LOCAL(This link's coordinate) -->
+        <pose>0 0 0.03304461 0 0 0</pose>
+        <mass>0.01375</mass>
+        <inertia>
+          <ixx>0.0620273193</ixx>
+          <ixy>0.0000000001</ixy>
+          <ixz>0.0000000044</ixz>
+          <iyy>0.0620273438</iyy>
+          <iyz>0.00000000</iyz>
+          <izz>0.0334274017</izz>
+        </inertia>
+      </inertial>
+      <visual name="visual">
+        <!-- SET COORDINATE in LOCAL(This link's coordinate) -->
+        <pose>0 0 0 0 0 0</pose>
+        <geometry>
+          <mesh>
+            <uri>model://JVRC_R5_obj/dae/R5_hose_1unit.dae</uri>
+          </mesh>
+        </geometry>
+      </visual>
+      <collision name="collision">
+        <!-- SET COORDINATE in LOCAL(This link's coordinate) -->
+        <pose>0 0 0 0 0 0</pose>
+        <geometry>
+          <mesh>
+            <uri>model://JVRC_R5_obj/dae/R5_hose_1unit.dae</uri>
+          </mesh>
+        </geometry>
+        <max_contacts>10</max_contacts>
+        <surface>
+          <bounce>
+            <restitution_coefficient>0.0</restitution_coefficient>
+            <threshold>1000000000.0</threshold>
+          </bounce>
+          <friction>
+            <ode>
+              <mu>0.2</mu>
+              <mu2>0.2</mu2>
+              <slip1>0.1</slip1>
+              <slip2>0.1</slip2>
+            </ode>
+          </friction>
+          <contact>
+          </contact>
+        </surface>
+      </collision>
+      <self_collide>1</self_collide>
+      <gravity>1</gravity>
+    </link>
+<!-- ======================================================== -->
+    <link name="L31ND">
+      <!-- SET COORDINATE in GLOBAL -->
+      <pose>0.5776464 7.4434 1.3206 0 0 0</pose>
+      <inertial>
+        <!-- SET COORDINATE in LOCAL(This link's coordinate) -->
+        <pose>0.000000 -0.000000 -0.025018 0 0 0</pose>
+        <mass>0.01375</mass>
+        <inertia>
+          <ixx>0.0326216797</ixx>
+          <ixy>0.00000000</ixy>
+          <ixz>0.00000000</ixz>
+          <iyy>0.0326217041</iyy>
+          <iyz>0.00000000</iyz>
+          <izz>0.0268928284</izz>
+        </inertia>
+      </inertial>
+      <visual name="visual">
+        <!-- SET COORDINATE in LOCAL(This link's coordinate) -->
+        <pose>0 0 0 0 0 0</pose>
+        <geometry>
+          <mesh>
+            <uri>model://JVRC_R5_obj/dae/R5_hose_1unit_no_dorm.dae</uri>
+          </mesh>
+        </geometry>
+      </visual>
+      <collision name="collision">
+        <!-- SET COORDINATE in LOCAL(This link's coordinate) -->
+        <pose>0 0 0 0 0 0</pose>
+        <geometry>
+          <mesh>
+            <uri>model://JVRC_R5_obj/dae/R5_hose_1unit_no_dorm.dae</uri>
+          </mesh>
+        </geometry>
+        <max_contacts>10</max_contacts>
+        <surface>
+          <bounce>
+            <restitution_coefficient>0.0</restitution_coefficient>
+            <threshold>1000000000.0</threshold>
+          </bounce>
+          <friction>
+            <ode>
+              <mu>0.2</mu>
+              <mu2>0.2</mu2>
+              <slip1>0.1</slip1>
+              <slip2>0.1</slip2>
+            </ode>
+          </friction>
+          <contact>
+          </contact>
+        </surface>
+      </collision>
+      <self_collide>1</self_collide>
+      <gravity>1</gravity>
+    </link>
+<!-- ======================================================== -->
+    <joint name="hinge_S2ND2L31WD" type="revolute">
+      <parent>S2ND</parent>
+      <child>L31WD</child>
+      <pose>0 0 0.05 0 0 0</pose>
+      <axis>
+        <xyz>1 0 0</xyz>
+        <limit>
+          <lower>-2.1</lower>
+          <upper>2.1</upper>
+        </limit>
+        <dynamics>
+          <damping>1.0</damping>
+          <friction>0</friction>
+        </dynamics>
+      </axis>
+      <physics>
+        <ode>
+          <cfm_damping>1</cfm_damping>
+        </ode>
+      </physics>
+    </joint>
+<!-- ======================================================== -->
+    <joint name="hinge_L31WD2L31ND" type="revolute">
+      <parent>L31WD</parent>
+      <child>L31ND</child>
+      <pose>0 0 0 0 0 0</pose>
+      <axis>
+        <xyz>0 0 1</xyz>
+        <dynamics>
+          <damping>1.0</damping>
+          <friction>0</friction>
+        </dynamics>
+      </axis>
+      <physics>
+        <ode>
+          <cfm_damping>1</cfm_damping>
+        </ode>
+      </physics>
+    </joint>
+
+<!-- ======================================================== -->
+<!-- ======================================================== -->
+<!-- ======================================================== -->
+    <link name="L32WD">
+      <!-- SET COORDINATE in GLOBAL -->
+      <pose>0.5776464 7.4434 1.2206 0 0 0</pose>
+      <inertial>
+        <!-- SET COORDINATE in LOCAL(This link's coordinate) -->
+        <pose>0 0 0.03304461 0 0 0</pose>
+        <mass>0.01375</mass>
+        <inertia>
+          <ixx>0.0620273193</ixx>
+          <ixy>0.0000000001</ixy>
+          <ixz>0.0000000044</ixz>
+          <iyy>0.0620273438</iyy>
+          <iyz>0.00000000</iyz>
+          <izz>0.0334274017</izz>
+        </inertia>
+      </inertial>
+      <visual name="visual">
+        <!-- SET COORDINATE in LOCAL(This link's coordinate) -->
+        <pose>0 0 0 0 0 0</pose>
+        <geometry>
+          <mesh>
+            <uri>model://JVRC_R5_obj/dae/R5_hose_1unit.dae</uri>
+          </mesh>
+        </geometry>
+      </visual>
+      <collision name="collision">
+        <!-- SET COORDINATE in LOCAL(This link's coordinate) -->
+        <pose>0 0 0 0 0 0</pose>
+        <geometry>
+          <mesh>
+            <uri>model://JVRC_R5_obj/dae/R5_hose_1unit.dae</uri>
+          </mesh>
+        </geometry>
+        <max_contacts>10</max_contacts>
+        <surface>
+          <bounce>
+            <restitution_coefficient>0.0</restitution_coefficient>
+            <threshold>1000000000.0</threshold>
+          </bounce>
+          <friction>
+            <ode>
+              <mu>0.2</mu>
+              <mu2>0.2</mu2>
+              <slip1>0.1</slip1>
+              <slip2>0.1</slip2>
+            </ode>
+          </friction>
+          <contact>
+          </contact>
+        </surface>
+      </collision>
+      <self_collide>1</self_collide>
+      <gravity>1</gravity>
+    </link>
+<!-- ======================================================== -->
+    <link name="L32ND">
+      <!-- SET COORDINATE in GLOBAL -->
+      <pose>0.5776464 7.4434 1.2206 0 0 0</pose>
+      <inertial>
+        <!-- SET COORDINATE in LOCAL(This link's coordinate) -->
+        <pose>0.000000 -0.000000 -0.025018 0 0 0</pose>
+        <mass>0.01375</mass>
+        <inertia>
+          <ixx>0.0326216797</ixx>
+          <ixy>0.00000000</ixy>
+          <ixz>0.00000000</ixz>
+          <iyy>0.0326217041</iyy>
+          <iyz>0.00000000</iyz>
+          <izz>0.0268928284</izz>
+        </inertia>
+      </inertial>
+      <visual name="visual">
+        <!-- SET COORDINATE in LOCAL(This link's coordinate) -->
+        <pose>0 0 0 0 0 0</pose>
+        <geometry>
+          <mesh>
+            <uri>model://JVRC_R5_obj/dae/R5_hose_1unit_no_dorm.dae</uri>
+          </mesh>
+        </geometry>
+      </visual>
+      <collision name="collision">
+        <!-- SET COORDINATE in LOCAL(This link's coordinate) -->
+        <pose>0 0 0 0 0 0</pose>
+        <geometry>
+          <mesh>
+            <uri>model://JVRC_R5_obj/dae/R5_hose_1unit_no_dorm.dae</uri>
+          </mesh>
+        </geometry>
+        <max_contacts>10</max_contacts>
+        <surface>
+          <bounce>
+            <restitution_coefficient>0.0</restitution_coefficient>
+            <threshold>1000000000.0</threshold>
+          </bounce>
+          <friction>
+            <ode>
+              <mu>0.2</mu>
+              <mu2>0.2</mu2>
+              <slip1>0.1</slip1>
+              <slip2>0.1</slip2>
+            </ode>
+          </friction>
+          <contact>
+          </contact>
+        </surface>
+      </collision>
+      <self_collide>1</self_collide>
+      <gravity>1</gravity>
+    </link>
+<!-- ======================================================== -->
+    <joint name="hinge_L31ND2L32WD" type="revolute">
+      <parent>L31ND</parent>
+      <child>L32WD</child>
+      <pose>0 0 0.05 0 0 0</pose>
+      <axis>
+        <xyz>1 0 0</xyz>
+        <limit>
+          <lower>-2.1</lower>
+          <upper>2.1</upper>
+        </limit>
+        <dynamics>
+          <damping>1.0</damping>
+          <friction>0</friction>
+        </dynamics>
+      </axis>
+      <physics>
+        <ode>
+          <cfm_damping>1</cfm_damping>
+        </ode>
+      </physics>
+    </joint>
+<!-- ======================================================== -->
+    <joint name="hinge_L32WD2L32ND" type="revolute">
+      <parent>L32WD</parent>
+      <child>L32ND</child>
+      <pose>0 0 0 0 0 0</pose>
+      <axis>
+        <xyz>0 0 1</xyz>
+        <dynamics>
+          <damping>1.0</damping>
+          <friction>0</friction>
+        </dynamics>
+      </axis>
+      <physics>
+        <ode>
+          <cfm_damping>1</cfm_damping>
+        </ode>
+      </physics>
+    </joint>
+
+<!-- ======================================================== -->
+<!-- ======================================================== -->
+<!-- ======================================================== -->
+    <link name="L33WD">
+      <!-- SET COORDINATE in GLOBAL -->
+      <pose>0.5776464 7.4434 1.1206 0 0 0</pose>
+      <inertial>
+        <!-- SET COORDINATE in LOCAL(This link's coordinate) -->
+        <pose>0 0 0.03304461 0 0 0</pose>
+        <mass>0.01375</mass>
+        <inertia>
+          <ixx>0.0620273193</ixx>
+          <ixy>0.0000000001</ixy>
+          <ixz>0.0000000044</ixz>
+          <iyy>0.0620273438</iyy>
+          <iyz>0.00000000</iyz>
+          <izz>0.0334274017</izz>
+        </inertia>
+      </inertial>
+      <visual name="visual">
+        <!-- SET COORDINATE in LOCAL(This link's coordinate) -->
+        <pose>0 0 0 0 0 0</pose>
+        <geometry>
+          <mesh>
+            <uri>model://JVRC_R5_obj/dae/R5_hose_1unit.dae</uri>
+          </mesh>
+        </geometry>
+      </visual>
+      <collision name="collision">
+        <!-- SET COORDINATE in LOCAL(This link's coordinate) -->
+        <pose>0 0 0 0 0 0</pose>
+        <geometry>
+          <mesh>
+            <uri>model://JVRC_R5_obj/dae/R5_hose_1unit.dae</uri>
+          </mesh>
+        </geometry>
+        <max_contacts>10</max_contacts>
+        <surface>
+          <bounce>
+            <restitution_coefficient>0.0</restitution_coefficient>
+            <threshold>1000000000.0</threshold>
+          </bounce>
+          <friction>
+            <ode>
+              <mu>0.2</mu>
+              <mu2>0.2</mu2>
+              <slip1>0.1</slip1>
+              <slip2>0.1</slip2>
+            </ode>
+          </friction>
+          <contact>
+          </contact>
+        </surface>
+      </collision>
+      <self_collide>1</self_collide>
+      <gravity>1</gravity>
+    </link>
+<!-- ======================================================== -->
+    <link name="L33ND">
+      <!-- SET COORDINATE in GLOBAL -->
+      <pose>0.5776464 7.4434 1.1206 0 0 0</pose>
+      <inertial>
+        <!-- SET COORDINATE in LOCAL(This link's coordinate) -->
+        <pose>0.000000 -0.000000 -0.025018 0 0 0</pose>
+        <mass>0.01375</mass>
+        <inertia>
+          <ixx>0.0326216797</ixx>
+          <ixy>0.00000000</ixy>
+          <ixz>0.00000000</ixz>
+          <iyy>0.0326217041</iyy>
+          <iyz>0.00000000</iyz>
+          <izz>0.0268928284</izz>
+        </inertia>
+      </inertial>
+      <visual name="visual">
+        <!-- SET COORDINATE in LOCAL(This link's coordinate) -->
+        <pose>0 0 0 0 0 0</pose>
+        <geometry>
+          <mesh>
+            <uri>model://JVRC_R5_obj/dae/R5_hose_1unit_no_dorm.dae</uri>
+          </mesh>
+        </geometry>
+      </visual>
+      <collision name="collision">
+        <!-- SET COORDINATE in LOCAL(This link's coordinate) -->
+        <pose>0 0 0 0 0 0</pose>
+        <geometry>
+          <mesh>
+            <uri>model://JVRC_R5_obj/dae/R5_hose_1unit_no_dorm.dae</uri>
+          </mesh>
+        </geometry>
+        <max_contacts>10</max_contacts>
+        <surface>
+          <bounce>
+            <restitution_coefficient>0.0</restitution_coefficient>
+            <threshold>1000000000.0</threshold>
+          </bounce>
+          <friction>
+            <ode>
+              <mu>0.2</mu>
+              <mu2>0.2</mu2>
+              <slip1>0.1</slip1>
+              <slip2>0.1</slip2>
+            </ode>
+          </friction>
+          <contact>
+          </contact>
+        </surface>
+      </collision>
+      <self_collide>1</self_collide>
+      <gravity>1</gravity>
+    </link>
+<!-- ======================================================== -->
+    <joint name="hinge_L32ND2L33WD" type="revolute">
+      <parent>L32ND</parent>
+      <child>L33WD</child>
+      <pose>0 0 0.05 0 0 0</pose>
+      <axis>
+        <xyz>1 0 0</xyz>
+        <limit>
+          <lower>-2.1</lower>
+          <upper>2.1</upper>
+        </limit>
+        <dynamics>
+          <damping>1.0</damping>
+          <friction>0</friction>
+        </dynamics>
+      </axis>
+      <physics>
+        <ode>
+          <cfm_damping>1</cfm_damping>
+        </ode>
+      </physics>
+    </joint>
+<!-- ======================================================== -->
+    <joint name="hinge_L33WD2L33ND" type="revolute">
+      <parent>L33WD</parent>
+      <child>L33ND</child>
+      <pose>0 0 0 0 0 0</pose>
+      <axis>
+        <xyz>0 0 1</xyz>
+        <dynamics>
+          <damping>1.0</damping>
+          <friction>0</friction>
+        </dynamics>
+      </axis>
+      <physics>
+        <ode>
+          <cfm_damping>1</cfm_damping>
+        </ode>
+      </physics>
+    </joint>
+
+<!-- ======================================================== -->
+<!-- ======================================================== -->
+<!-- ======================================================== -->
+    <link name="S3WD">
+      <!-- SET COORDINATE in GLOBAL -->
+      <pose>0.5776464 7.3934 1.0706 -1.57079638 0 0</pose>
+      <inertial>
+        <!-- SET COORDINATE in LOCAL(This link's coordinate) -->
+        <pose>0 0 0.03304461 0 0 0</pose>
+        <mass>0.01375</mass>
+        <inertia>
+          <ixx>0.0620273193</ixx>
+          <ixy>0.0000000001</ixy>
+          <ixz>0.0000000044</ixz>
+          <iyy>0.0620273438</iyy>
+          <iyz>0.00000000</iyz>
+          <izz>0.0334274017</izz>
+        </inertia>
+      </inertial>
+      <visual name="visual">
+        <!-- SET COORDINATE in LOCAL(This link's coordinate) -->
+        <pose>0 0 0 0 0 0</pose>
+        <geometry>
+          <mesh>
+            <uri>model://JVRC_R5_obj/dae/R5_hose_1unit.dae</uri>
+          </mesh>
+        </geometry>
+      </visual>
+      <collision name="collision">
+        <!-- SET COORDINATE in LOCAL(This link's coordinate) -->
+        <pose>0 0 0 0 0 0</pose>
+        <geometry>
+          <mesh>
+            <uri>model://JVRC_R5_obj/dae/R5_hose_1unit.dae</uri>
+          </mesh>
+        </geometry>
+        <max_contacts>10</max_contacts>
+        <surface>
+          <bounce>
+            <restitution_coefficient>0.0</restitution_coefficient>
+            <threshold>1000000000.0</threshold>
+          </bounce>
+          <friction>
+            <ode>
+              <mu>0.2</mu>
+              <mu2>0.2</mu2>
+              <slip1>0.1</slip1>
+              <slip2>0.1</slip2>
+            </ode>
+          </friction>
+          <contact>
+          </contact>
+        </surface>
+      </collision>
+      <self_collide>1</self_collide>
+      <gravity>1</gravity>
+    </link>
+<!-- ======================================================== -->
+    <link name="S3ND">
+      <!-- SET COORDINATE in GLOBAL -->
+      <pose>0.5776464 7.3934 1.0706 -1.57079638 0 0</pose>
+      <inertial>
+        <!-- SET COORDINATE in LOCAL(This link's coordinate) -->
+        <pose>0.000000 -0.000000 -0.025018 0 0 0</pose>
+        <mass>0.01375</mass>
+        <inertia>
+          <ixx>0.0326216797</ixx>
+          <ixy>0.00000000</ixy>
+          <ixz>0.00000000</ixz>
+          <iyy>0.0326217041</iyy>
+          <iyz>0.00000000</iyz>
+          <izz>0.0268928284</izz>
+        </inertia>
+      </inertial>
+      <visual name="visual">
+        <!-- SET COORDINATE in LOCAL(This link's coordinate) -->
+        <pose>0 0 0 0 0 0</pose>
+        <geometry>
+          <mesh>
+            <uri>model://JVRC_R5_obj/dae/R5_hose_1unit_no_dorm.dae</uri>
+          </mesh>
+        </geometry>
+      </visual>
+      <collision name="collision">
+        <!-- SET COORDINATE in LOCAL(This link's coordinate) -->
+        <pose>0 0 0 0 0 0</pose>
+        <geometry>
+          <mesh>
+            <uri>model://JVRC_R5_obj/dae/R5_hose_1unit_no_dorm.dae</uri>
+          </mesh>
+        </geometry>
+        <max_contacts>10</max_contacts>
+        <surface>
+          <bounce>
+            <restitution_coefficient>0.0</restitution_coefficient>
+            <threshold>1000000000.0</threshold>
+          </bounce>
+          <friction>
+            <ode>
+              <mu>0.2</mu>
+              <mu2>0.2</mu2>
+              <slip1>0.1</slip1>
+              <slip2>0.1</slip2>
+            </ode>
+          </friction>
+          <contact>
+          </contact>
+        </surface>
+      </collision>
+      <self_collide>1</self_collide>
+      <gravity>1</gravity>
+    </link>
+<!-- ======================================================== -->
+    <joint name="hinge_L33ND2S3WD" type="revolute">
+      <parent>L33ND</parent>
+      <child>S3WD</child>
+      <pose>0 0 0.05 0 0 0</pose>
+      <axis>
+        <xyz>1 0 0</xyz>
+        <limit>
+          <lower>-0.53</lower>
+          <upper>3.67</upper>
+        </limit>
+        <dynamics>
+          <damping>1.0</damping>
+          <friction>0</friction>
+        </dynamics>
+      </axis>
+      <physics>
+        <ode>
+          <cfm_damping>1</cfm_damping>
+        </ode>
+      </physics>
+    </joint>
+<!-- ======================================================== -->
+    <joint name="hinge_S3WD2S3ND" type="revolute">
+      <parent>S3WD</parent>
+      <child>S3ND</child>
+      <pose>0 0 0 0 0 0</pose>
+      <axis>
+        <xyz>0 0 1</xyz>
+        <dynamics>
+          <damping>1.0</damping>
+          <friction>0</friction>
+        </dynamics>
+      </axis>
+      <physics>
+        <ode>
+          <cfm_damping>1</cfm_damping>
+        </ode>
+      </physics>
+    </joint>
+
+<!-- ======================================================== -->
+<!-- ======================================================== -->
+<!-- ======================================================== -->
+<!-- ======================================================== -->
+<!-- ======================================================== -->
+<!-- ======================================================== -->
+    <link name="L41WD">
+      <!-- SET COORDINATE in GLOBAL -->
+      <pose>0.5776464 7.3434 1.1206 3.14159265 0 0</pose>
+      <inertial>
+        <!-- SET COORDINATE in LOCAL(This link's coordinate) -->
+        <pose>0 0 0.03304461 0 0 0</pose>
+        <mass>0.01375</mass>
+        <inertia>
+          <ixx>0.0620273193</ixx>
+          <ixy>0.0000000001</ixy>
+          <ixz>0.0000000044</ixz>
+          <iyy>0.0620273438</iyy>
+          <iyz>0.00000000</iyz>
+          <izz>0.0334274017</izz>
+        </inertia>
+      </inertial>
+      <visual name="visual">
+        <!-- SET COORDINATE in LOCAL(This link's coordinate) -->
+        <pose>0 0 0 0 0 0</pose>
+        <geometry>
+          <mesh>
+            <uri>model://JVRC_R5_obj/dae/R5_hose_1unit.dae</uri>
+          </mesh>
+        </geometry>
+      </visual>
+      <collision name="collision">
+        <!-- SET COORDINATE in LOCAL(This link's coordinate) -->
+        <pose>0 0 0 0 0 0</pose>
+        <geometry>
+          <mesh>
+            <uri>model://JVRC_R5_obj/dae/R5_hose_1unit.dae</uri>
+          </mesh>
+        </geometry>
+        <max_contacts>10</max_contacts>
+        <surface>
+          <bounce>
+            <restitution_coefficient>0.0</restitution_coefficient>
+            <threshold>1000000000.0</threshold>
+          </bounce>
+          <friction>
+            <ode>
+              <mu>0.2</mu>
+              <mu2>0.2</mu2>
+              <slip1>0.1</slip1>
+              <slip2>0.1</slip2>
+            </ode>
+          </friction>
+          <contact>
+          </contact>
+        </surface>
+      </collision>
+      <self_collide>1</self_collide>
+      <gravity>1</gravity>
+    </link>
+<!-- ======================================================== -->
+    <link name="L41ND">
+      <!-- SET COORDINATE in GLOBAL -->
+      <pose>0.5776464 7.3434 1.1206 3.14159265 0 0</pose>
+      <inertial>
+        <!-- SET COORDINATE in LOCAL(This link's coordinate) -->
+        <pose>0.000000 -0.000000 -0.025018 0 0 0</pose>
+        <mass>0.01375</mass>
+        <inertia>
+          <ixx>0.0326216797</ixx>
+          <ixy>0.00000000</ixy>
+          <ixz>0.00000000</ixz>
+          <iyy>0.0326217041</iyy>
+          <iyz>0.00000000</iyz>
+          <izz>0.0268928284</izz>
+        </inertia>
+      </inertial>
+      <visual name="visual">
+        <!-- SET COORDINATE in LOCAL(This link's coordinate) -->
+        <pose>0 0 0 0 0 0</pose>
+        <geometry>
+          <mesh>
+            <uri>model://JVRC_R5_obj/dae/R5_hose_1unit_no_dorm.dae</uri>
+          </mesh>
+        </geometry>
+      </visual>
+      <collision name="collision">
+        <!-- SET COORDINATE in LOCAL(This link's coordinate) -->
+        <pose>0 0 0 0 0 0</pose>
+        <geometry>
+          <mesh>
+            <uri>model://JVRC_R5_obj/dae/R5_hose_1unit_no_dorm.dae</uri>
+          </mesh>
+        </geometry>
+        <max_contacts>10</max_contacts>
+        <surface>
+          <bounce>
+            <restitution_coefficient>0.0</restitution_coefficient>
+            <threshold>1000000000.0</threshold>
+          </bounce>
+          <friction>
+            <ode>
+              <mu>0.2</mu>
+              <mu2>0.2</mu2>
+              <slip1>0.1</slip1>
+              <slip2>0.1</slip2>
+            </ode>
+          </friction>
+          <contact>
+          </contact>
+        </surface>
+      </collision>
+      <self_collide>1</self_collide>
+      <gravity>1</gravity>
+    </link>
+<!-- ======================================================== -->
+    <joint name="hinge_S3ND2L41WD" type="revolute">
+      <parent>S3ND</parent>
+      <child>L41WD</child>
+      <pose>0 0 0.05 0 0 0</pose>
+      <axis>
+        <xyz>1 0 0</xyz>
+        <limit>
+          <lower>-0.53</lower>
+          <upper>3.67</upper>
+        </limit>
+        <dynamics>
+          <damping>1.0</damping>
+          <friction>0</friction>
+        </dynamics>
+      </axis>
+      <physics>
+        <ode>
+          <cfm_damping>1</cfm_damping>
+        </ode>
+      </physics>
+    </joint>
+<!-- ======================================================== -->
+    <joint name="hinge_L41WD2L41ND" type="revolute">
+      <parent>L41WD</parent>
+      <child>L41ND</child>
+      <pose>0 0 0 0 0 0</pose>
+      <axis>
+        <xyz>0 0 1</xyz>
+        <dynamics>
+          <damping>1.0</damping>
+          <friction>0</friction>
+        </dynamics>
+      </axis>
+      <physics>
+        <ode>
+          <cfm_damping>1</cfm_damping>
+        </ode>
+      </physics>
+    </joint>
+
+<!-- ======================================================== -->
+<!-- ======================================================== -->
+<!-- ======================================================== -->
+    <link name="L42WD">
+      <!-- SET COORDINATE in GLOBAL -->
+      <pose>0.5776464 7.3434 1.2206 3.14159265 0 0</pose>
+      <inertial>
+        <!-- SET COORDINATE in LOCAL(This link's coordinate) -->
+        <pose>0 0 0.03304461 0 0 0</pose>
+        <mass>0.01375</mass>
+        <inertia>
+          <ixx>0.0620273193</ixx>
+          <ixy>0.0000000001</ixy>
+          <ixz>0.0000000044</ixz>
+          <iyy>0.0620273438</iyy>
+          <iyz>0.00000000</iyz>
+          <izz>0.0334274017</izz>
+        </inertia>
+      </inertial>
+      <visual name="visual">
+        <!-- SET COORDINATE in LOCAL(This link's coordinate) -->
+        <pose>0 0 0 0 0 0</pose>
+        <geometry>
+          <mesh>
+            <uri>model://JVRC_R5_obj/dae/R5_hose_1unit.dae</uri>
+          </mesh>
+        </geometry>
+      </visual>
+      <collision name="collision">
+        <!-- SET COORDINATE in LOCAL(This link's coordinate) -->
+        <pose>0 0 0 0 0 0</pose>
+        <geometry>
+          <mesh>
+            <uri>model://JVRC_R5_obj/dae/R5_hose_1unit.dae</uri>
+          </mesh>
+        </geometry>
+        <max_contacts>10</max_contacts>
+        <surface>
+          <bounce>
+            <restitution_coefficient>0.0</restitution_coefficient>
+            <threshold>1000000000.0</threshold>
+          </bounce>
+          <friction>
+            <ode>
+              <mu>0.2</mu>
+              <mu2>0.2</mu2>
+              <slip1>0.1</slip1>
+              <slip2>0.1</slip2>
+            </ode>
+          </friction>
+          <contact>
+          </contact>
+        </surface>
+      </collision>
+      <self_collide>1</self_collide>
+      <gravity>1</gravity>
+    </link>
+<!-- ======================================================== -->
+    <link name="L42ND">
+      <!-- SET COORDINATE in GLOBAL -->
+      <pose>0.5776464 7.3434 1.2206 3.14159265 0 0</pose>
+      <inertial>
+        <!-- SET COORDINATE in LOCAL(This link's coordinate) -->
+        <pose>0.000000 -0.000000 -0.025018 0 0 0</pose>
+        <mass>0.01375</mass>
+        <inertia>
+          <ixx>0.0326216797</ixx>
+          <ixy>0.00000000</ixy>
+          <ixz>0.00000000</ixz>
+          <iyy>0.0326217041</iyy>
+          <iyz>0.00000000</iyz>
+          <izz>0.0268928284</izz>
+        </inertia>
+      </inertial>
+      <visual name="visual">
+        <!-- SET COORDINATE in LOCAL(This link's coordinate) -->
+        <pose>0 0 0 0 0 0</pose>
+        <geometry>
+          <mesh>
+            <uri>model://JVRC_R5_obj/dae/R5_hose_1unit_no_dorm.dae</uri>
+          </mesh>
+        </geometry>
+      </visual>
+      <collision name="collision">
+        <!-- SET COORDINATE in LOCAL(This link's coordinate) -->
+        <pose>0 0 0 0 0 0</pose>
+        <geometry>
+          <mesh>
+            <uri>model://JVRC_R5_obj/dae/R5_hose_1unit_no_dorm.dae</uri>
+          </mesh>
+        </geometry>
+        <max_contacts>10</max_contacts>
+        <surface>
+          <bounce>
+            <restitution_coefficient>0.0</restitution_coefficient>
+            <threshold>1000000000.0</threshold>
+          </bounce>
+          <friction>
+            <ode>
+              <mu>0.2</mu>
+              <mu2>0.2</mu2>
+              <slip1>0.1</slip1>
+              <slip2>0.1</slip2>
+            </ode>
+          </friction>
+          <contact>
+          </contact>
+        </surface>
+      </collision>
+      <self_collide>1</self_collide>
+      <gravity>1</gravity>
+    </link>
+<!-- ======================================================== -->
+    <joint name="hinge_L41ND2L42WD" type="revolute">
+      <parent>L41ND</parent>
+      <child>L42WD</child>
+      <pose>0 0 0.05 0 0 0</pose>
+      <axis>
+        <xyz>1 0 0</xyz>
+        <limit>
+          <lower>-2.1</lower>
+          <upper>2.1</upper>
+        </limit>
+        <dynamics>
+          <damping>1.0</damping>
+          <friction>0</friction>
+        </dynamics>
+      </axis>
+      <physics>
+        <ode>
+          <cfm_damping>1</cfm_damping>
+        </ode>
+      </physics>
+    </joint>
+<!-- ======================================================== -->
+    <joint name="hinge_L42WD2L42ND" type="revolute">
+      <parent>L42WD</parent>
+      <child>L42ND</child>
+      <pose>0 0 0 0 0 0</pose>
+      <axis>
+        <xyz>0 0 1</xyz>
+        <dynamics>
+          <damping>1.0</damping>
+          <friction>0</friction>
+        </dynamics>
+      </axis>
+      <physics>
+        <ode>
+          <cfm_damping>1</cfm_damping>
+        </ode>
+      </physics>
+    </joint>
+
+<!-- ======================================================== -->
+<!-- ======================================================== -->
+<!-- ======================================================== -->
+    <link name="L43WD">
+      <!-- SET COORDINATE in GLOBAL -->
+      <pose>0.5776464 7.3434 1.3206 3.14159265 0 0</pose>
+      <inertial>
+        <!-- SET COORDINATE in LOCAL(This link's coordinate) -->
+        <pose>0 0 0.03304461 0 0 0</pose>
+        <mass>0.01375</mass>
+        <inertia>
+          <ixx>0.0620273193</ixx>
+          <ixy>0.0000000001</ixy>
+          <ixz>0.0000000044</ixz>
+          <iyy>0.0620273438</iyy>
+          <iyz>0.00000000</iyz>
+          <izz>0.0334274017</izz>
+        </inertia>
+      </inertial>
+      <visual name="visual">
+        <!-- SET COORDINATE in LOCAL(This link's coordinate) -->
+        <pose>0 0 0 0 0 0</pose>
+        <geometry>
+          <mesh>
+            <uri>model://JVRC_R5_obj/dae/R5_hose_1unit.dae</uri>
+          </mesh>
+        </geometry>
+      </visual>
+      <collision name="collision">
+        <!-- SET COORDINATE in LOCAL(This link's coordinate) -->
+        <pose>0 0 0 0 0 0</pose>
+        <geometry>
+          <mesh>
+            <uri>model://JVRC_R5_obj/dae/R5_hose_1unit.dae</uri>
+          </mesh>
+        </geometry>
+        <max_contacts>10</max_contacts>
+        <surface>
+          <bounce>
+            <restitution_coefficient>0.0</restitution_coefficient>
+            <threshold>1000000000.0</threshold>
+          </bounce>
+          <friction>
+            <ode>
+              <mu>0.2</mu>
+              <mu2>0.2</mu2>
+              <slip1>0.1</slip1>
+              <slip2>0.1</slip2>
+            </ode>
+          </friction>
+          <contact>
+          </contact>
+        </surface>
+      </collision>
+      <self_collide>1</self_collide>
+      <gravity>1</gravity>
+    </link>
+<!-- ======================================================== -->
+    <link name="L43ND">
+      <!-- SET COORDINATE in GLOBAL -->
+      <pose>0.5776464 7.3434 1.3206 3.14159265 0 0</pose>
+      <inertial>
+        <!-- SET COORDINATE in LOCAL(This link's coordinate) -->
+        <pose>0.000000 -0.000000 -0.025018 0 0 0</pose>
+        <mass>0.01375</mass>
+        <inertia>
+          <ixx>0.0326216797</ixx>
+          <ixy>0.00000000</ixy>
+          <ixz>0.00000000</ixz>
+          <iyy>0.0326217041</iyy>
+          <iyz>0.00000000</iyz>
+          <izz>0.0268928284</izz>
+        </inertia>
+      </inertial>
+      <visual name="visual">
+        <!-- SET COORDINATE in LOCAL(This link's coordinate) -->
+        <pose>0 0 0 0 0 0</pose>
+        <geometry>
+          <mesh>
+            <uri>model://JVRC_R5_obj/dae/R5_hose_1unit_no_dorm.dae</uri>
+          </mesh>
+        </geometry>
+      </visual>
+      <collision name="collision">
+        <!-- SET COORDINATE in LOCAL(This link's coordinate) -->
+        <pose>0 0 0 0 0 0</pose>
+        <geometry>
+          <mesh>
+            <uri>model://JVRC_R5_obj/dae/R5_hose_1unit_no_dorm.dae</uri>
+          </mesh>
+        </geometry>
+        <max_contacts>10</max_contacts>
+        <surface>
+          <bounce>
+            <restitution_coefficient>0.0</restitution_coefficient>
+            <threshold>1000000000.0</threshold>
+          </bounce>
+          <friction>
+            <ode>
+              <mu>0.2</mu>
+              <mu2>0.2</mu2>
+              <slip1>0.1</slip1>
+              <slip2>0.1</slip2>
+            </ode>
+          </friction>
+          <contact>
+          </contact>
+        </surface>
+      </collision>
+      <self_collide>1</self_collide>
+      <gravity>1</gravity>
+    </link>
+<!-- ======================================================== -->
+    <joint name="hinge_L42ND2L43WD" type="revolute">
+      <parent>L42ND</parent>
+      <child>L43WD</child>
+      <pose>0 0 0.05 0 0 0</pose>
+      <axis>
+        <xyz>1 0 0</xyz>
+        <limit>
+          <lower>-2.1</lower>
+          <upper>2.1</upper>
+        </limit>
+        <dynamics>
+          <damping>1.0</damping>
+          <friction>0</friction>
+        </dynamics>
+      </axis>
+      <physics>
+        <ode>
+          <cfm_damping>1</cfm_damping>
+        </ode>
+      </physics>
+    </joint>
+<!-- ======================================================== -->
+    <joint name="hinge_L43WD2L43ND" type="revolute">
+      <parent>L43WD</parent>
+      <child>L43ND</child>
+      <pose>0 0 0 0 0 0</pose>
+      <axis>
+        <xyz>0 0 1</xyz>
+        <dynamics>
+          <damping>1.0</damping>
+          <friction>0</friction>
+        </dynamics>
+      </axis>
+      <physics>
+        <ode>
+          <cfm_damping>1</cfm_damping>
+        </ode>
+      </physics>
+    </joint>
+
+<!-- ======================================================== -->
+<!-- ======================================================== -->
+<!-- ======================================================== -->
+    <link name="S4WD">
+      <!-- SET COORDINATE in GLOBAL -->
+      <pose>0.5776464 7.2934 1.3706 -1.57079638 0 0</pose>
+      <inertial>
+        <!-- SET COORDINATE in LOCAL(This link's coordinate) -->
+        <pose>0 0 0.03304461 0 0 0</pose>
+        <mass>0.01375</mass>
+        <inertia>
+          <ixx>0.0620273193</ixx>
+          <ixy>0.0000000001</ixy>
+          <ixz>0.0000000044</ixz>
+          <iyy>0.0620273438</iyy>
+          <iyz>0.00000000</iyz>
+          <izz>0.0334274017</izz>
+        </inertia>
+      </inertial>
+      <visual name="visual">
+        <!-- SET COORDINATE in LOCAL(This link's coordinate) -->
+        <pose>0 0 0 0 0 0</pose>
+        <geometry>
+          <mesh>
+            <uri>model://JVRC_R5_obj/dae/R5_hose_1unit.dae</uri>
+          </mesh>
+        </geometry>
+      </visual>
+      <collision name="collision">
+        <!-- SET COORDINATE in LOCAL(This link's coordinate) -->
+        <pose>0 0 0 0 0 0</pose>
+        <geometry>
+          <mesh>
+            <uri>model://JVRC_R5_obj/dae/R5_hose_1unit.dae</uri>
+          </mesh>
+        </geometry>
+        <max_contacts>10</max_contacts>
+        <surface>
+          <bounce>
+            <restitution_coefficient>0.0</restitution_coefficient>
+            <threshold>1000000000.0</threshold>
+          </bounce>
+          <friction>
+            <ode>
+              <mu>0.2</mu>
+              <mu2>0.2</mu2>
+              <slip1>0.1</slip1>
+              <slip2>0.1</slip2>
+            </ode>
+          </friction>
+          <contact>
+          </contact>
+        </surface>
+      </collision>
+      <self_collide>1</self_collide>
+      <gravity>1</gravity>
+    </link>
+<!-- ======================================================== -->
+    <link name="S4ND">
+      <!-- SET COORDINATE in GLOBAL -->
+      <pose>0.5776464 7.2934 1.3706 -1.57079638 0 0</pose>
+      <inertial>
+        <!-- SET COORDINATE in LOCAL(This link's coordinate) -->
+        <pose>0.000000 -0.000000 -0.025018 0 0 0</pose>
+        <mass>0.01375</mass>
+        <inertia>
+          <ixx>0.0326216797</ixx>
+          <ixy>0.00000000</ixy>
+          <ixz>0.00000000</ixz>
+          <iyy>0.0326217041</iyy>
+          <iyz>0.00000000</iyz>
+          <izz>0.0268928284</izz>
+        </inertia>
+      </inertial>
+      <visual name="visual">
+        <!-- SET COORDINATE in LOCAL(This link's coordinate) -->
+        <pose>0 0 0 0 0 0</pose>
+        <geometry>
+          <mesh>
+            <uri>model://JVRC_R5_obj/dae/R5_hose_1unit_no_dorm.dae</uri>
+          </mesh>
+        </geometry>
+      </visual>
+      <collision name="collision">
+        <!-- SET COORDINATE in LOCAL(This link's coordinate) -->
+        <pose>0 0 0 0 0 0</pose>
+        <geometry>
+          <mesh>
+            <uri>model://JVRC_R5_obj/dae/R5_hose_1unit_no_dorm.dae</uri>
+          </mesh>
+        </geometry>
+        <max_contacts>10</max_contacts>
+        <surface>
+          <bounce>
+            <restitution_coefficient>0.0</restitution_coefficient>
+            <threshold>1000000000.0</threshold>
+          </bounce>
+          <friction>
+            <ode>
+              <mu>0.2</mu>
+              <mu2>0.2</mu2>
+              <slip1>0.1</slip1>
+              <slip2>0.1</slip2>
+            </ode>
+          </friction>
+          <contact>
+          </contact>
+        </surface>
+      </collision>
+      <self_collide>1</self_collide>
+      <gravity>1</gravity>
+    </link>
+<!-- ======================================================== -->
+    <joint name="hinge_L43ND2S4WD" type="revolute">
+      <parent>L43ND</parent>
+      <child>S4WD</child>
+      <pose>0 0 0.05 0 0 0</pose>
+      <axis>
+        <xyz>1 0 0</xyz>
+        <limit>
+          <lower>-3.67</lower>
+          <upper>0.53</upper>
+        </limit>
+        <dynamics>
+          <damping>1.0</damping>
+          <friction>0</friction>
+        </dynamics>
+      </axis>
+      <physics>
+        <ode>
+          <cfm_damping>1</cfm_damping>
+        </ode>
+      </physics>
+    </joint>
+<!-- ======================================================== -->
+    <joint name="hinge_S4WD2S4ND" type="revolute">
+      <parent>S4WD</parent>
+      <child>S4ND</child>
+      <pose>0 0 0 0 0 0</pose>
+      <axis>
+        <xyz>0 0 1</xyz>
+        <dynamics>
+          <damping>1.0</damping>
+          <friction>0</friction>
+        </dynamics>
+      </axis>
+      <physics>
+        <ode>
+          <cfm_damping>1</cfm_damping>
+        </ode>
+      </physics>
+    </joint>
+
+<!-- ======================================================== -->
+<!-- ======================================================== -->
+<!-- ======================================================== -->
+<!-- ======================================================== -->
+<!-- ======================================================== -->
+<!-- ======================================================== -->
+<!-- ======================================================== -->
+<!-- ======================================================== -->
+<!-- ======================================================== -->
+
+<!-- ======================================================== -->
+<!-- ======================================================== -->
+<!-- ======================================================== -->
+<!-- ======================================================== -->
+<!-- ======================================================== -->
+<!-- ======================================================== -->
+<!-- ======================================================== -->
+<!-- ======================================================== -->
+<!-- ======================================================== -->
+    <link name="L51WD">
+      <!-- SET COORDINATE in GLOBAL -->
+      <pose>0.5776464 7.2434 1.3206 0 0 0</pose>
+      <inertial>
+        <!-- SET COORDINATE in LOCAL(This link's coordinate) -->
+        <pose>0 0 0.03304461 0 0 0</pose>
+        <mass>0.01375</mass>
+        <inertia>
+          <ixx>0.0620273193</ixx>
+          <ixy>0.0000000001</ixy>
+          <ixz>0.0000000044</ixz>
+          <iyy>0.0620273438</iyy>
+          <iyz>0.00000000</iyz>
+          <izz>0.0334274017</izz>
+        </inertia>
+      </inertial>
+      <visual name="visual">
+        <!-- SET COORDINATE in LOCAL(This link's coordinate) -->
+        <pose>0 0 0 0 0 0</pose>
+        <geometry>
+          <mesh>
+            <uri>model://JVRC_R5_obj/dae/R5_hose_1unit.dae</uri>
+          </mesh>
+        </geometry>
+      </visual>
+      <collision name="collision">
+        <!-- SET COORDINATE in LOCAL(This link's coordinate) -->
+        <pose>0 0 0 0 0 0</pose>
+        <geometry>
+          <mesh>
+            <uri>model://JVRC_R5_obj/dae/R5_hose_1unit.dae</uri>
+          </mesh>
+        </geometry>
+        <max_contacts>10</max_contacts>
+        <surface>
+          <bounce>
+            <restitution_coefficient>0.0</restitution_coefficient>
+            <threshold>1000000000.0</threshold>
+          </bounce>
+          <friction>
+            <ode>
+              <mu>0.2</mu>
+              <mu2>0.2</mu2>
+              <slip1>0.1</slip1>
+              <slip2>0.1</slip2>
+            </ode>
+          </friction>
+          <contact>
+          </contact>
+        </surface>
+      </collision>
+      <self_collide>1</self_collide>
+      <gravity>1</gravity>
+    </link>
+<!-- ======================================================== -->
+    <link name="L51ND">
+      <!-- SET COORDINATE in GLOBAL -->
+      <pose>0.5776464 7.2434 1.3206 0 0 0</pose>
+      <inertial>
+        <!-- SET COORDINATE in LOCAL(This link's coordinate) -->
+        <pose>0.000000 -0.000000 -0.025018 0 0 0</pose>
+        <mass>0.01375</mass>
+        <inertia>
+          <ixx>0.0326216797</ixx>
+          <ixy>0.00000000</ixy>
+          <ixz>0.00000000</ixz>
+          <iyy>0.0326217041</iyy>
+          <iyz>0.00000000</iyz>
+          <izz>0.0268928284</izz>
+        </inertia>
+      </inertial>
+      <visual name="visual">
+        <!-- SET COORDINATE in LOCAL(This link's coordinate) -->
+        <pose>0 0 0 0 0 0</pose>
+        <geometry>
+          <mesh>
+            <uri>model://JVRC_R5_obj/dae/R5_hose_1unit_no_dorm.dae</uri>
+          </mesh>
+        </geometry>
+      </visual>
+      <collision name="collision">
+        <!-- SET COORDINATE in LOCAL(This link's coordinate) -->
+        <pose>0 0 0 0 0 0</pose>
+        <geometry>
+          <mesh>
+            <uri>model://JVRC_R5_obj/dae/R5_hose_1unit_no_dorm.dae</uri>
+          </mesh>
+        </geometry>
+        <max_contacts>10</max_contacts>
+        <surface>
+          <bounce>
+            <restitution_coefficient>0.0</restitution_coefficient>
+            <threshold>1000000000.0</threshold>
+          </bounce>
+          <friction>
+            <ode>
+              <mu>0.2</mu>
+              <mu2>0.2</mu2>
+              <slip1>0.1</slip1>
+              <slip2>0.1</slip2>
+            </ode>
+          </friction>
+          <contact>
+          </contact>
+        </surface>
+      </collision>
+      <self_collide>1</self_collide>
+      <gravity>1</gravity>
+    </link>
+<!-- ======================================================== -->
+    <joint name="hinge_S4ND2L51WD" type="revolute">
+      <parent>S4ND</parent>
+      <child>L51WD</child>
+      <pose>0 0 0.05 0 0 0</pose>
+      <axis>
+        <xyz>1 0 0</xyz>
+        <limit>
+          <lower>-2.1</lower>
+          <upper>2.1</upper>
+        </limit>
+        <dynamics>
+          <damping>1.0</damping>
+          <friction>0</friction>
+        </dynamics>
+      </axis>
+      <physics>
+        <ode>
+          <cfm_damping>1</cfm_damping>
+        </ode>
+      </physics>
+    </joint>
+<!-- ======================================================== -->
+    <joint name="hinge_L51WD2L51ND" type="revolute">
+      <parent>L51WD</parent>
+      <child>L51ND</child>
+      <pose>0 0 0 0 0 0</pose>
+      <axis>
+        <xyz>0 0 1</xyz>
+        <dynamics>
+          <damping>1.0</damping>
+          <friction>0</friction>
+        </dynamics>
+      </axis>
+      <physics>
+        <ode>
+          <cfm_damping>1</cfm_damping>
+        </ode>
+      </physics>
+    </joint>
+
+<!-- ======================================================== -->
+<!-- ======================================================== -->
+<!-- ======================================================== -->
+    <link name="L52WD">
+      <!-- SET COORDINATE in GLOBAL -->
+      <pose>0.5776464 7.2434 1.2206 0 0 0</pose>
+      <inertial>
+        <!-- SET COORDINATE in LOCAL(This link's coordinate) -->
+        <pose>0 0 0.03304461 0 0 0</pose>
+        <mass>0.01375</mass>
+        <inertia>
+          <ixx>0.0620273193</ixx>
+          <ixy>0.0000000001</ixy>
+          <ixz>0.0000000044</ixz>
+          <iyy>0.0620273438</iyy>
+          <iyz>0.00000000</iyz>
+          <izz>0.0334274017</izz>
+        </inertia>
+      </inertial>
+      <visual name="visual">
+        <!-- SET COORDINATE in LOCAL(This link's coordinate) -->
+        <pose>0 0 0 0 0 0</pose>
+        <geometry>
+          <mesh>
+            <uri>model://JVRC_R5_obj/dae/R5_hose_1unit.dae</uri>
+          </mesh>
+        </geometry>
+      </visual>
+      <collision name="collision">
+        <!-- SET COORDINATE in LOCAL(This link's coordinate) -->
+        <pose>0 0 0 0 0 0</pose>
+        <geometry>
+          <mesh>
+            <uri>model://JVRC_R5_obj/dae/R5_hose_1unit.dae</uri>
+          </mesh>
+        </geometry>
+        <max_contacts>10</max_contacts>
+        <surface>
+          <bounce>
+            <restitution_coefficient>0.0</restitution_coefficient>
+            <threshold>1000000000.0</threshold>
+          </bounce>
+          <friction>
+            <ode>
+              <mu>0.2</mu>
+              <mu2>0.2</mu2>
+              <slip1>0.1</slip1>
+              <slip2>0.1</slip2>
+            </ode>
+          </friction>
+          <contact>
+          </contact>
+        </surface>
+      </collision>
+      <self_collide>1</self_collide>
+      <gravity>1</gravity>
+    </link>
+<!-- ======================================================== -->
+    <link name="L52ND">
+      <!-- SET COORDINATE in GLOBAL -->
+      <pose>0.5776464 7.2434 1.2206 0 0 0</pose>
+      <inertial>
+        <!-- SET COORDINATE in LOCAL(This link's coordinate) -->
+        <pose>0.000000 -0.000000 -0.025018 0 0 0</pose>
+        <mass>0.01375</mass>
+        <inertia>
+          <ixx>0.0326216797</ixx>
+          <ixy>0.00000000</ixy>
+          <ixz>0.00000000</ixz>
+          <iyy>0.0326217041</iyy>
+          <iyz>0.00000000</iyz>
+          <izz>0.0268928284</izz>
+        </inertia>
+      </inertial>
+      <visual name="visual">
+        <!-- SET COORDINATE in LOCAL(This link's coordinate) -->
+        <pose>0 0 0 0 0 0</pose>
+        <geometry>
+          <mesh>
+            <uri>model://JVRC_R5_obj/dae/R5_hose_1unit_no_dorm.dae</uri>
+          </mesh>
+        </geometry>
+      </visual>
+      <collision name="collision">
+        <!-- SET COORDINATE in LOCAL(This link's coordinate) -->
+        <pose>0 0 0 0 0 0</pose>
+        <geometry>
+          <mesh>
+            <uri>model://JVRC_R5_obj/dae/R5_hose_1unit_no_dorm.dae</uri>
+          </mesh>
+        </geometry>
+        <max_contacts>10</max_contacts>
+        <surface>
+          <bounce>
+            <restitution_coefficient>0.0</restitution_coefficient>
+            <threshold>1000000000.0</threshold>
+          </bounce>
+          <friction>
+            <ode>
+              <mu>0.2</mu>
+              <mu2>0.2</mu2>
+              <slip1>0.1</slip1>
+              <slip2>0.1</slip2>
+            </ode>
+          </friction>
+          <contact>
+          </contact>
+        </surface>
+      </collision>
+      <self_collide>1</self_collide>
+      <gravity>1</gravity>
+    </link>
+<!-- ======================================================== -->
+    <joint name="hinge_L51ND2L52WD" type="revolute">
+      <parent>L51ND</parent>
+      <child>L52WD</child>
+      <pose>0 0 0.05 0 0 0</pose>
+      <axis>
+        <xyz>1 0 0</xyz>
+        <limit>
+          <lower>-2.1</lower>
+          <upper>2.1</upper>
+        </limit>
+        <dynamics>
+          <damping>1.0</damping>
+          <friction>0</friction>
+        </dynamics>
+      </axis>
+      <physics>
+        <ode>
+          <cfm_damping>1</cfm_damping>
+        </ode>
+      </physics>
+    </joint>
+<!-- ======================================================== -->
+    <joint name="hinge_L52WD2L52ND" type="revolute">
+      <parent>L52WD</parent>
+      <child>L52ND</child>
+      <pose>0 0 0 0 0 0</pose>
+      <axis>
+        <xyz>0 0 1</xyz>
+        <dynamics>
+          <damping>1.0</damping>
+          <friction>0</friction>
+        </dynamics>
+      </axis>
+      <physics>
+        <ode>
+          <cfm_damping>1</cfm_damping>
+        </ode>
+      </physics>
+    </joint>
+
+<!-- ======================================================== -->
+<!-- ======================================================== -->
+<!-- ======================================================== -->
+    <link name="L53WD">
+      <!-- SET COORDINATE in GLOBAL -->
+      <pose>0.5776464 7.2434 1.1206 0 0 0</pose>
+      <inertial>
+        <!-- SET COORDINATE in LOCAL(This link's coordinate) -->
+        <pose>0 0 0.03304461 0 0 0</pose>
+        <mass>0.01375</mass>
+        <inertia>
+          <ixx>0.0620273193</ixx>
+          <ixy>0.0000000001</ixy>
+          <ixz>0.0000000044</ixz>
+          <iyy>0.0620273438</iyy>
+          <iyz>0.00000000</iyz>
+          <izz>0.0334274017</izz>
+        </inertia>
+      </inertial>
+      <visual name="visual">
+        <!-- SET COORDINATE in LOCAL(This link's coordinate) -->
+        <pose>0 0 0 0 0 0</pose>
+        <geometry>
+          <mesh>
+            <uri>model://JVRC_R5_obj/dae/R5_hose_1unit.dae</uri>
+          </mesh>
+        </geometry>
+      </visual>
+      <collision name="collision">
+        <!-- SET COORDINATE in LOCAL(This link's coordinate) -->
+        <pose>0 0 0 0 0 0</pose>
+        <geometry>
+          <mesh>
+            <uri>model://JVRC_R5_obj/dae/R5_hose_1unit.dae</uri>
+          </mesh>
+        </geometry>
+        <max_contacts>10</max_contacts>
+        <surface>
+          <bounce>
+            <restitution_coefficient>0.0</restitution_coefficient>
+            <threshold>1000000000.0</threshold>
+          </bounce>
+          <friction>
+            <ode>
+              <mu>0.2</mu>
+              <mu2>0.2</mu2>
+              <slip1>0.1</slip1>
+              <slip2>0.1</slip2>
+            </ode>
+          </friction>
+          <contact>
+          </contact>
+        </surface>
+      </collision>
+      <self_collide>1</self_collide>
+      <gravity>1</gravity>
+    </link>
+<!-- ======================================================== -->
+    <link name="L53ND">
+      <!-- SET COORDINATE in GLOBAL -->
+      <pose>0.5776464 7.2434 1.1206 0 0 0</pose>
+      <inertial>
+        <!-- SET COORDINATE in LOCAL(This link's coordinate) -->
+        <pose>0.000000 -0.000000 -0.025018 0 0 0</pose>
+        <mass>0.01375</mass>
+        <inertia>
+          <ixx>0.0326216797</ixx>
+          <ixy>0.00000000</ixy>
+          <ixz>0.00000000</ixz>
+          <iyy>0.0326217041</iyy>
+          <iyz>0.00000000</iyz>
+          <izz>0.0268928284</izz>
+        </inertia>
+      </inertial>
+      <visual name="visual">
+        <!-- SET COORDINATE in LOCAL(This link's coordinate) -->
+        <pose>0 0 0 0 0 0</pose>
+        <geometry>
+          <mesh>
+            <uri>model://JVRC_R5_obj/dae/R5_hose_1unit_no_dorm.dae</uri>
+          </mesh>
+        </geometry>
+      </visual>
+      <collision name="collision">
+        <!-- SET COORDINATE in LOCAL(This link's coordinate) -->
+        <pose>0 0 0 0 0 0</pose>
+        <geometry>
+          <mesh>
+            <uri>model://JVRC_R5_obj/dae/R5_hose_1unit_no_dorm.dae</uri>
+          </mesh>
+        </geometry>
+        <max_contacts>10</max_contacts>
+        <surface>
+          <bounce>
+            <restitution_coefficient>0.0</restitution_coefficient>
+            <threshold>1000000000.0</threshold>
+          </bounce>
+          <friction>
+            <ode>
+              <mu>0.2</mu>
+              <mu2>0.2</mu2>
+              <slip1>0.1</slip1>
+              <slip2>0.1</slip2>
+            </ode>
+          </friction>
+          <contact>
+          </contact>
+        </surface>
+      </collision>
+      <self_collide>1</self_collide>
+      <gravity>1</gravity>
+    </link>
+<!-- ======================================================== -->
+    <joint name="hinge_L52ND2L53WD" type="revolute">
+      <parent>L52ND</parent>
+      <child>L53WD</child>
+      <pose>0 0 0.05 0 0 0</pose>
+      <axis>
+        <xyz>1 0 0</xyz>
+        <limit>
+          <lower>-2.1</lower>
+          <upper>2.1</upper>
+        </limit>
+        <dynamics>
+          <damping>1.0</damping>
+          <friction>0</friction>
+        </dynamics>
+      </axis>
+      <physics>
+        <ode>
+          <cfm_damping>1</cfm_damping>
+        </ode>
+      </physics>
+    </joint>
+<!-- ======================================================== -->
+    <joint name="hinge_L53WD2L53ND" type="revolute">
+      <parent>L53WD</parent>
+      <child>L53ND</child>
+      <pose>0 0 0 0 0 0</pose>
+      <axis>
+        <xyz>0 0 1</xyz>
+        <dynamics>
+          <damping>1.0</damping>
+          <friction>0</friction>
+        </dynamics>
+      </axis>
+      <physics>
+        <ode>
+          <cfm_damping>1</cfm_damping>
+        </ode>
+      </physics>
+    </joint>
+
+<!-- ======================================================== -->
+<!-- ======================================================== -->
+<!-- ======================================================== -->
+    <link name="S5WD">
+      <!-- SET COORDINATE in GLOBAL -->
+      <pose>0.5776464 7.1934 1.0706 -1.57079638 0 0</pose>
+      <inertial>
+        <!-- SET COORDINATE in LOCAL(This link's coordinate) -->
+        <pose>0 0 0.03304461 0 0 0</pose>
+        <mass>0.01375</mass>
+        <inertia>
+          <ixx>0.0620273193</ixx>
+          <ixy>0.0000000001</ixy>
+          <ixz>0.0000000044</ixz>
+          <iyy>0.0620273438</iyy>
+          <iyz>0.00000000</iyz>
+          <izz>0.0334274017</izz>
+        </inertia>
+      </inertial>
+      <visual name="visual">
+        <!-- SET COORDINATE in LOCAL(This link's coordinate) -->
+        <pose>0 0 0 0 0 0</pose>
+        <geometry>
+          <mesh>
+            <uri>model://JVRC_R5_obj/dae/R5_hose_1unit.dae</uri>
+          </mesh>
+        </geometry>
+      </visual>
+      <collision name="collision">
+        <!-- SET COORDINATE in LOCAL(This link's coordinate) -->
+        <pose>0 0 0 0 0 0</pose>
+        <geometry>
+          <mesh>
+            <uri>model://JVRC_R5_obj/dae/R5_hose_1unit.dae</uri>
+          </mesh>
+        </geometry>
+        <max_contacts>10</max_contacts>
+        <surface>
+          <bounce>
+            <restitution_coefficient>0.0</restitution_coefficient>
+            <threshold>1000000000.0</threshold>
+          </bounce>
+          <friction>
+            <ode>
+              <mu>0.2</mu>
+              <mu2>0.2</mu2>
+              <slip1>0.1</slip1>
+              <slip2>0.1</slip2>
+            </ode>
+          </friction>
+          <contact>
+          </contact>
+        </surface>
+      </collision>
+      <self_collide>1</self_collide>
+      <gravity>1</gravity>
+    </link>
+<!-- ======================================================== -->
+    <link name="S5ND">
+      <!-- SET COORDINATE in GLOBAL -->
+      <pose>0.5776464 7.1934 1.0706 -1.57079638 0 0</pose>
+      <inertial>
+        <!-- SET COORDINATE in LOCAL(This link's coordinate) -->
+        <pose>0.000000 -0.000000 -0.025018 0 0 0</pose>
+        <mass>0.01375</mass>
+        <inertia>
+          <ixx>0.0326216797</ixx>
+          <ixy>0.00000000</ixy>
+          <ixz>0.00000000</ixz>
+          <iyy>0.0326217041</iyy>
+          <iyz>0.00000000</iyz>
+          <izz>0.0268928284</izz>
+        </inertia>
+      </inertial>
+      <visual name="visual">
+        <!-- SET COORDINATE in LOCAL(This link's coordinate) -->
+        <pose>0 0 0 0 0 0</pose>
+        <geometry>
+          <mesh>
+            <uri>model://JVRC_R5_obj/dae/R5_hose_1unit_no_dorm.dae</uri>
+          </mesh>
+        </geometry>
+      </visual>
+      <collision name="collision">
+        <!-- SET COORDINATE in LOCAL(This link's coordinate) -->
+        <pose>0 0 0 0 0 0</pose>
+        <geometry>
+          <mesh>
+            <uri>model://JVRC_R5_obj/dae/R5_hose_1unit_no_dorm.dae</uri>
+          </mesh>
+        </geometry>
+        <max_contacts>10</max_contacts>
+        <surface>
+          <bounce>
+            <restitution_coefficient>0.0</restitution_coefficient>
+            <threshold>1000000000.0</threshold>
+          </bounce>
+          <friction>
+            <ode>
+              <mu>0.2</mu>
+              <mu2>0.2</mu2>
+              <slip1>0.1</slip1>
+              <slip2>0.1</slip2>
+            </ode>
+          </friction>
+          <contact>
+          </contact>
+        </surface>
+      </collision>
+      <self_collide>1</self_collide>
+      <gravity>1</gravity>
+    </link>
+<!-- ======================================================== -->
+    <joint name="hinge_L53ND2S5WD" type="revolute">
+      <parent>L53ND</parent>
+      <child>S5WD</child>
+      <pose>0 0 0.05 0 0 0</pose>
+      <axis>
+        <xyz>1 0 0</xyz>
+        <limit>
+          <lower>-0.53</lower>
+          <upper>3.67</upper>
+        </limit>
+        <dynamics>
+          <damping>1.0</damping>
+          <friction>0</friction>
+        </dynamics>
+      </axis>
+      <physics>
+        <ode>
+          <cfm_damping>1</cfm_damping>
+        </ode>
+      </physics>
+    </joint>
+<!-- ======================================================== -->
+    <joint name="hinge_S5WD2S5ND" type="revolute">
+      <parent>S5WD</parent>
+      <child>S5ND</child>
+      <pose>0 0 0 0 0 0</pose>
+      <axis>
+        <xyz>0 0 1</xyz>
+        <dynamics>
+          <damping>1.0</damping>
+          <friction>0</friction>
+        </dynamics>
+      </axis>
+      <physics>
+        <ode>
+          <cfm_damping>1</cfm_damping>
+        </ode>
+      </physics>
+    </joint>
+
+<!-- ======================================================== -->
+<!-- ======================================================== -->
+<!-- ======================================================== -->
+<!-- ======================================================== -->
+<!-- ======================================================== -->
+<!-- ======================================================== -->
+    <link name="L61WD">
+      <!-- SET COORDINATE in GLOBAL -->
+      <pose>0.5776464 7.1434 1.1206 3.14159265 0 0</pose>
+      <inertial>
+        <!-- SET COORDINATE in LOCAL(This link's coordinate) -->
+        <pose>0 0 0.03304461 0 0 0</pose>
+        <mass>0.01375</mass>
+        <inertia>
+          <ixx>0.0620273193</ixx>
+          <ixy>0.0000000001</ixy>
+          <ixz>0.0000000044</ixz>
+          <iyy>0.0620273438</iyy>
+          <iyz>0.00000000</iyz>
+          <izz>0.0334274017</izz>
+        </inertia>
+      </inertial>
+      <visual name="visual">
+        <!-- SET COORDINATE in LOCAL(This link's coordinate) -->
+        <pose>0 0 0 0 0 0</pose>
+        <geometry>
+          <mesh>
+            <uri>model://JVRC_R5_obj/dae/R5_hose_1unit.dae</uri>
+          </mesh>
+        </geometry>
+      </visual>
+      <collision name="collision">
+        <!-- SET COORDINATE in LOCAL(This link's coordinate) -->
+        <pose>0 0 0 0 0 0</pose>
+        <geometry>
+          <mesh>
+            <uri>model://JVRC_R5_obj/dae/R5_hose_1unit.dae</uri>
+          </mesh>
+        </geometry>
+        <max_contacts>10</max_contacts>
+        <surface>
+          <bounce>
+            <restitution_coefficient>0.0</restitution_coefficient>
+            <threshold>1000000000.0</threshold>
+          </bounce>
+          <friction>
+            <ode>
+              <mu>0.2</mu>
+              <mu2>0.2</mu2>
+              <slip1>0.1</slip1>
+              <slip2>0.1</slip2>
+            </ode>
+          </friction>
+          <contact>
+          </contact>
+        </surface>
+      </collision>
+      <self_collide>1</self_collide>
+      <gravity>1</gravity>
+    </link>
+<!-- ======================================================== -->
+    <link name="L61ND">
+      <!-- SET COORDINATE in GLOBAL -->
+      <pose>0.5776464 7.1434 1.1206 3.14159265 0 0</pose>
+      <inertial>
+        <!-- SET COORDINATE in LOCAL(This link's coordinate) -->
+        <pose>0.000000 -0.000000 -0.025018 0 0 0</pose>
+        <mass>0.01375</mass>
+        <inertia>
+          <ixx>0.0326216797</ixx>
+          <ixy>0.00000000</ixy>
+          <ixz>0.00000000</ixz>
+          <iyy>0.0326217041</iyy>
+          <iyz>0.00000000</iyz>
+          <izz>0.0268928284</izz>
+        </inertia>
+      </inertial>
+      <visual name="visual">
+        <!-- SET COORDINATE in LOCAL(This link's coordinate) -->
+        <pose>0 0 0 0 0 0</pose>
+        <geometry>
+          <mesh>
+            <uri>model://JVRC_R5_obj/dae/R5_hose_1unit_no_dorm.dae</uri>
+          </mesh>
+        </geometry>
+      </visual>
+      <collision name="collision">
+        <!-- SET COORDINATE in LOCAL(This link's coordinate) -->
+        <pose>0 0 0 0 0 0</pose>
+        <geometry>
+          <mesh>
+            <uri>model://JVRC_R5_obj/dae/R5_hose_1unit_no_dorm.dae</uri>
+          </mesh>
+        </geometry>
+        <max_contacts>10</max_contacts>
+        <surface>
+          <bounce>
+            <restitution_coefficient>0.0</restitution_coefficient>
+            <threshold>1000000000.0</threshold>
+          </bounce>
+          <friction>
+            <ode>
+              <mu>0.2</mu>
+              <mu2>0.2</mu2>
+              <slip1>0.1</slip1>
+              <slip2>0.1</slip2>
+            </ode>
+          </friction>
+          <contact>
+          </contact>
+        </surface>
+      </collision>
+      <self_collide>1</self_collide>
+      <gravity>1</gravity>
+    </link>
+<!-- ======================================================== -->
+    <joint name="hinge_S5ND2L61WD" type="revolute">
+      <parent>S5ND</parent>
+      <child>L61WD</child>
+      <pose>0 0 0.05 0 0 0</pose>
+      <axis>
+        <xyz>1 0 0</xyz>
+        <limit>
+          <lower>-0.53</lower>
+          <upper>3.67</upper>
+        </limit>
+        <dynamics>
+          <damping>1.0</damping>
+          <friction>0</friction>
+        </dynamics>
+      </axis>
+      <physics>
+        <ode>
+          <cfm_damping>1</cfm_damping>
+        </ode>
+      </physics>
+    </joint>
+<!-- ======================================================== -->
+    <joint name="hinge_L61WD2L61ND" type="revolute">
+      <parent>L61WD</parent>
+      <child>L61ND</child>
+      <pose>0 0 0 0 0 0</pose>
+      <axis>
+        <xyz>0 0 1</xyz>
+        <dynamics>
+          <damping>1.0</damping>
+          <friction>0</friction>
+        </dynamics>
+      </axis>
+      <physics>
+        <ode>
+          <cfm_damping>1</cfm_damping>
+        </ode>
+      </physics>
+    </joint>
+
+<!-- ======================================================== -->
+<!-- ======================================================== -->
+<!-- ======================================================== -->
+    <link name="L62WD">
+      <!-- SET COORDINATE in GLOBAL -->
+      <pose>0.5776464 7.1434 1.2206 3.14159265 0 0</pose>
+      <inertial>
+        <!-- SET COORDINATE in LOCAL(This link's coordinate) -->
+        <pose>0 0 0.03304461 0 0 0</pose>
+        <mass>0.01375</mass>
+        <inertia>
+          <ixx>0.0620273193</ixx>
+          <ixy>0.0000000001</ixy>
+          <ixz>0.0000000044</ixz>
+          <iyy>0.0620273438</iyy>
+          <iyz>0.00000000</iyz>
+          <izz>0.0334274017</izz>
+        </inertia>
+      </inertial>
+      <visual name="visual">
+        <!-- SET COORDINATE in LOCAL(This link's coordinate) -->
+        <pose>0 0 0 0 0 0</pose>
+        <geometry>
+          <mesh>
+            <uri>model://JVRC_R5_obj/dae/R5_hose_1unit.dae</uri>
+          </mesh>
+        </geometry>
+      </visual>
+      <collision name="collision">
+        <!-- SET COORDINATE in LOCAL(This link's coordinate) -->
+        <pose>0 0 0 0 0 0</pose>
+        <geometry>
+          <mesh>
+            <uri>model://JVRC_R5_obj/dae/R5_hose_1unit.dae</uri>
+          </mesh>
+        </geometry>
+        <max_contacts>10</max_contacts>
+        <surface>
+          <bounce>
+            <restitution_coefficient>0.0</restitution_coefficient>
+            <threshold>1000000000.0</threshold>
+          </bounce>
+          <friction>
+            <ode>
+              <mu>0.2</mu>
+              <mu2>0.2</mu2>
+              <slip1>0.1</slip1>
+              <slip2>0.1</slip2>
+            </ode>
+          </friction>
+          <contact>
+          </contact>
+        </surface>
+      </collision>
+      <self_collide>1</self_collide>
+      <gravity>1</gravity>
+    </link>
+<!-- ======================================================== -->
+    <link name="L62ND">
+      <!-- SET COORDINATE in GLOBAL -->
+      <pose>0.5776464 7.1434 1.2206 3.14159265 0 0</pose>
+      <inertial>
+        <!-- SET COORDINATE in LOCAL(This link's coordinate) -->
+        <pose>0.000000 -0.000000 -0.025018 0 0 0</pose>
+        <mass>0.01375</mass>
+        <inertia>
+          <ixx>0.0326216797</ixx>
+          <ixy>0.00000000</ixy>
+          <ixz>0.00000000</ixz>
+          <iyy>0.0326217041</iyy>
+          <iyz>0.00000000</iyz>
+          <izz>0.0268928284</izz>
+        </inertia>
+      </inertial>
+      <visual name="visual">
+        <!-- SET COORDINATE in LOCAL(This link's coordinate) -->
+        <pose>0 0 0 0 0 0</pose>
+        <geometry>
+          <mesh>
+            <uri>model://JVRC_R5_obj/dae/R5_hose_1unit_no_dorm.dae</uri>
+          </mesh>
+        </geometry>
+      </visual>
+      <collision name="collision">
+        <!-- SET COORDINATE in LOCAL(This link's coordinate) -->
+        <pose>0 0 0 0 0 0</pose>
+        <geometry>
+          <mesh>
+            <uri>model://JVRC_R5_obj/dae/R5_hose_1unit_no_dorm.dae</uri>
+          </mesh>
+        </geometry>
+        <max_contacts>10</max_contacts>
+        <surface>
+          <bounce>
+            <restitution_coefficient>0.0</restitution_coefficient>
+            <threshold>1000000000.0</threshold>
+          </bounce>
+          <friction>
+            <ode>
+              <mu>0.2</mu>
+              <mu2>0.2</mu2>
+              <slip1>0.1</slip1>
+              <slip2>0.1</slip2>
+            </ode>
+          </friction>
+          <contact>
+          </contact>
+        </surface>
+      </collision>
+      <self_collide>1</self_collide>
+      <gravity>1</gravity>
+    </link>
+<!-- ======================================================== -->
+    <joint name="hinge_L61ND2L62WD" type="revolute">
+      <parent>L61ND</parent>
+      <child>L62WD</child>
+      <pose>0 0 0.05 0 0 0</pose>
+      <axis>
+        <xyz>1 0 0</xyz>
+        <limit>
+          <lower>-2.1</lower>
+          <upper>2.1</upper>
+        </limit>
+        <dynamics>
+          <damping>1.0</damping>
+          <friction>0</friction>
+        </dynamics>
+      </axis>
+      <physics>
+        <ode>
+          <cfm_damping>1</cfm_damping>
+        </ode>
+      </physics>
+    </joint>
+<!-- ======================================================== -->
+    <joint name="hinge_L62WD2L62ND" type="revolute">
+      <parent>L62WD</parent>
+      <child>L62ND</child>
+      <pose>0 0 0 0 0 0</pose>
+      <axis>
+        <xyz>0 0 1</xyz>
+        <dynamics>
+          <damping>1.0</damping>
+          <friction>0</friction>
+        </dynamics>
+      </axis>
+      <physics>
+        <ode>
+          <cfm_damping>1</cfm_damping>
+        </ode>
+      </physics>
+    </joint>
+
+<!-- ======================================================== -->
+<!-- ======================================================== -->
+<!-- ======================================================== -->
+    <link name="L63WD">
+      <!-- SET COORDINATE in GLOBAL -->
+      <pose>0.5776464 7.1434 1.3206 3.14159265 0 0</pose>
+      <inertial>
+        <!-- SET COORDINATE in LOCAL(This link's coordinate) -->
+        <pose>0 0 0.03304461 0 0 0</pose>
+        <mass>0.01375</mass>
+        <inertia>
+          <ixx>0.0620273193</ixx>
+          <ixy>0.0000000001</ixy>
+          <ixz>0.0000000044</ixz>
+          <iyy>0.0620273438</iyy>
+          <iyz>0.00000000</iyz>
+          <izz>0.0334274017</izz>
+        </inertia>
+      </inertial>
+      <visual name="visual">
+        <!-- SET COORDINATE in LOCAL(This link's coordinate) -->
+        <pose>0 0 0 0 0 0</pose>
+        <geometry>
+          <mesh>
+            <uri>model://JVRC_R5_obj/dae/R5_hose_1unit.dae</uri>
+          </mesh>
+        </geometry>
+      </visual>
+      <collision name="collision">
+        <!-- SET COORDINATE in LOCAL(This link's coordinate) -->
+        <pose>0 0 0 0 0 0</pose>
+        <geometry>
+          <mesh>
+            <uri>model://JVRC_R5_obj/dae/R5_hose_1unit.dae</uri>
+          </mesh>
+        </geometry>
+        <max_contacts>10</max_contacts>
+        <surface>
+          <bounce>
+            <restitution_coefficient>0.0</restitution_coefficient>
+            <threshold>1000000000.0</threshold>
+          </bounce>
+          <friction>
+            <ode>
+              <mu>0.2</mu>
+              <mu2>0.2</mu2>
+              <slip1>0.1</slip1>
+              <slip2>0.1</slip2>
+            </ode>
+          </friction>
+          <contact>
+          </contact>
+        </surface>
+      </collision>
+      <self_collide>1</self_collide>
+      <gravity>1</gravity>
+    </link>
+<!-- ======================================================== -->
+    <link name="L63ND">
+      <!-- SET COORDINATE in GLOBAL -->
+      <pose>0.5776464 7.1434 1.3206 3.14159265 0 0</pose>
+      <inertial>
+        <!-- SET COORDINATE in LOCAL(This link's coordinate) -->
+        <pose>0.000000 -0.000000 -0.025018 0 0 0</pose>
+        <mass>0.01375</mass>
+        <inertia>
+          <ixx>0.0326216797</ixx>
+          <ixy>0.00000000</ixy>
+          <ixz>0.00000000</ixz>
+          <iyy>0.0326217041</iyy>
+          <iyz>0.00000000</iyz>
+          <izz>0.0268928284</izz>
+        </inertia>
+      </inertial>
+      <visual name="visual">
+        <!-- SET COORDINATE in LOCAL(This link's coordinate) -->
+        <pose>0 0 0 0 0 0</pose>
+        <geometry>
+          <mesh>
+            <uri>model://JVRC_R5_obj/dae/R5_hose_1unit_no_dorm.dae</uri>
+          </mesh>
+        </geometry>
+      </visual>
+      <collision name="collision">
+        <!-- SET COORDINATE in LOCAL(This link's coordinate) -->
+        <pose>0 0 0 0 0 0</pose>
+        <geometry>
+          <mesh>
+            <uri>model://JVRC_R5_obj/dae/R5_hose_1unit_no_dorm.dae</uri>
+          </mesh>
+        </geometry>
+        <max_contacts>10</max_contacts>
+        <surface>
+          <bounce>
+            <restitution_coefficient>0.0</restitution_coefficient>
+            <threshold>1000000000.0</threshold>
+          </bounce>
+          <friction>
+            <ode>
+              <mu>0.2</mu>
+              <mu2>0.2</mu2>
+              <slip1>0.1</slip1>
+              <slip2>0.1</slip2>
+            </ode>
+          </friction>
+          <contact>
+          </contact>
+        </surface>
+      </collision>
+      <self_collide>1</self_collide>
+      <gravity>1</gravity>
+    </link>
+<!-- ======================================================== -->
+    <joint name="hinge_L62ND2L63WD" type="revolute">
+      <parent>L62ND</parent>
+      <child>L63WD</child>
+      <pose>0 0 0.05 0 0 0</pose>
+      <axis>
+        <xyz>1 0 0</xyz>
+        <limit>
+          <lower>-2.1</lower>
+          <upper>2.1</upper>
+        </limit>
+        <dynamics>
+          <damping>1.0</damping>
+          <friction>0</friction>
+        </dynamics>
+      </axis>
+      <physics>
+        <ode>
+          <cfm_damping>1</cfm_damping>
+        </ode>
+      </physics>
+    </joint>
+<!-- ======================================================== -->
+    <joint name="hinge_L63WD2L63ND" type="revolute">
+      <parent>L63WD</parent>
+      <child>L63ND</child>
+      <pose>0 0 0 0 0 0</pose>
+      <axis>
+        <xyz>0 0 1</xyz>
+        <dynamics>
+          <damping>1.0</damping>
+          <friction>0</friction>
+        </dynamics>
+      </axis>
+      <physics>
+        <ode>
+          <cfm_damping>1</cfm_damping>
+        </ode>
+      </physics>
+    </joint>
+
+<!-- ======================================================== -->
+<!-- ======================================================== -->
+<!-- ======================================================== -->
+    <link name="S6WD">
+      <!-- SET COORDINATE in GLOBAL -->
+      <pose>0.5776464 7.0934 1.3706 -1.57079638 0 0</pose>
+      <inertial>
+        <!-- SET COORDINATE in LOCAL(This link's coordinate) -->
+        <pose>0 0 0.03304461 0 0 0</pose>
+        <mass>0.01375</mass>
+        <inertia>
+          <ixx>0.0620273193</ixx>
+          <ixy>0.0000000001</ixy>
+          <ixz>0.0000000044</ixz>
+          <iyy>0.0620273438</iyy>
+          <iyz>0.00000000</iyz>
+          <izz>0.0334274017</izz>
+        </inertia>
+      </inertial>
+      <visual name="visual">
+        <!-- SET COORDINATE in LOCAL(This link's coordinate) -->
+        <pose>0 0 0 0 0 0</pose>
+        <geometry>
+          <mesh>
+            <uri>model://JVRC_R5_obj/dae/R5_hose_1unit.dae</uri>
+          </mesh>
+        </geometry>
+      </visual>
+      <collision name="collision">
+        <!-- SET COORDINATE in LOCAL(This link's coordinate) -->
+        <pose>0 0 0 0 0 0</pose>
+        <geometry>
+          <mesh>
+            <uri>model://JVRC_R5_obj/dae/R5_hose_1unit.dae</uri>
+          </mesh>
+        </geometry>
+        <max_contacts>10</max_contacts>
+        <surface>
+          <bounce>
+            <restitution_coefficient>0.0</restitution_coefficient>
+            <threshold>1000000000.0</threshold>
+          </bounce>
+          <friction>
+            <ode>
+              <mu>0.2</mu>
+              <mu2>0.2</mu2>
+              <slip1>0.1</slip1>
+              <slip2>0.1</slip2>
+            </ode>
+          </friction>
+          <contact>
+          </contact>
+        </surface>
+      </collision>
+      <self_collide>1</self_collide>
+      <gravity>1</gravity>
+    </link>
+<!-- ======================================================== -->
+    <link name="S6ND">
+      <!-- SET COORDINATE in GLOBAL -->
+      <pose>0.5776464 7.0934 1.3706 -1.57079638 0 0</pose>
+      <inertial>
+        <!-- SET COORDINATE in LOCAL(This link's coordinate) -->
+        <pose>0.000000 -0.000000 -0.025018 0 0 0</pose>
+        <mass>0.01375</mass>
+        <inertia>
+          <ixx>0.0326216797</ixx>
+          <ixy>0.00000000</ixy>
+          <ixz>0.00000000</ixz>
+          <iyy>0.0326217041</iyy>
+          <iyz>0.00000000</iyz>
+          <izz>0.0268928284</izz>
+        </inertia>
+      </inertial>
+      <visual name="visual">
+        <!-- SET COORDINATE in LOCAL(This link's coordinate) -->
+        <pose>0 0 0 0 0 0</pose>
+        <geometry>
+          <mesh>
+            <uri>model://JVRC_R5_obj/dae/R5_hose_1unit_no_dorm.dae</uri>
+          </mesh>
+        </geometry>
+      </visual>
+      <collision name="collision">
+        <!-- SET COORDINATE in LOCAL(This link's coordinate) -->
+        <pose>0 0 0 0 0 0</pose>
+        <geometry>
+          <mesh>
+            <uri>model://JVRC_R5_obj/dae/R5_hose_1unit_no_dorm.dae</uri>
+          </mesh>
+        </geometry>
+        <max_contacts>10</max_contacts>
+        <surface>
+          <bounce>
+            <restitution_coefficient>0.0</restitution_coefficient>
+            <threshold>1000000000.0</threshold>
+          </bounce>
+          <friction>
+            <ode>
+              <mu>0.2</mu>
+              <mu2>0.2</mu2>
+              <slip1>0.1</slip1>
+              <slip2>0.1</slip2>
+            </ode>
+          </friction>
+          <contact>
+          </contact>
+        </surface>
+      </collision>
+      <self_collide>1</self_collide>
+      <gravity>1</gravity>
+    </link>
+<!-- ======================================================== -->
+    <joint name="hinge_L63ND2S6WD" type="revolute">
+      <parent>L63ND</parent>
+      <child>S6WD</child>
+      <pose>0 0 0.05 0 0 0</pose>
+      <axis>
+        <xyz>1 0 0</xyz>
+        <limit>
+          <lower>-3.67</lower>
+          <upper>0.53</upper>
+        </limit>
+        <dynamics>
+          <damping>1.0</damping>
+          <friction>0</friction>
+        </dynamics>
+      </axis>
+      <physics>
+        <ode>
+          <cfm_damping>1</cfm_damping>
+        </ode>
+      </physics>
+    </joint>
+<!-- ======================================================== -->
+    <joint name="hinge_S6WD2S6ND" type="revolute">
+      <parent>S6WD</parent>
+      <child>S6ND</child>
+      <pose>0 0 0 0 0 0</pose>
+      <axis>
+        <xyz>0 0 1</xyz>
+        <dynamics>
+          <damping>1.0</damping>
+          <friction>0</friction>
+        </dynamics>
+      </axis>
+      <physics>
+        <ode>
+          <cfm_damping>1</cfm_damping>
+        </ode>
+      </physics>
+    </joint>
+
+<!-- ======================================================== -->
+<!-- ======================================================== -->
+<!-- ======================================================== -->
+<!-- ======================================================== -->
+<!-- ======================================================== -->
+<!-- ======================================================== -->
+<!-- ======================================================== -->
+<!-- ======================================================== -->
+<!-- ======================================================== -->
+
+<!-- ======================================================== -->
+<!-- ======================================================== -->
+<!-- ======================================================== -->
+<!-- ======================================================== -->
+<!-- ======================================================== -->
+<!-- ======================================================== -->
+<!-- ======================================================== -->
+<!-- ======================================================== -->
+<!-- ======================================================== -->
+    <link name="L71WD">
+      <!-- SET COORDINATE in GLOBAL -->
+      <pose>0.5776464 7.0434 1.3206 0 0 0</pose>
+      <inertial>
+        <!-- SET COORDINATE in LOCAL(This link's coordinate) -->
+        <pose>0 0 0.03304461 0 0 0</pose>
+        <mass>0.01375</mass>
+        <inertia>
+          <ixx>0.0620273193</ixx>
+          <ixy>0.0000000001</ixy>
+          <ixz>0.0000000044</ixz>
+          <iyy>0.0620273438</iyy>
+          <iyz>0.00000000</iyz>
+          <izz>0.0334274017</izz>
+        </inertia>
+      </inertial>
+      <visual name="visual">
+        <!-- SET COORDINATE in LOCAL(This link's coordinate) -->
+        <pose>0 0 0 0 0 0</pose>
+        <geometry>
+          <mesh>
+            <uri>model://JVRC_R5_obj/dae/R5_hose_1unit.dae</uri>
+          </mesh>
+        </geometry>
+      </visual>
+      <collision name="collision">
+        <!-- SET COORDINATE in LOCAL(This link's coordinate) -->
+        <pose>0 0 0 0 0 0</pose>
+        <geometry>
+          <mesh>
+            <uri>model://JVRC_R5_obj/dae/R5_hose_1unit.dae</uri>
+          </mesh>
+        </geometry>
+        <max_contacts>10</max_contacts>
+        <surface>
+          <bounce>
+            <restitution_coefficient>0.0</restitution_coefficient>
+            <threshold>1000000000.0</threshold>
+          </bounce>
+          <friction>
+            <ode>
+              <mu>0.2</mu>
+              <mu2>0.2</mu2>
+              <slip1>0.1</slip1>
+              <slip2>0.1</slip2>
+            </ode>
+          </friction>
+          <contact>
+          </contact>
+        </surface>
+      </collision>
+      <self_collide>1</self_collide>
+      <gravity>1</gravity>
+    </link>
+<!-- ======================================================== -->
+    <link name="L71ND">
+      <!-- SET COORDINATE in GLOBAL -->
+      <pose>0.5776464 7.0434 1.3206 0 0 0</pose>
+      <inertial>
+        <!-- SET COORDINATE in LOCAL(This link's coordinate) -->
+        <pose>0.000000 -0.000000 -0.025018 0 0 0</pose>
+        <mass>0.01375</mass>
+        <inertia>
+          <ixx>0.0326216797</ixx>
+          <ixy>0.00000000</ixy>
+          <ixz>0.00000000</ixz>
+          <iyy>0.0326217041</iyy>
+          <iyz>0.00000000</iyz>
+          <izz>0.0268928284</izz>
+        </inertia>
+      </inertial>
+      <visual name="visual">
+        <!-- SET COORDINATE in LOCAL(This link's coordinate) -->
+        <pose>0 0 0 0 0 0</pose>
+        <geometry>
+          <mesh>
+            <uri>model://JVRC_R5_obj/dae/R5_hose_1unit_no_dorm.dae</uri>
+          </mesh>
+        </geometry>
+      </visual>
+      <collision name="collision">
+        <!-- SET COORDINATE in LOCAL(This link's coordinate) -->
+        <pose>0 0 0 0 0 0</pose>
+        <geometry>
+          <mesh>
+            <uri>model://JVRC_R5_obj/dae/R5_hose_1unit_no_dorm.dae</uri>
+          </mesh>
+        </geometry>
+        <max_contacts>10</max_contacts>
+        <surface>
+          <bounce>
+            <restitution_coefficient>0.0</restitution_coefficient>
+            <threshold>1000000000.0</threshold>
+          </bounce>
+          <friction>
+            <ode>
+              <mu>0.2</mu>
+              <mu2>0.2</mu2>
+              <slip1>0.1</slip1>
+              <slip2>0.1</slip2>
+            </ode>
+          </friction>
+          <contact>
+          </contact>
+        </surface>
+      </collision>
+      <self_collide>1</self_collide>
+      <gravity>1</gravity>
+    </link>
+<!-- ======================================================== -->
+    <joint name="hinge_S6ND2L71WD" type="revolute">
+      <parent>S6ND</parent>
+      <child>L71WD</child>
+      <pose>0 0 0.05 0 0 0</pose>
+      <axis>
+        <xyz>1 0 0</xyz>
+        <limit>
+          <lower>-2.1</lower>
+          <upper>2.1</upper>
+        </limit>
+        <dynamics>
+          <damping>1.0</damping>
+          <friction>0</friction>
+        </dynamics>
+      </axis>
+      <physics>
+        <ode>
+          <cfm_damping>1</cfm_damping>
+        </ode>
+      </physics>
+    </joint>
+<!-- ======================================================== -->
+    <joint name="hinge_L71WD2L71ND" type="revolute">
+      <parent>L71WD</parent>
+      <child>L71ND</child>
+      <pose>0 0 0 0 0 0</pose>
+      <axis>
+        <xyz>0 0 1</xyz>
+        <dynamics>
+          <damping>1.0</damping>
+          <friction>0</friction>
+        </dynamics>
+      </axis>
+      <physics>
+        <ode>
+          <cfm_damping>1</cfm_damping>
+        </ode>
+      </physics>
+    </joint>
+
+<!-- ======================================================== -->
+<!-- ======================================================== -->
+<!-- ======================================================== -->
+    <link name="L72WD">
+      <!-- SET COORDINATE in GLOBAL -->
+      <pose>0.5776464 7.0434 1.2206 0 0 0</pose>
+      <inertial>
+        <!-- SET COORDINATE in LOCAL(This link's coordinate) -->
+        <pose>0 0 0.03304461 0 0 0</pose>
+        <mass>0.01375</mass>
+        <inertia>
+          <ixx>0.0620273193</ixx>
+          <ixy>0.0000000001</ixy>
+          <ixz>0.0000000044</ixz>
+          <iyy>0.0620273438</iyy>
+          <iyz>0.00000000</iyz>
+          <izz>0.0334274017</izz>
+        </inertia>
+      </inertial>
+      <visual name="visual">
+        <!-- SET COORDINATE in LOCAL(This link's coordinate) -->
+        <pose>0 0 0 0 0 0</pose>
+        <geometry>
+          <mesh>
+            <uri>model://JVRC_R5_obj/dae/R5_hose_1unit.dae</uri>
+          </mesh>
+        </geometry>
+      </visual>
+      <collision name="collision">
+        <!-- SET COORDINATE in LOCAL(This link's coordinate) -->
+        <pose>0 0 0 0 0 0</pose>
+        <geometry>
+          <mesh>
+            <uri>model://JVRC_R5_obj/dae/R5_hose_1unit.dae</uri>
+          </mesh>
+        </geometry>
+        <max_contacts>10</max_contacts>
+        <surface>
+          <bounce>
+            <restitution_coefficient>0.0</restitution_coefficient>
+            <threshold>1000000000.0</threshold>
+          </bounce>
+          <friction>
+            <ode>
+              <mu>0.2</mu>
+              <mu2>0.2</mu2>
+              <slip1>0.1</slip1>
+              <slip2>0.1</slip2>
+            </ode>
+          </friction>
+          <contact>
+          </contact>
+        </surface>
+      </collision>
+      <self_collide>1</self_collide>
+      <gravity>1</gravity>
+    </link>
+<!-- ======================================================== -->
+    <link name="L72ND">
+      <!-- SET COORDINATE in GLOBAL -->
+      <pose>0.5776464 7.0434 1.2206 0 0 0</pose>
+      <inertial>
+        <!-- SET COORDINATE in LOCAL(This link's coordinate) -->
+        <pose>0.000000 -0.000000 -0.025018 0 0 0</pose>
+        <mass>0.5</mass>
+        <inertia>
+          <ixx>0.0326216797</ixx>
+          <ixy>0.00000000</ixy>
+          <ixz>0.00000000</ixz>
+          <iyy>0.0326217041</iyy>
+          <iyz>0.00000000</iyz>
+          <izz>0.0268928284</izz>
+        </inertia>
+      </inertial>
+      <visual name="visual">
+        <!-- SET COORDINATE in LOCAL(This link's coordinate) -->
+        <pose>0 0 0 3.141592 0 0</pose>
+        <geometry>
+          <mesh>
+            <uri>model://JVRC_R5_obj/dae/R5_nozle_joint_0820.dae</uri>
+          </mesh>
+        </geometry>
+      </visual>
+      <collision name="collision">
+        <!-- SET COORDINATE in LOCAL(This link's coordinate) -->
+        <pose>0 0 0 3.141592 0 0</pose>
+        <geometry>
+          <mesh>
+            <uri>model://JVRC_R5_obj/dae/R5_nozle_joint_0820.dae</uri>
+          </mesh>
+        </geometry>
+        <max_contacts>10</max_contacts>
+        <surface>
+          <bounce>
+            <restitution_coefficient>0.0</restitution_coefficient>
+            <threshold>1000000000.0</threshold>
+          </bounce>
+          <friction>
+            <ode>
+              <mu>0.2</mu>
+              <mu2>0.2</mu2>
+              <slip1>0.1</slip1>
+              <slip2>0.1</slip2>
+            </ode>
+          </friction>
+          <contact>
+          </contact>
+        </surface>
+      </collision>
+      <self_collide>1</self_collide>
+      <gravity>1</gravity>
+    </link>
+<!-- ======================================================== -->
+    <joint name="hinge_L71ND2L72WD" type="revolute">
+      <parent>L71ND</parent>
+      <child>L72WD</child>
+      <pose>0 0 0.05 0 0 0</pose>
+      <axis>
+        <xyz>1 0 0</xyz>
+        <limit>
+          <lower>-2.1</lower>
+          <upper>2.1</upper>
+        </limit>
+        <dynamics>
+          <damping>1.0</damping>
+          <friction>0</friction>
+        </dynamics>
+      </axis>
+      <physics>
+        <ode>
+          <cfm_damping>1</cfm_damping>
+        </ode>
+      </physics>
+    </joint>
+<!-- ======================================================== -->
+    <joint name="hinge_L72WD2L72ND" type="revolute">
+      <parent>L72WD</parent>
+      <child>L72ND</child>
+      <pose>0 0 0 0 0 0</pose>
+      <axis>
+        <xyz>0 0 1</xyz>
+        <dynamics>
+          <damping>1.0</damping>
+          <friction>0</friction>
+        </dynamics>
+      </axis>
+      <physics>
+        <ode>
+          <cfm_damping>1</cfm_damping>
+        </ode>
+      </physics>
+    </joint>
+
+<!-- ======================================================== -->
+<!-- ======================================================== -->
+<!-- ======================================================== -->
+<!-- ======================================================== -->
+<!-- ======================================================== -->
+<!-- ======================================================== -->
+<!-- ======================================================== -->
+<!-- ======================================================== -->
+<!-- ======================================================== -->
+
+<!-- ======================================================== -->
+<!-- ======================================================== -->
+<!-- ======================================================== -->
+<!-- ======================================================== -->
+<!-- ======================================================== -->
+<!-- ======================================================== -->
+<!-- ======================================================== -->
+<!-- ======================================================== -->
+<!-- ======================================================== -->
+
+    <joint name="hinge_hose0" type="revolute">
+      <parent>world</parent>
+      <child>FirstPart</child>
+      <pose>0 0 0 0 0 0</pose>
+      <axis>
+        <xyz>0 0 1</xyz>
+        <dynamics>
+          <damping>1.0</damping>
+          <friction>2</friction>
+        </dynamics>
+      </axis>
+      <physics>
+        <ode>
+          <cfm_damping>1</cfm_damping>
+        </ode>
+      </physics>
+    </joint>
+
+  </model>
+</sdf>
+

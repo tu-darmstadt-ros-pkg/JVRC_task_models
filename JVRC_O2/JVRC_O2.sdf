@@ -1,0 +1,825 @@
+<?xml version="1.0" ?>
+<sdf version="1.5">
+  <model name="JVRC_O2">
+    <static>true</static>
+
+    <link name="O2_target1">
+      <pose>3.109 7.051 5.655 0 2.7 0</pose>
+      <visual name="visual">
+        <geometry>
+          <mesh>
+            <scale>5 5 10</scale>
+            <uri>model://JVRC_O2/dae/target4.dae</uri>
+          </mesh>
+        </geometry>
+      </visual>
+      <collision name="collision">
+        <geometry>
+          <mesh>
+            <scale>5 5 10</scale>
+            <uri>model://JVRC_O2/dae/target4.dae</uri>
+          </mesh>
+        </geometry>
+        <surface>
+          <friction>
+            <ode>
+              <mu>0.7</mu>
+              <mu2>0.7</mu2>
+              <slip1>1.0</slip1>
+              <slip2>1.0</slip2>
+            </ode>
+          </friction>
+        </surface>
+      </collision>
+      <self_collide>1</self_collide>
+      <kinematic>0</kinematic>
+      <gravity>0</gravity>
+    </link>
+
+    <link name="O2_target2">
+      <pose>3.027 7.162 5.613 0 2.6 0</pose>
+      <visual name="visual">
+        <geometry>
+          <mesh>
+            <scale>5 5 10</scale>
+            <uri>model://JVRC_O2/dae/target3.dae</uri>
+          </mesh>
+        </geometry>
+      </visual>
+      <collision name="collision">
+        <geometry>
+          <mesh>
+            <scale>5 5 10</scale>
+            <uri>model://JVRC_O2/dae/target3.dae</uri>
+          </mesh>
+        </geometry>
+        <surface>
+          <friction>
+            <ode>
+              <mu>0.7</mu>
+              <mu2>0.7</mu2>
+              <slip1>1.0</slip1>
+              <slip2>1.0</slip2>
+            </ode>
+          </friction>
+        </surface>
+      </collision>
+      <self_collide>1</self_collide>
+      <kinematic>0</kinematic>
+      <gravity>0</gravity>
+    </link>
+
+    <link name="O2_target3">
+      <pose>3.407 7.171 5.106 0 -1.2 0</pose>
+      <visual name="visual">
+        <geometry>
+          <mesh>
+            <scale>5 5 10</scale>
+            <uri>model://JVRC_O2/dae/target1.dae</uri>
+          </mesh>
+        </geometry>
+      </visual>
+      <collision name="collision">
+        <geometry>
+          <mesh>
+            <scale>5 5 10</scale>
+            <uri>model://JVRC_O2/dae/target1.dae</uri>
+          </mesh>
+        </geometry>
+        <surface>
+          <friction>
+            <ode>
+              <mu>0.7</mu>
+              <mu2>0.7</mu2>
+              <slip1>1.0</slip1>
+              <slip2>1.0</slip2>
+            </ode>
+          </friction>
+        </surface>
+      </collision>
+      <self_collide>1</self_collide>
+      <kinematic>0</kinematic>
+      <gravity>0</gravity>
+    </link>
+
+    <link name="O2_target4">
+      <pose>3.382 7.06 5.01 0 -1.3 0</pose>
+      <visual name="visual">
+        <geometry>
+          <mesh>
+            <scale>5 5 10</scale>
+            <uri>model://JVRC_O2/dae/target2.dae</uri>
+          </mesh>
+        </geometry>
+      </visual>
+      <collision name="collision">
+        <geometry>
+          <mesh>
+            <scale>5 5 10</scale>
+            <uri>model://JVRC_O2/dae/target2.dae</uri>
+          </mesh>
+        </geometry>
+        <surface>
+          <friction>
+            <ode>
+              <mu>0.7</mu>
+              <mu2>0.7</mu2>
+              <slip1>1.0</slip1>
+              <slip2>1.0</slip2>
+            </ode>
+          </friction>
+        </surface>
+      </collision>
+      <self_collide>1</self_collide>
+      <kinematic>0</kinematic>
+      <gravity>0</gravity>
+    </link>
+
+
+<!-- 8 Targets
+    <link name="O2_target1">
+      <pose>3.109 7.051 5.655 0 2.7 0</pose>
+      <visual name="visual">
+        <geometry>
+          <mesh>
+            <scale>5 5 10</scale>
+            <uri>model://JVRC_O2/dae/target4.dae</uri>
+          </mesh>
+        </geometry>
+      </visual>
+      <collision name="collision">
+        <geometry>
+          <mesh>
+            <scale>5 5 10</scale>
+            <uri>model://JVRC_O2/dae/target4.dae</uri>
+          </mesh>
+        </geometry>
+        <surface>
+          <friction>
+            <ode>
+              <mu>0.7</mu>
+              <mu2>0.7</mu2>
+              <slip1>1.0</slip1>
+              <slip2>1.0</slip2>
+            </ode>
+          </friction>
+        </surface>
+      </collision>
+      <self_collide>1</self_collide>
+      <kinematic>0</kinematic>
+      <gravity>0</gravity>
+    </link>
+
+    <link name="O2_target2">
+      <pose>3.109 7.162 5.655 0 2.7 0</pose>
+      <visual name="visual">
+        <geometry>
+          <mesh>
+            <scale>5 5 10</scale>
+            <uri>model://JVRC_O2/dae/target4.dae</uri>
+          </mesh>
+        </geometry>
+      </visual>
+      <collision name="collision">
+        <geometry>
+          <mesh>
+            <scale>5 5 10</scale>
+            <uri>model://JVRC_O2/dae/target4.dae</uri>
+          </mesh>
+        </geometry>
+        <surface>
+          <friction>
+            <ode>
+              <mu>0.7</mu>
+              <mu2>0.7</mu2>
+              <slip1>1.0</slip1>
+              <slip2>1.0</slip2>
+            </ode>
+          </friction>
+        </surface>
+      </collision>
+      <self_collide>1</self_collide>
+      <kinematic>0</kinematic>
+      <gravity>0</gravity>
+    </link>
+
+    <link name="O2_target3">
+      <pose>3.027 7.162 5.613 0 2.6 0</pose>
+      <visual name="visual">
+        <geometry>
+          <mesh>
+            <scale>5 5 10</scale>
+            <uri>model://JVRC_O2/dae/target3.dae</uri>
+          </mesh>
+        </geometry>
+      </visual>
+      <collision name="collision">
+        <geometry>
+          <mesh>
+            <scale>5 5 10</scale>
+            <uri>model://JVRC_O2/dae/target3.dae</uri>
+          </mesh>
+        </geometry>
+        <surface>
+          <friction>
+            <ode>
+              <mu>0.7</mu>
+              <mu2>0.7</mu2>
+              <slip1>1.0</slip1>
+              <slip2>1.0</slip2>
+            </ode>
+          </friction>
+        </surface>
+      </collision>
+      <self_collide>1</self_collide>
+      <kinematic>0</kinematic>
+      <gravity>0</gravity>
+    </link>
+
+    <link name="O2_target4">
+      <pose>3.027 7.051 5.613 0 2.6 0</pose>
+      <visual name="visual">
+        <geometry>
+          <mesh>
+            <scale>5 5 10</scale>
+            <uri>model://JVRC_O2/dae/target4.dae</uri>
+          </mesh>
+        </geometry>
+      </visual>
+      <collision name="collision">
+        <geometry>
+          <mesh>
+            <scale>5 5 10</scale>
+            <uri>model://JVRC_O2/dae/target4.dae</uri>
+          </mesh>
+        </geometry>
+        <surface>
+          <friction>
+            <ode>
+              <mu>0.7</mu>
+              <mu2>0.7</mu2>
+              <slip1>1.0</slip1>
+              <slip2>1.0</slip2>
+            </ode>
+          </friction>
+        </surface>
+      </collision>
+      <self_collide>1</self_collide>
+      <kinematic>0</kinematic>
+      <gravity>0</gravity>
+    </link>
+
+    <link name="O2_target5">
+      <pose>3.407 7.171 5.106 0 -1.2 0</pose>
+      <visual name="visual">
+        <geometry>
+          <mesh>
+            <scale>5 5 10</scale>
+            <uri>model://JVRC_O2/dae/target1.dae</uri>
+          </mesh>
+        </geometry>
+      </visual>
+      <collision name="collision">
+        <geometry>
+          <mesh>
+            <scale>5 5 10</scale>
+            <uri>model://JVRC_O2/dae/target1.dae</uri>
+          </mesh>
+        </geometry>
+        <surface>
+          <friction>
+            <ode>
+              <mu>0.7</mu>
+              <mu2>0.7</mu2>
+              <slip1>1.0</slip1>
+              <slip2>1.0</slip2>
+            </ode>
+          </friction>
+        </surface>
+      </collision>
+      <self_collide>1</self_collide>
+      <kinematic>0</kinematic>
+      <gravity>0</gravity>
+    </link>
+
+    <link name="O2_target6">
+      <pose>3.407 7.06 5.106 0 -1.2 0</pose>
+      <visual name="visual">
+        <geometry>
+          <mesh>
+            <scale>5 5 10</scale>
+            <uri>model://JVRC_O2/dae/target1.dae</uri>
+          </mesh>
+        </geometry>
+      </visual>
+      <collision name="collision">
+        <geometry>
+          <mesh>
+            <scale>5 5 10</scale>
+            <uri>model://JVRC_O2/dae/target1.dae</uri>
+          </mesh>
+        </geometry>
+        <surface>
+          <friction>
+            <ode>
+              <mu>0.7</mu>
+              <mu2>0.7</mu2>
+              <slip1>1.0</slip1>
+              <slip2>1.0</slip2>
+            </ode>
+          </friction>
+        </surface>
+      </collision>
+      <self_collide>1</self_collide>
+      <kinematic>0</kinematic>
+      <gravity>0</gravity>
+    </link>
+
+    <link name="O2_target7">
+      <pose>3.382 7.06 5.01 0 -1.3 0</pose>
+      <visual name="visual">
+        <geometry>
+          <mesh>
+            <scale>5 5 10</scale>
+            <uri>model://JVRC_O2/dae/target2.dae</uri>
+          </mesh>
+        </geometry>
+      </visual>
+      <collision name="collision">
+        <geometry>
+          <mesh>
+            <scale>5 5 10</scale>
+            <uri>model://JVRC_O2/dae/target2.dae</uri>
+          </mesh>
+        </geometry>
+        <surface>
+          <friction>
+            <ode>
+              <mu>0.7</mu>
+              <mu2>0.7</mu2>
+              <slip1>1.0</slip1>
+              <slip2>1.0</slip2>
+            </ode>
+          </friction>
+        </surface>
+      </collision>
+      <self_collide>1</self_collide>
+      <kinematic>0</kinematic>
+      <gravity>0</gravity>
+    </link>
+
+    <link name="O2_target8">
+      <pose>3.382 7.171 5.01 0 -1.3 0</pose>
+      <visual name="visual">
+        <geometry>
+          <mesh>
+            <scale>5 5 10</scale>
+            <uri>model://JVRC_O2/dae/target2.dae</uri>
+          </mesh>
+        </geometry>
+      </visual>
+      <collision name="collision">
+        <geometry>
+          <mesh>
+            <scale>5 5 10</scale>
+            <uri>model://JVRC_O2/dae/target2.dae</uri>
+          </mesh>
+        </geometry>
+        <surface>
+          <friction>
+            <ode>
+              <mu>0.7</mu>
+              <mu2>0.7</mu2>
+              <slip1>1.0</slip1>
+              <slip2>1.0</slip2>
+            </ode>
+          </friction>
+        </surface>
+      </collision>
+      <self_collide>1</self_collide>
+      <kinematic>0</kinematic>
+      <gravity>0</gravity>
+    </link>
+-->
+
+
+    <link name="O2_bolt1">
+      <pose>3.415 7.171 5.104 0 -1.2 0</pose>
+      <visual name="visual">
+        <geometry>
+          <mesh>
+            <scale>0.988 0.988 7.5</scale>
+            <uri>model://JVRC_O2/dae/O2_bolt.dae</uri>
+          </mesh>
+        </geometry>
+      </visual>
+      <collision name="collision">
+        <geometry>
+          <mesh>
+            <scale>0.988 0.988 7.5</scale>
+            <uri>model://JVRC_O2/dae/O2_bolt.dae</uri>
+          </mesh>
+        </geometry>
+        <surface>
+          <friction>
+            <ode>
+              <mu>0.7</mu>
+              <mu2>0.7</mu2>
+              <slip1>1.0</slip1>
+              <slip2>1.0</slip2>
+            </ode>
+          </friction>
+        </surface>
+      </collision>
+      <self_collide>1</self_collide>
+      <kinematic>0</kinematic>
+      <gravity>0</gravity>
+    </link>
+
+    <link name="O2_bolt2">
+      <pose>3.415 7.06 5.104 0 -1.2 0</pose>
+      <visual name="visual">
+        <geometry>
+          <mesh>
+            <scale>0.988 0.988 7.5</scale>
+            <uri>model://JVRC_O2/dae/O2_bolt.dae</uri>
+          </mesh>
+        </geometry>
+      </visual>
+      <collision name="collision">
+        <geometry>
+          <mesh>
+            <scale>0.988 0.988 7.5</scale>
+            <uri>model://JVRC_O2/dae/O2_bolt.dae</uri>
+          </mesh>
+        </geometry>
+        <surface>
+          <friction>
+            <ode>
+              <mu>0.7</mu>
+              <mu2>0.7</mu2>
+              <slip1>1.0</slip1>
+              <slip2>1.0</slip2>
+            </ode>
+          </friction>
+        </surface>
+      </collision>
+      <self_collide>1</self_collide>
+      <kinematic>0</kinematic>
+      <gravity>0</gravity>
+    </link>
+
+    <link name="O2_bolt3">
+      <pose>3.39 7.06 5.008 0 -1.3 0</pose>
+      <visual name="visual">
+        <geometry>
+          <mesh>
+            <scale>0.988 0.988 7.5</scale>
+            <uri>model://JVRC_O2/dae/O2_bolt.dae</uri>
+          </mesh>
+        </geometry>
+      </visual>
+      <collision name="collision">
+        <geometry>
+          <mesh>
+            <scale>0.988 0.988 7.5</scale>
+            <uri>model://JVRC_O2/dae/O2_bolt.dae</uri>
+          </mesh>
+        </geometry>
+        <surface>
+          <friction>
+            <ode>
+              <mu>0.7</mu>
+              <mu2>0.7</mu2>
+              <slip1>1.0</slip1>
+              <slip2>1.0</slip2>
+            </ode>
+          </friction>
+        </surface>
+      </collision>
+      <self_collide>1</self_collide>
+      <kinematic>0</kinematic>
+      <gravity>0</gravity>
+    </link>
+
+    <link name="O2_bolt4">
+      <pose>3.39 7.171 5.008 0 -1.3 0</pose>
+      <visual name="visual">
+        <geometry>
+          <mesh>
+            <scale>0.988 0.988 7.5</scale>
+            <uri>model://JVRC_O2/dae/O2_bolt.dae</uri>
+          </mesh>
+        </geometry>
+      </visual>
+      <collision name="collision">
+        <geometry>
+          <mesh>
+            <scale>0.988 0.988 7.5</scale>
+            <uri>model://JVRC_O2/dae/O2_bolt.dae</uri>
+          </mesh>
+        </geometry>
+        <surface>
+          <friction>
+            <ode>
+              <mu>0.7</mu>
+              <mu2>0.7</mu2>
+              <slip1>1.0</slip1>
+              <slip2>1.0</slip2>
+            </ode>
+          </friction>
+        </surface>
+      </collision>
+      <self_collide>1</self_collide>
+      <kinematic>0</kinematic>
+      <gravity>0</gravity>
+    </link>
+
+    <link name="O2_bolt5">
+      <pose>3.104 7.051 5.662 0 2.7 0</pose>
+      <visual name="visual">
+        <geometry>
+          <mesh>
+            <scale>0.988 0.988 7.5</scale>
+            <uri>model://JVRC_O2/dae/O2_bolt.dae</uri>
+          </mesh>
+        </geometry>
+      </visual>
+      <collision name="collision">
+        <geometry>
+          <mesh>
+            <scale>0.988 0.988 7.5</scale>
+            <uri>model://JVRC_O2/dae/O2_bolt.dae</uri>
+          </mesh>
+        </geometry>
+        <surface>
+          <friction>
+            <ode>
+              <mu>0.7</mu>
+              <mu2>0.7</mu2>
+              <slip1>1.0</slip1>
+              <slip2>1.0</slip2>
+            </ode>
+          </friction>
+        </surface>
+      </collision>
+      <self_collide>1</self_collide>
+      <kinematic>0</kinematic>
+      <gravity>0</gravity>
+    </link>
+
+   <link name="O2_bolt6">
+      <pose>3.104 7.162 5.662 0 2.7 0</pose>
+      <visual name="visual">
+        <geometry>
+          <mesh>
+            <scale>0.988 0.988 7.5</scale>
+            <uri>model://JVRC_O2/dae/O2_bolt.dae</uri>
+          </mesh>
+        </geometry>
+      </visual>
+      <collision name="collision">
+        <geometry>
+          <mesh>
+            <scale>0.988 0.988 7.5</scale>
+            <uri>model://JVRC_O2/dae/O2_bolt.dae</uri>
+          </mesh>
+        </geometry>
+        <surface>
+          <friction>
+            <ode>
+              <mu>0.7</mu>
+              <mu2>0.7</mu2>
+              <slip1>1.0</slip1>
+              <slip2>1.0</slip2>
+            </ode>
+          </friction>
+        </surface>
+      </collision>
+      <self_collide>1</self_collide>
+      <kinematic>0</kinematic>
+      <gravity>0</gravity>
+    </link>
+
+    <link name="O2_bolt7">
+      <pose>3.023 7.162 5.62 0 2.6 0</pose>
+      <visual name="visual">
+        <geometry>
+          <mesh>
+            <scale>0.988 0.988 7.5</scale>
+            <uri>model://JVRC_O2/dae/O2_bolt.dae</uri>
+          </mesh>
+        </geometry>
+      </visual>
+      <collision name="collision">
+        <geometry>
+          <mesh>
+            <scale>0.988 0.988 7.5</scale>
+            <uri>model://JVRC_O2/dae/O2_bolt.dae</uri>
+          </mesh>
+        </geometry>
+        <surface>
+          <friction>
+            <ode>
+              <mu>0.7</mu>
+              <mu2>0.7</mu2>
+              <slip1>1.0</slip1>
+              <slip2>1.0</slip2>
+            </ode>
+          </friction>
+        </surface>
+      </collision>
+      <self_collide>1</self_collide>
+      <kinematic>0</kinematic>
+      <gravity>0</gravity>
+    </link>
+
+    <link name="O2_bolt8">
+      <pose>3.023 7.051 5.62 0 2.6 0</pose>
+      <visual name="visual">
+        <geometry>
+          <mesh>
+            <scale>0.988 0.988 7.5</scale>
+            <uri>model://JVRC_O2/dae/O2_bolt.dae</uri>
+          </mesh>
+        </geometry>
+      </visual>
+      <collision name="collision">
+        <geometry>
+          <mesh>
+            <scale>0.988 0.988 7.5</scale>
+            <uri>model://JVRC_O2/dae/O2_bolt.dae</uri>
+          </mesh>
+        </geometry>
+        <surface>
+          <friction>
+            <ode>
+              <mu>0.7</mu>
+              <mu2>0.7</mu2>
+              <slip1>1.0</slip1>
+              <slip2>1.0</slip2>
+            </ode>
+          </friction>
+        </surface>
+      </collision>
+      <self_collide>1</self_collide>
+      <kinematic>0</kinematic>
+      <gravity>0</gravity>
+    </link>
+
+
+
+
+
+    <link name="O2_base">
+      <visual name="visual">
+        <geometry>
+          <mesh>
+            <uri>model://JVRC_O2/dae/O2_base_visual.dae</uri>
+          </mesh>
+        </geometry>
+      </visual>
+      <collision name="collision">
+        <geometry>
+          <mesh>
+            <uri>model://JVRC_O2/dae/O2_base_collision.dae</uri>
+          </mesh>
+        </geometry>
+        <surface>
+          <friction>
+            <ode>
+              <mu>0.7</mu>
+              <mu2>0.7</mu2>
+            </ode>
+          </friction>
+        </surface>
+      </collision>
+      <self_collide>1</self_collide>
+      <kinematic>0</kinematic>
+      <gravity>0</gravity>
+    </link>
+
+    <link name="O2_base_up">
+      <visual name="visual">
+        <geometry>
+          <mesh>
+            <uri>model://JVRC_O2/dae/O2_base_up.dae</uri>
+          </mesh>
+        </geometry>
+      </visual>
+      <collision name="collision">
+        <geometry>
+          <mesh>
+            <uri>model://JVRC_O2/dae/O2_base_up.dae</uri>
+          </mesh>
+        </geometry>
+        <surface>
+          <friction>
+            <ode>
+              <mu>0.7</mu>
+              <mu2>0.7</mu2>
+            </ode>
+          </friction>
+        </surface>
+      </collision>
+      <self_collide>1</self_collide>
+      <kinematic>0</kinematic>
+      <gravity>0</gravity>
+    </link>
+
+    <link name="O2_fin">
+      <visual name="visual">
+        <geometry>
+          <mesh>
+            <uri>model://JVRC_O2/dae/JVRC_O2_fin_detailed_visual.dae</uri>
+          </mesh>
+        </geometry>
+      </visual>
+      <collision name="collision">
+        <geometry>
+          <mesh>
+            <uri>model://JVRC_O2/dae/JVRC_O2_fin_detailed_collision.dae</uri>
+          </mesh>
+        </geometry>
+        <surface>
+          <friction>
+            <ode>
+              <mu>0.7</mu>
+              <mu2>0.7</mu2>
+              <slip1>1.0</slip1>
+              <slip2>1.0</slip2>
+            </ode>
+          </friction>
+        </surface>
+      </collision>
+      <self_collide>1</self_collide>
+      <kinematic>0</kinematic>
+      <gravity>0</gravity>
+    </link>
+
+    <link name="O2_frag">
+      <visual name="visual">
+        <geometry>
+          <mesh>
+            <scale>10 10 10</scale>
+            <uri>model://JVRC_O2/dae/O2_frag.dae</uri>
+          </mesh>
+        </geometry>
+      </visual>
+      <collision name="collision">
+        <geometry>
+          <mesh>
+            <scale>10 10 10</scale>
+            <uri>model://JVRC_O2/dae/O2_frag.dae</uri>
+          </mesh>
+        </geometry>
+        <surface>
+          <friction>
+            <ode>
+              <mu>0.7</mu>
+              <mu2>0.7</mu2>
+              <slip1>1.0</slip1>
+              <slip2>1.0</slip2>
+            </ode>
+          </friction>
+        </surface>
+      </collision>
+      <self_collide>1</self_collide>
+      <kinematic>0</kinematic>
+      <gravity>0</gravity>
+    </link>
+
+    <link name="O2_tunneru_wall">
+      <visual name="visual">
+        <geometry>
+          <mesh>
+            <scale>10 10 10</scale>
+            <uri>model://JVRC_O2/dae/O2_tunneru_wall.dae</uri>
+          </mesh>
+        </geometry>
+      </visual>
+      <collision name="collision">
+        <geometry>
+          <mesh>
+            <scale>10 10 10</scale>
+            <uri>model://JVRC_O2/dae/O2_tunneru_wall.dae</uri>
+          </mesh>
+        </geometry>
+        <surface>
+          <friction>
+            <ode>
+              <mu>0.7</mu>
+              <mu2>0.7</mu2>
+            </ode>
+          </friction>
+        </surface>
+      </collision>
+      <self_collide>1</self_collide>
+      <kinematic>0</kinematic>
+      <gravity>0</gravity>
+    </link>
+-->
+
+  </model>
+</sdf>
+

@@ -1,0 +1,5 @@
+  <library_images>
+	  <image id="QRcode_5_jpg" name="QRcode_5_jpg">
+		  <init_from>QRcode_5.jpg</init_from>
+		</image>
+  </library_images>

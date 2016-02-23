@@ -1,0 +1,226 @@
+<?xml version="1.0" ?>
+<sdf version="1.5">
+  <model name="JVRC_R4_field">
+
+<!-- =========================================================== -->
+<!-- =========================================================== -->
+
+    <link name="R4_field">
+      <visual name="visual">
+        <geometry>
+          <mesh>
+            <uri>model://JVRC_R4_field/dae/R4_field.dae</uri>
+          </mesh>
+        </geometry>
+      </visual>
+      <collision name="collision">
+        <geometry>
+          <mesh>
+            <uri>model://JVRC_R4_field/dae/R4_field.dae</uri>
+          </mesh>
+        </geometry>
+        <surface>
+          <friction>
+            <ode>
+              <mu>0.7</mu>
+              <mu2>0.7</mu2>
+            </ode>
+          </friction>
+        </surface>
+      </collision>
+      <self_collide>1</self_collide>
+      <gravity>1</gravity>
+    </link>
+
+<!-- ====================================================  -->
+<!-- ====================================================  -->
+
+    <link name="R4_frag">
+      <visual name="visual">
+        <geometry>
+          <mesh>
+            <uri>model://JVRC_R4_field/dae/R4_flag.dae</uri>
+          </mesh>
+        </geometry>
+      </visual>
+      <collision name="collision">
+        <geometry>
+          <mesh>
+            <uri>model://JVRC_R4_field/dae/R4_flag.dae</uri>
+          </mesh>
+        </geometry>
+        <surface>
+          <friction>
+            <ode>
+              <mu>0.7</mu>
+              <mu2>0.7</mu2>
+            </ode>
+          </friction>
+        </surface>
+      </collision>
+      <self_collide>1</self_collide>
+      <gravity>1</gravity>
+    </link>
+
+<!-- ====================================================  -->
+<!-- ====================================================  -->
+
+    <link name="R4_surface">
+      <visual name="visual">
+        <geometry>
+          <mesh>
+            <uri>model://JVRC_R4_field/dae/R4_surface.dae</uri>
+          </mesh>
+        </geometry>
+      </visual>
+      <collision name="collision">
+        <geometry>
+          <mesh>
+            <uri>model://JVRC_R4_field/dae/R4_surface.dae</uri>
+          </mesh>
+        </geometry>
+        <surface>
+          <friction>
+            <ode>
+              <mu>0.7</mu>
+              <mu2>0.7</mu2>
+            </ode>
+          </friction>
+        </surface>
+      </collision>
+      <self_collide>1</self_collide>
+      <gravity>1</gravity>
+    </link>
+
+<!-- ====================================================  -->
+<!-- ====================================================  -->
+
+    <link name="R4_wall">
+      <visual name="visual">
+        <geometry>
+          <mesh>
+            <scale>1 1.17 1</scale>
+            <uri>model://JVRC_R4_field/dae/R4_wall.dae</uri>
+          </mesh>
+        </geometry>
+      </visual>
+      <collision name="collision">
+        <geometry>
+          <mesh>
+            <scale>1 1.17 1</scale>
+            <uri>model://JVRC_R4_field/dae/R4_wall.dae</uri>
+          </mesh>
+        </geometry>
+        <surface>
+          <friction>
+            <ode>
+              <mu>0.7</mu>
+              <mu2>0.7</mu2>
+            </ode>
+          </friction>
+        </surface>
+      </collision>
+      <self_collide>1</self_collide>
+      <gravity>1</gravity>
+    </link>
+
+<!-- ====================================================  -->
+<!-- ====================================================  -->
+<!-- ====================================================  -->
+<!--
+    <joint name="anchor_world_surface" type="revolute">
+      <parent>world</parent>
+      <child>R4_surface</child>
+      <pose>0 0 0 0 0 0</pose>
+      <axis>
+        <xyz>0 0 1</xyz>
+        <limit>
+          <lower>0</lower>
+          <upper>0</upper>
+        </limit>
+      </axis>
+    </joint>
+
+    <joint name="anchor_world_wall" type="revolute">
+      <parent>world</parent>
+      <child>R4_wall</child>
+      <pose>0 0 0 0 0 0</pose>
+      <axis>
+        <xyz>0 0 1</xyz>
+        <limit>
+          <lower>0</lower>
+          <upper>0</upper>
+        </limit>
+      </axis>
+    </joint>
+
+    <joint name="anchor_world_frag" type="revolute">
+      <parent>world</parent>
+      <child>R4_frag</child>
+      <pose>0 0 0 0 0 0</pose>
+      <axis>
+        <xyz>0 0 1</xyz>
+        <limit>
+          <lower>0</lower>
+          <upper>0</upper>
+        </limit>
+      </axis>
+    </joint>
+
+    <joint name="anchor_world_field" type="revolute">
+      <parent>world</parent>
+      <child>R4_field</child>
+      <pose>0 0 0 0 0 0</pose>
+      <axis>
+        <xyz>0 0 1</xyz>
+        <limit>
+          <lower>0</lower>
+          <upper>0</upper>
+        </limit>
+      </axis>
+    </joint>
+
+    <joint name="anchor_surface_wall" type="revolute">
+      <parent>R4_surface</parent>
+      <child>R4_wall</child>
+      <pose>0 0 0 0 0 0</pose>
+      <axis>
+        <xyz>0 0 1</xyz>
+        <limit>
+          <lower>0</lower>
+          <upper>0</upper>
+        </limit>
+      </axis>
+    </joint>
+
+    <joint name="anchor_surface_frag" type="revolute">
+      <parent>R4_surface</parent>
+      <child>R4_frag</child>
+      <pose>0 0 0 0 0 0</pose>
+      <axis>
+        <xyz>0 0 1</xyz>
+        <limit>
+          <lower>0</lower>
+          <upper>0</upper>
+        </limit>
+      </axis>
+    </joint>
+
+    <joint name="anchor_surface_field" type="revolute">
+      <parent>R4_surface</parent>
+      <child>R4_field</child>
+      <pose>0 0 0 0 0 0</pose>
+      <axis>
+        <xyz>0 0 1</xyz>
+        <limit>
+          <lower>0</lower>
+          <upper>0</upper>
+        </limit>
+      </axis>
+    </joint>
+-->
+
+<!-- ====================================================  -->
+
+  </model>
+</sdf>

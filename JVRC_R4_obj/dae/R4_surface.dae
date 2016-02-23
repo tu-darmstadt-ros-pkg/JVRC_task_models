@@ -1,0 +1,196 @@
+<?xml version="1.0" encoding="utf-8"?>
+<COLLADA xmlns="http://www.collada.org/2005/11/COLLADASchema" version="1.4.1">
+  <asset>
+    <contributor>
+      <author>Blender User</author>
+      <authoring_tool>Blender 2.72.0 commit date:2014-10-21, commit time:11:38, hash:9e963ae</authoring_tool>
+    </contributor>
+    <created>2015-07-17T11:13:15</created>
+    <modified>2015-07-17T11:13:15</modified>
+    <unit name="meter" meter="10"/>
+    <up_axis>Z_UP</up_axis>
+  </asset>
+  <library_images>
+    <image id="RoadTexture_png" name="RoadTexture_png">
+      <init_from>RoadTexture.png</init_from>
+    </image>
+  </library_images>
+  <library_effects>
+    <effect id="FrontCol-effect">
+      <profile_COMMON>
+        <technique sid="common">
+          <phong>
+            <emission>
+              <color sid="emission">0 0 0 1</color>
+            </emission>
+            <ambient>
+              <color sid="ambient">0 0 0 1</color>
+            </ambient>
+            <diffuse>
+              <color sid="diffuse">0.8 0.8 0.8 1</color>
+            </diffuse>
+            <specular>
+              <color sid="specular">0.1647059 0.1647059 0.1647059 1</color>
+            </specular>
+            <shininess>
+              <float sid="shininess">50</float>
+            </shininess>
+            <index_of_refraction>
+              <float sid="index_of_refraction">1</float>
+            </index_of_refraction>
+          </phong>
+        </technique>
+      </profile_COMMON>
+    </effect>
+    <effect id="abcdefg-effect">
+      <profile_COMMON>
+        <newparam sid="RoadTexture_png-surface">
+          <surface type="2D">
+            <init_from>RoadTexture_png</init_from>
+          </surface>
+        </newparam>
+        <newparam sid="RoadTexture_png-sampler">
+          <sampler2D>
+            <source>RoadTexture_png-surface</source>
+          </sampler2D>
+        </newparam>
+        <technique sid="common">
+          <phong>
+            <emission>
+              <color sid="emission">0 0 0 1</color>
+            </emission>
+            <ambient>
+              <color sid="ambient">0 0 0 1</color>
+            </ambient>
+            <diffuse>
+              <texture texture="RoadTexture_png-sampler" texcoord="UVMap"/>
+            </diffuse>
+            <specular>
+              <color sid="specular">0.5 0.5 0.5 1</color>
+            </specular>
+            <shininess>
+              <float sid="shininess">50</float>
+            </shininess>
+            <index_of_refraction>
+              <float sid="index_of_refraction">1</float>
+            </index_of_refraction>
+          </phong>
+        </technique>
+      </profile_COMMON>
+    </effect>
+  </library_effects>
+  <library_materials>
+    <material id="FrontCol-material" name="FrontCol">
+      <instance_effect url="#FrontCol-effect"/>
+    </material>
+    <material id="abcdefg-material" name="abcdefg">
+      <instance_effect url="#abcdefg-effect"/>
+    </material>
+  </library_materials>
+  <library_geometries>
+    <geometry id="Group1-mesh" name="Group1">
+      <mesh>
+        <source id="Group1-mesh-positions">
+          <float_array id="Group1-mesh-positions-array" count="159">0.6792154 0 0.556 1.679215 0 0.356 0.6792154 0 0.356 1.679215 0 0.556 0.6792154 0 0.556 1.679215 21 0.556 1.679215 0 0.556 0.6792154 21 0.556 0.6792154 0 0.556 0.6792154 21 0 0.6792154 21 0.556 0.6792154 0 0.356 0.6792154 0 0 0.6792154 0 0.356 8.679216 0 0 0.6792154 0 0 8.679216 0 0.356 7.679215 0 0.356 1.679215 0 0.356 7.679215 21 0.356 7.679215 0 0.356 1.679215 21 0.356 1.679215 0 0.356 1.679215 21 0.556 1.679215 21 0.356 1.679215 0 0.556 0.6792154 21 0.556 1.679215 21 0.356 1.679215 21 0.556 0.6792154 21 0 7.679215 21 0.356 8.679216 21 0 8.679216 21 0.556 8.679216 0 0 8.679216 21 0.556 8.679216 21 0 8.679216 0 0.356 8.679216 0 0.556 7.679215 0 0.556 8.679216 0 0.556 7.679215 21 0.356 7.679215 0 0.556 7.679215 0 0.356 7.679215 21 0.556 7.679215 21 0.556 8.679216 21 0.556 7.679215 0 0.556 7.679215 21 0.556 8.679216 0 0.556 0.6792154 21 0 8.679216 0 0 8.679216 21 0 0.6792154 0 0</float_array>
+          <technique_common>
+            <accessor source="#Group1-mesh-positions-array" count="53" stride="3">
+              <param name="X" type="float"/>
+              <param name="Y" type="float"/>
+              <param name="Z" type="float"/>
+            </accessor>
+          </technique_common>
+        </source>
+        <source id="Group1-mesh-normals">
+          <float_array id="Group1-mesh-normals-array" count="57">-1 0 0 1 0 0 0 0 -1 -1 0 0 0 0 1 0 0 -1 0 0 1 -1 0 0 0 1 0 0 -1 0 0 1 0 0 1 0 0 0 1 0 0 1 1 0 0 0 -1 0 0 -1 0 0 1 0 1 0 0</float_array>
+          <technique_common>
+            <accessor source="#Group1-mesh-normals-array" count="19" stride="3">
+              <param name="X" type="float"/>
+              <param name="Y" type="float"/>
+              <param name="Z" type="float"/>
+            </accessor>
+          </technique_common>
+        </source>
+        <source id="Group1-mesh-map-0">
+          <float_array id="Group1-mesh-map-0-array" count="140">826.7717 14.01575 0 14.01575 0 21.88976 826.7717 21.88976 0 14.01575 0 0 -826.7717 0 -826.7717 21.88976 0 826.7717 314.9606 826.7717 314.9606 0 0 0 826.7717 0 0 0 0 14.01575 -314.9606 826.7717 -275.5906 826.7717 -275.5906 0 -314.9606 0 -314.9606 14.01575 0 14.01575 -39.37008 14.01575 -314.9606 14.01575 -39.37008 14.01575 -275.5906 14.01575 0 14.01575 0 21.88976 826.7717 21.88976 826.7717 0 314.9606 21.88976 314.9606 0 275.5906 14.01575 275.5906 21.88976 -314.9606 14.01575 -314.9606 21.88976 -275.5906 21.88976 -275.5906 14.01575 39.37008 14.01575 275.5906 14.01575 0 0 314.9606 0 0 0 275.5906 14.01575 0 0 -39.37008 0 -39.37008 826.7717 0 826.7717 5.34465e-5 0.996255 5.34478e-5 5.34465e-5 0.9999466 5.34465e-5 0.9999465 0.996255 -826.7717 21.88976 0 21.88976 0 14.01575 0 14.01575 0 0 -314.9606 0 -314.9606 14.01575 0 21.88976 0 14.01575 -39.37008 14.01575 -39.37008 21.88976 0 0 0 21.88976 39.37008 21.88976 39.37008 14.01575 0 14.01575 -826.7717 14.01575 -826.7717 21.88976 0 21.88976</float_array>
+          <technique_common>
+            <accessor source="#Group1-mesh-map-0-array" count="70" stride="2">
+              <param name="S" type="float"/>
+              <param name="T" type="float"/>
+            </accessor>
+          </technique_common>
+        </source>
+        <vertices id="Group1-mesh-vertices">
+          <input semantic="POSITION" source="#Group1-mesh-positions"/>
+        </vertices>
+        <polylist material="FrontCol-material" count="18">
+          <input semantic="VERTEX" source="#Group1-mesh-vertices" offset="0"/>
+          <input semantic="NORMAL" source="#Group1-mesh-normals" offset="1"/>
+          <input semantic="TEXCOORD" source="#Group1-mesh-map-0" offset="2" set="0"/>
+          <vcount>4 4 4 3 4 3 3 4 4 4 3 3 4 3 4 4 4 4 </vcount>
+          <p>40 0 0 42 0 1 41 0 2 43 0 3 36 1 4 33 1 5 35 1 6 34 1 7 49 2 8 51 2 9 50 2 10 52 2 11 9 3 12 12 3 13 11 3 14 45 4 15 47 4 16 46 4 17 48 4 18 16 5 19 13 5 20 1 5 21 16 6 22 1 6 23 17 6 24 11 7 25 8 7 26 10 7 27 9 7 28 32 8 29 31 8 30 30 8 31 44 8 32 16 9 33 39 9 34 38 9 35 17 9 36 27 10 37 30 10 38 29 10 39 31 11 40 29 11 41 30 11 42 4 12 43 6 12 44 5 12 45 7 12 46 34 14 51 37 14 52 36 14 53 13 15 54 15 15 55 14 15 56 16 15 57 0 16 58 2 16 59 1 16 60 3 16 61 29 17 62 26 17 63 28 17 64 27 17 65 22 18 66 24 18 67 23 18 68 25 18 69</p>
+        </polylist>
+        <polylist material="abcdefg-material" count="1">
+          <input semantic="VERTEX" source="#Group1-mesh-vertices" offset="0"/>
+          <input semantic="NORMAL" source="#Group1-mesh-normals" offset="1"/>
+          <input semantic="TEXCOORD" source="#Group1-mesh-map-0" offset="2" set="0"/>
+          <vcount>4 </vcount>
+          <p>18 13 47 20 13 48 19 13 49 21 13 50</p>
+        </polylist>
+      </mesh>
+    </geometry>
+    <geometry id="Model-mesh" name="Model">
+      <mesh>
+        <source id="Model-mesh-positions">
+          <float_array id="Model-mesh-positions-array" count="0"/>
+          <technique_common>
+            <accessor source="#Model-mesh-positions-array" count="0" stride="3">
+              <param name="X" type="float"/>
+              <param name="Y" type="float"/>
+              <param name="Z" type="float"/>
+            </accessor>
+          </technique_common>
+        </source>
+        <source id="Model-mesh-normals">
+          <float_array id="Model-mesh-normals-array" count="0"/>
+          <technique_common>
+            <accessor source="#Model-mesh-normals-array" count="0" stride="3">
+              <param name="X" type="float"/>
+              <param name="Y" type="float"/>
+              <param name="Z" type="float"/>
+            </accessor>
+          </technique_common>
+        </source>
+        <vertices id="Model-mesh-vertices">
+          <input semantic="POSITION" source="#Model-mesh-positions"/>
+        </vertices>
+      </mesh>
+    </geometry>
+  </library_geometries>
+  <library_controllers/>
+  <library_visual_scenes>
+    <visual_scene id="Scene" name="Scene">
+      <node id="Model" name="Model" type="NODE">
+        <matrix sid="transform">0.1 0 0 0 0 0.1 0 0 0 0 0.1 0 0 0 0 1</matrix>
+        <instance_geometry url="#Model-mesh"/>
+        <node id="Group1" name="Group1" type="NODE">
+          <matrix sid="transform">1 0 0 0 0 1 0 0 0 0 1 0 0 0 0 1</matrix>
+          <instance_geometry url="#Group1-mesh">
+            <bind_material>
+              <technique_common>
+                <instance_material symbol="FrontCol-material" target="#FrontCol-material">
+                  <bind_vertex_input semantic="UVMap" input_semantic="TEXCOORD" input_set="0"/>
+                </instance_material>
+                <instance_material symbol="abcdefg-material" target="#abcdefg-material">
+                  <bind_vertex_input semantic="UVMap" input_semantic="TEXCOORD" input_set="0"/>
+                </instance_material>
+              </technique_common>
+            </bind_material>
+          </instance_geometry>
+        </node>
+      </node>
+    </visual_scene>
+  </library_visual_scenes>
+  <scene>
+    <instance_visual_scene url="#Scene"/>
+  </scene>
+</COLLADA>

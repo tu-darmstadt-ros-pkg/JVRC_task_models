@@ -1,0 +1,422 @@
+<?xml version="1.0" ?>
+<sdf version="1.5">
+  <model name="JVRC_R4_obj">
+
+<!-- =========================================================== -->
+<!-- =========================================================== -->
+
+    <link name="R4_deblis1">
+      <pose>0 0 0.01 0 0 0</pose>
+      <inertial>
+        <pose>4.681215 5.352676 0.612000 0 0 0</pose>
+        <mass>0.001</mass>
+        <inertia>
+          <ixx>0.052084</ixx>
+          <ixy>-0.031251</ixy>
+          <ixz>-0.000000</ixz>
+          <iyy>0.098961</iyy>
+          <iyz>-0.000000</iyz>
+          <izz>0.130210</izz>
+        </inertia>
+      </inertial>
+      <visual name="visual">
+        <geometry>
+          <mesh>
+            <uri>model://JVRC_R4_obj/dae/R4_deblis1.dae</uri>
+          </mesh>
+        </geometry>
+      </visual>
+      <collision name="collision">
+        <geometry>
+          <mesh>
+            <uri>model://JVRC_R4_obj/dae/R4_deblis1.dae</uri>
+          </mesh>
+        </geometry>
+        <surface>
+          <friction>
+            <ode>
+              <mu>10</mu>
+              <mu2>10</mu2>
+            </ode>
+          </friction>
+        </surface>
+      </collision>
+      <self_collide>1</self_collide>
+      <gravity>1</gravity>
+    </link>
+
+<!-- Deblis1 inertial data calced by meshlab
+Mesh Bounding Box Size 1.767767 1.414214 0.500000
+Mesh Bounding Box Diag 2.318404 
+Mesh Volume is 0.500000
+Mesh Surface is 4.500000
+Thin shell barycenter 4.681216 5.333035 0.612000
+Center of Mass is 4.681215 5.352676 0.612000
+Inertia Tensor is :
+| 0.052084 -0.031251 -0.000000 |
+| -0.031251 0.098961 -0.000000 |
+| -0.000000 -0.000000 0.130210 |
+Principal axes are :
+| 0.894429 -0.447210 -0.000002 |
+| 0.447210 0.894429 -0.000002 |
+| 0.000003 0.000001 1.000000 |
+axis momenta are :
+| 0.036459 0.114586 0.130210 |
+-->
+
+<!-- Center of mass of each parts of debris1
+ Part1 : 5.2036941346 5.3530340189 0.61
+ Part2 : 4.85 5.7064466094 0.61
+ Part3 : 4.4968691776 5.3524711551 0.61
+ Part4 : 4.1437383552 4.9984957008 0.61
+-->
+
+    <link name="R4_deblis1_masscenter">
+      <pose>4.85 5.7064466094 0.61 0 0 0</pose>
+      <inertial>
+        <mass>2.999</mass>
+      </inertial>
+      <self_collide>0</self_collide>
+      <gravity>1</gravity>
+    </link>
+
+    <joint name="anchor_deblis1" type="revolute">
+      <parent>R4_deblis1</parent>
+      <child>R4_deblis1_masscenter</child>
+      <pose>0 0 0 0 0 0</pose>
+      <axis>
+        <xyz>1 0 0</xyz>
+        <limit>
+          <lower>0</lower>
+          <upper>0</upper>
+        </limit>
+      </axis>
+    </joint>
+
+<!-- =========================================================== -->
+<!-- =========================================================== -->
+
+    <link name="R4_deblis2">
+      <pose>0 0 0.01 0 0 0</pose>
+      <inertial>
+        <pose>4.556215 9.875000 0.612000 0 0 0</pose>
+        <mass>0.001</mass>
+        <inertia>
+          <ixx>0.106773</ixx>
+          <ixy>-0.023438</ixy>
+          <ixz>0.0</ixz>
+          <iyy>0.044271</iyy>
+          <iyz>0.0</iyz>
+          <izz>0.130211</izz>
+        </inertia>
+      </inertial>
+      <visual name="visual">
+        <geometry>
+          <mesh>
+            <uri>model://JVRC_R4_obj/dae/R4_deblis2.dae</uri>
+          </mesh>
+        </geometry>
+      </visual>
+      <collision name="collision">
+        <geometry>
+          <mesh>
+            <uri>model://JVRC_R4_obj/dae/R4_deblis2.dae</uri>
+          </mesh>
+        </geometry>
+        <surface>
+          <friction>
+            <ode>
+              <mu>10</mu>
+              <mu2>10</mu2>
+            </ode>
+          </friction>
+        </surface>
+      </collision>
+      <self_collide>1</self_collide>
+      <gravity>1</gravity>
+    </link>
+
+<!-- Deblis2 inertial data calced by meshlab
+Mesh Bounding Box Size 1.000000 1.500000 0.500000
+Mesh Bounding Box Diag 1.870829 
+Mesh Volume is 0.500000
+Mesh Surface is 4.500000
+Thin shell barycenter 4.570104 9.861111 0.612000
+Center of Mass is 4.556215 9.875000 0.612000
+Inertia Tensor is :
+| 0.106773 -0.023438 -0.000000 |
+| -0.023438 0.044271 -0.000000 |
+| -0.000000 -0.000000 0.130211 |
+Principal axes are :
+| 0.948686 0.316218 -0.000001 |
+| -0.316218 0.948686 -0.000000 |
+| 0.000001 0.000000 1.000000 |
+axis momenta are :
+| 0.114586 0.036458 0.130211 |
+-->
+
+<!-- Center of mass of each parts of debris2
+ Part1 : 4.9325 10.25 0.61
+ Part2 : 4.4325 10.25 0.61
+ Part3 : 4.4328981634 9.7500001585 0.61
+ Part4 : 4.4332963267 9.2500003171 0.61
+-->
+
+    <link name="R4_deblis2_masscenter">
+      <pose>4.4325 10.25 0.61 0 0 0</pose>
+      <inertial>
+        <mass>2.999</mass>
+      </inertial>
+      <self_collide>0</self_collide>
+      <gravity>1</gravity>
+    </link>
+
+    <joint name="anchor_deblis2" type="revolute">
+      <parent>R4_deblis2</parent>
+      <child>R4_deblis2_masscenter</child>
+      <pose>0 0 0 0 0 0</pose>
+      <axis>
+        <xyz>1 0 0</xyz>
+        <limit>
+          <lower>0</lower>
+          <upper>0</upper>
+        </limit>
+      </axis>
+    </joint>
+
+<!-- =========================================================== -->
+<!-- =========================================================== -->
+
+    <link name="R4_deblis3">
+      <pose>0.1 0 0 0 0 0</pose>
+      <inertial>
+        <pose>6.054088 9.703802 0.949450 0 0 0</pose>
+        <mass>3</mass>
+        <inertia>
+          <ixx>0.000078</ixx>
+          <ixy>0.0</ixy>
+          <ixz>-0.000271</ixz>
+          <iyy>0.003832</iyy>
+          <iyz>0.0</iyz>
+          <izz>0.003780</izz>
+        </inertia>
+      </inertial>
+      <visual name="visual">
+        <geometry>
+          <mesh>
+            <uri>model://JVRC_R4_obj/dae/R4_deblis3.dae</uri>
+          </mesh>
+        </geometry>
+      </visual>
+      <collision name="collision">
+        <geometry>
+          <mesh>
+            <uri>model://JVRC_R4_obj/dae/R4_deblis3.dae</uri>
+          </mesh>
+        </geometry>
+        <surface>
+          <friction>
+            <ode>
+              <mu>10</mu>
+              <mu2>10</mu2>
+            </ode>
+          </friction>
+        </surface>
+      </collision>
+      <self_collide>1</self_collide>
+      <gravity>1</gravity>
+    </link>
+
+<!-- Deblis3 inertial data calced by meshlab
+Mesh Bounding Box Size 1.617109 0.100000 0.306937
+Mesh Bounding Box Diag 1.649015 
+Mesh Volume is 0.017794
+Mesh Surface is 0.705405
+Thin shell barycenter 6.061148 9.703799 0.952370
+Center of Mass is 6.054088 9.703802 0.949450
+Inertia Tensor is :
+| 0.000078 0.000000 -0.000271 |
+| 0.000000 0.003832 0.000000 |
+| -0.000271 0.000000 0.003780 |
+Principal axes are :
+| 0.997357 -0.000285 -0.072660 |
+| -0.000057 0.999989 -0.004715 |
+| 0.072661 0.004707 0.997346 |
+axis momenta are :
+| 0.000059 0.003832 0.003800 |
+-->
+
+<!-- =========================================================== -->
+<!-- =========================================================== -->
+
+    <link name="R4_deblis4">
+      <pose>0 0 0.01 0 0 0</pose>
+      <inertial>
+        <pose>5.231762 12.161197 0.491000 0 0 0</pose>
+        <mass>0.001</mass>
+        <inertia>
+          <ixx>0.001600</ixx>
+          <ixy>-0.000964</ixy>
+          <ixz>0.0</ixz>
+          <iyy>0.003100</iyy>
+          <iyz>0.0</iyz>
+          <izz>0.004049</izz>
+        </inertia>
+      </inertial>
+      <visual name="visual">
+        <geometry>
+          <mesh>
+            <uri>model://JVRC_R4_obj/dae/R4_deblis4.dae</uri>
+          </mesh>
+        </geometry>
+      </visual>
+      <collision name="collision">
+        <geometry>
+          <mesh>
+            <uri>model://JVRC_R4_obj/dae/R4_deblis4.dae</uri>
+          </mesh>
+        </geometry>
+        <surface>
+          <friction>
+            <ode>
+              <mu>10</mu>
+              <mu2>10</mu2>
+            </ode>
+          </friction>
+        </surface>
+      </collision>
+      <self_collide>1</self_collide>
+      <gravity>1</gravity>
+    </link>
+
+<!-- Deblis4 inertial data calced by meshlab
+Mesh Bounding Box Size 0.883883 0.707107 0.250000
+Mesh Bounding Box Diag 1.159202 
+Mesh Volume is 0.062500
+Mesh Surface is 1.125000
+Thin shell barycenter 5.231760 12.151339 0.491000
+Center of Mass is 5.231762 12.161197 0.491000
+Inertia Tensor is :
+| 0.001600 -0.000964 0.000000 |
+| -0.000964 0.003100 0.000000 |
+| 0.000000 0.000000 0.004049 |
+Principal axes are :
+| 0.898374 -0.439232 -0.000002 |
+| 0.439232 0.898374 0.000048 |
+| -0.000019 -0.000044 1.000000 |
+axis momenta are :
+| 0.001128 0.003572 0.004049 |
+-->
+
+<!-- Center of mass of each parts of debris4
+ Part1 : 5.4968470673 12.1665170094 0.485
+ Part2 : 5.32 12.3432233047 0.485
+ Part3 : 5.1434345888 12.1662355775 0.485
+ Part4 : 4.9668691776 11.9892478504 0.485
+-->
+
+    <link name="R4_deblis4_masscenter">
+      <pose>5.32 12.3432233047 0.485 0 0 0</pose>
+      <inertial>
+        <mass>9.999</mass>
+      </inertial>
+      <self_collide>0</self_collide>
+      <gravity>1</gravity>
+    </link>
+
+    <joint name="anchor_deblis4" type="revolute">
+      <parent>R4_deblis4</parent>
+      <child>R4_deblis4_masscenter</child>
+      <pose>0 0 0 0 0 0</pose>
+      <axis>
+        <xyz>1 0 0</xyz>
+        <limit>
+          <lower>0</lower>
+          <upper>0</upper>
+        </limit>
+      </axis>
+    </joint>
+
+<!-- =========================================================== -->
+<!-- =========================================================== -->
+
+    <link name="R4_deblis5">
+      <pose>0.02 0 0.001 0 0 0</pose>
+      <inertial>
+        <pose>4.306215 12.701711 0.938001 0 0 0</pose>
+        <mass>3</mass>
+        <inertia>
+          <ixx>0.004672</ixx>
+          <ixy>-0.0</ixy>
+          <ixz>0.000787</ixz>
+          <iyy>0.005108</iyy>
+          <iyz>-0.0</iyz>
+          <izz>0.000472</izz>
+        </inertia>
+      </inertial>
+      <visual name="visual">
+        <geometry>
+          <mesh>
+            <uri>model://JVRC_R4_obj/dae/R4_deblis5.dae</uri>
+          </mesh>
+        </geometry>
+      </visual>
+      <collision name="collision">
+        <geometry>
+          <mesh>
+            <uri>model://JVRC_R4_obj/dae/R4_deblis5.dae</uri>
+          </mesh>
+        </geometry>
+        <surface>
+          <friction>
+            <ode>
+              <mu>10</mu>
+              <mu2>10</mu2>
+            </ode>
+          </friction>
+        </surface>
+      </collision>
+      <self_collide>1</self_collide>
+      <gravity>1</gravity>
+    </link>
+
+<!-- Deblis5 inertial data calced by meshlab
+Mesh Bounding Box Size 0.600000 0.099999 1.500000
+Mesh Bounding Box Diag 1.618641 
+Mesh Volume is 0.020000
+Mesh Surface is 0.819999
+Thin shell barycenter 4.310484 12.701713 0.942269
+Center of Mass is 4.306215 12.701711 0.938001
+Inertia Tensor is :
+| 0.004672 -0.000000 0.000787 |
+| -0.000000 0.005108 -0.000000 |
+| 0.000787 -0.000000 0.000472 |
+Principal axes are :
+| 0.983952 -0.000299 -0.178435 |
+| 0.000304 1.000000 0.000001 |
+| 0.178435 -0.000055 0.983952 |
+axis momenta are :
+| 0.004815 0.005108 0.000329 |
+-->
+
+<!-- Deblis4 inertial data calced by meshlab
+Mesh Bounding Box Size 0.883883 0.707107 0.250000
+Mesh Bounding Box Diag 1.159202 
+Mesh Volume is 0.062500
+Mesh Surface is 1.125000
+Thin shell barycenter 5.231760 12.151339 0.491000
+Center of Mass is 5.231762 12.161197 0.491000
+Inertia Tensor is :
+| 0.001600 -0.000964 0.000000 |
+| -0.000964 0.003100 0.000000 |
+| 0.000000 0.000000 0.004049 |
+Principal axes are :
+| 0.898374 -0.439232 -0.000002 |
+| 0.439232 0.898374 0.000048 |
+| -0.000019 -0.000044 1.000000 |
+axis momenta are :
+| 0.001128 0.003572 0.004049 |
+-->
+
+  </model>
+</sdf>

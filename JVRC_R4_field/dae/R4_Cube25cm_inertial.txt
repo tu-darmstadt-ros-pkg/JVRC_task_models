@@ -1,0 +1,19 @@
+Opened mesh /home/masaru/Desktop/JVRC/Final_MapV4_0906/sdf/Task_R4/dae/R4_Cube25cm.dae in 23 msec
+All files opened in 2092 msec
+Mesh Bounding Box Size 0.250000 0.250000 0.250000
+Mesh Bounding Box Diag 0.433013 
+Mesh Volume is 0.031250
+Mesh Surface is 0.750000
+Thin shell barycenter -0.000000 0.000000 0.000000
+Center of Mass is 0.000000 0.000000 0.000000
+Inertia Tensor is :
+| 0.000326 0.000000 0.000000 |
+| 0.000000 0.000326 0.000000 |
+| 0.000000 0.000000 0.000326 |
+Principal axes are :
+| 1.000000 0.000000 0.000000 |
+| 0.000000 1.000000 0.000000 |
+| 0.000000 0.000000 1.000000 |
+axis momenta are :
+| 0.000326 0.000326 0.000326 |
+

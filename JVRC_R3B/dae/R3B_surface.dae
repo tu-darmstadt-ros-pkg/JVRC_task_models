@@ -1,0 +1,262 @@
+<?xml version="1.0" encoding="utf-8"?>
+<COLLADA xmlns="http://www.collada.org/2005/11/COLLADASchema" version="1.4.1">
+  <asset>
+    <contributor>
+      <author>Blender User</author>
+      <authoring_tool>Blender 2.72.0 commit date:2014-10-21, commit time:11:38, hash:9e963ae</authoring_tool>
+    </contributor>
+    <created>2015-07-24T16:47:10</created>
+    <modified>2015-07-24T16:47:10</modified>
+    <unit name="meter" meter="10"/>
+    <up_axis>Z_UP</up_axis>
+  </asset>
+  <library_images>
+    <image id="Concrete_jpg" name="Concrete_jpg">
+      <init_from>Concrete.jpg</init_from>
+    </image>
+    <image id="romenR01_png" name="romenR01_png">
+      <init_from>romenR01.png</init_from>
+    </image>
+  </library_images>
+  <library_effects>
+    <effect id="Concrete-effect">
+      <profile_COMMON>
+        <newparam sid="Concrete_jpg-surface">
+          <surface type="2D">
+            <init_from>Concrete_jpg</init_from>
+          </surface>
+        </newparam>
+        <newparam sid="Concrete_jpg-sampler">
+          <sampler2D>
+            <source>Concrete_jpg-surface</source>
+          </sampler2D>
+        </newparam>
+        <technique sid="common">
+          <phong>
+            <emission>
+              <color sid="emission">0 0 0 1</color>
+            </emission>
+            <ambient>
+              <color sid="ambient">0 0 0 1</color>
+            </ambient>
+            <diffuse>
+              <texture texture="Concrete_jpg-sampler" texcoord="UVMap"/>
+            </diffuse>
+            <specular>
+              <color sid="specular">0.1647059 0.1647059 0.1647059 1</color>
+            </specular>
+            <shininess>
+              <float sid="shininess">50</float>
+            </shininess>
+            <index_of_refraction>
+              <float sid="index_of_refraction">1</float>
+            </index_of_refraction>
+          </phong>
+        </technique>
+      </profile_COMMON>
+    </effect>
+    <effect id="FrontCol-effect">
+      <profile_COMMON>
+        <technique sid="common">
+          <phong>
+            <emission>
+              <color sid="emission">0 0 0 1</color>
+            </emission>
+            <ambient>
+              <color sid="ambient">0 0 0 1</color>
+            </ambient>
+            <diffuse>
+              <color sid="diffuse">0.8 0.8 0.8 1</color>
+            </diffuse>
+            <specular>
+              <color sid="specular">0.1647059 0.1647059 0.1647059 1</color>
+            </specular>
+            <shininess>
+              <float sid="shininess">50</float>
+            </shininess>
+            <index_of_refraction>
+              <float sid="index_of_refraction">1</float>
+            </index_of_refraction>
+          </phong>
+        </technique>
+      </profile_COMMON>
+    </effect>
+    <effect id="abcdefg-effect">
+      <profile_COMMON>
+        <newparam sid="romenR01_png-surface">
+          <surface type="2D">
+            <init_from>romenR01_png</init_from>
+          </surface>
+        </newparam>
+        <newparam sid="romenR01_png-sampler">
+          <sampler2D>
+            <source>romenR01_png-surface</source>
+          </sampler2D>
+        </newparam>
+        <technique sid="common">
+          <phong>
+            <emission>
+              <color sid="emission">0 0 0 1</color>
+            </emission>
+            <ambient>
+              <color sid="ambient">0 0 0 1</color>
+            </ambient>
+            <diffuse>
+              <texture texture="romenR01_png-sampler" texcoord="UVMap"/>
+            </diffuse>
+            <specular>
+              <color sid="specular">0.5 0.5 0.5 1</color>
+            </specular>
+            <shininess>
+              <float sid="shininess">50</float>
+            </shininess>
+            <index_of_refraction>
+              <float sid="index_of_refraction">1</float>
+            </index_of_refraction>
+          </phong>
+        </technique>
+      </profile_COMMON>
+    </effect>
+  </library_effects>
+  <library_materials>
+    <material id="Concrete-material" name="Concrete">
+      <instance_effect url="#Concrete-effect"/>
+    </material>
+    <material id="FrontCol-material" name="FrontCol">
+      <instance_effect url="#FrontCol-effect"/>
+    </material>
+    <material id="abcdefg-material" name="abcdefg">
+      <instance_effect url="#abcdefg-effect"/>
+    </material>
+  </library_materials>
+  <library_geometries>
+    <geometry id="Group1-mesh" name="Group1">
+      <mesh>
+        <source id="Group1-mesh-positions">
+          <float_array id="Group1-mesh-positions-array" count="72">1.6 18.1 1.356 1.6 18 0.356 1.6 18 1.356 1.6 18.1 0.356 1.6 18.1 1.356 7.8 18.1 0.356 1.6 18.1 0.356 7.8 18.1 1.356 1.6 18.1 1.356 7.8 18 1.356 7.8 18.1 1.356 1.6 18 1.356 1.6 18 0.356 7.8 18 1.356 1.6 18 1.356 7.8 18 0.356 1.6 18 0.356 7.8 18.1 0.356 7.8 18 0.356 1.6 18.1 0.356 7.8 18.1 0.356 7.8 18 1.356 7.8 18 0.356 7.8 18.1 1.356</float_array>
+          <technique_common>
+            <accessor source="#Group1-mesh-positions-array" count="24" stride="3">
+              <param name="X" type="float"/>
+              <param name="Y" type="float"/>
+              <param name="Z" type="float"/>
+            </accessor>
+          </technique_common>
+        </source>
+        <source id="Group1-mesh-normals">
+          <float_array id="Group1-mesh-normals-array" count="18">-1 0 0 0 1 0 1 0 0 0 0 1 0 0 -1 0 -1 0</float_array>
+          <technique_common>
+            <accessor source="#Group1-mesh-normals-array" count="6" stride="3">
+              <param name="X" type="float"/>
+              <param name="Y" type="float"/>
+              <param name="Z" type="float"/>
+            </accessor>
+          </technique_common>
+        </source>
+        <source id="Group1-mesh-map-0">
+          <float_array id="Group1-mesh-map-0-array" count="48">-0.328084 3.28084 -0.328084 0 0 0 0 3.28084 10.1706 3.28084 -10.1706 3.28084 -10.1706 0 10.1706 0 0.328084 0 0.328084 3.28084 0 3.28084 0 0 -10.1706 0.328084 -10.1706 0 10.1706 0 10.1706 0.328084 10.1706 0 10.1706 0.328084 -10.1706 0.328084 -10.1706 0 -10.1706 0 10.1706 0 10.1706 3.28084 -10.1706 3.28084</float_array>
+          <technique_common>
+            <accessor source="#Group1-mesh-map-0-array" count="24" stride="2">
+              <param name="S" type="float"/>
+              <param name="T" type="float"/>
+            </accessor>
+          </technique_common>
+        </source>
+        <vertices id="Group1-mesh-vertices">
+          <input semantic="POSITION" source="#Group1-mesh-positions"/>
+        </vertices>
+        <polylist material="Concrete-material" count="6">
+          <input semantic="VERTEX" source="#Group1-mesh-vertices" offset="0"/>
+          <input semantic="NORMAL" source="#Group1-mesh-normals" offset="1"/>
+          <input semantic="TEXCOORD" source="#Group1-mesh-map-0" offset="2" set="0"/>
+          <vcount>4 4 4 4 4 4 </vcount>
+          <p>0 0 0 3 0 1 1 0 2 2 0 3 4 1 4 7 1 5 5 1 6 6 1 7 20 2 8 23 2 9 21 2 10 22 2 11 8 3 12 11 3 13 9 3 14 10 3 15 16 4 16 19 4 17 17 4 18 18 4 19 12 5 20 15 5 21 13 5 22 14 5 23</p>
+        </polylist>
+      </mesh>
+    </geometry>
+    <geometry id="Model-mesh" name="Model">
+      <mesh>
+        <source id="Model-mesh-positions">
+          <float_array id="Model-mesh-positions-array" count="225">8.7 0 0 0.7 18 0 0.7 0 0 8.7 18 0 8.7 0 0.556 8.7 18 0 8.7 0 0 8.7 18 0.556 7.8 0 0.556 8.7 18 0.556 8.7 0 0.556 7.8 18 0.556 7.8 0 0.556 7.8 18 1.356 7.8 18 0.556 7.8 0 1.356 7.8 0 0.556 7.7 0 1.356 7.8 0 1.356 7.7 0 0.356 7.8 0 0.356 8.7 0 0.556 8.7 0 0 0.7 0 0.356 0.7 0 0 0.7 18 0 0.7 0 0.356 0.7 0 0 0.7 0 0.556 0.7 18 0.556 0.7 18 0 1.7 18 0.356 0.7 18 0.556 7.7 18 0.356 8.7 18 0 8.7 18 0.556 7.8 18 0.556 7.7 18 1.356 7.8 18 1.356 7.8 18 1.356 7.7 0 1.356 7.7 18 1.356 7.8 0 1.356 7.7 0 1.356 7.7 18 0.356 7.7 18 1.356 7.7 0 0.356 1.7 0 0.356 7.7 18 0.356 7.7 0 0.356 1.7 18 0.356 1.7 0 0.356 1.7 18 1.356 1.7 18 0.356 1.7 0 1.356 1.7 0 0.356 1.6 0 0.556 1.7 0 1.356 0.7 0 0.556 0.7 0 0.556 1.6 18 0.556 1.6 0 0.556 0.7 18 0.556 1.6 18 0.556 1.7 18 1.356 1.6 18 1.356 1.7 18 1.356 1.6 0 1.356 1.6 18 1.356 1.7 0 1.356 1.6 0 1.356 1.6 18 0.556 1.6 0 1.356 1.6 0 0.556 1.6 18 1.356</float_array>
+          <technique_common>
+            <accessor source="#Model-mesh-positions-array" count="75" stride="3">
+              <param name="X" type="float"/>
+              <param name="Y" type="float"/>
+              <param name="Z" type="float"/>
+            </accessor>
+          </technique_common>
+        </source>
+        <source id="Model-mesh-normals">
+          <float_array id="Model-mesh-normals-array" count="81">-1 0 0 -1 0 0 0 0 1 1 0 0 0 -1 0 0 -1 0 0 0 -1 -1 0 0 -1 0 0 1 0 0 0 0 1 0 1 0 0 1 0 0 0 1 0 1 0 0 -1 0 0 0 1 0 -1 0 0 1 0 0 -1 0 0 0 0 0 0 0 0 -1 0 0 0 1 1 0 0 0 -1 0 0 -1 0</float_array>
+          <technique_common>
+            <accessor source="#Model-mesh-normals-array" count="27" stride="3">
+              <param name="X" type="float"/>
+              <param name="Y" type="float"/>
+              <param name="Z" type="float"/>
+            </accessor>
+          </technique_common>
+        </source>
+        <source id="Model-mesh-map-0">
+          <float_array id="Model-mesh-map-0-array" count="204">0 53.38582 708.6614 53.38582 708.6614 14.01575 0 14.01575 708.6614 0 0 14.01575 0 21.88976 708.6614 21.88976 -307.0866 708.6614 -303.1496 708.6614 -303.1496 0 -307.0866 0 0 21.88976 0 0 -708.6614 0 -708.6614 21.88976 -62.99213 21.88976 -66.92913 14.01575 -66.92913 53.38582 -62.99213 53.38582 -303.1496 14.01575 -307.0866 14.01575 -307.0866 21.88976 342.5197 0 27.55906 0 27.55906 708.6614 342.5197 708.6614 708.6614 21.88976 0 21.88976 0 53.38582 708.6614 53.38582 708.6614 0 0 0 0 14.01575 0 14.01575 -708.6614 14.01575 -708.6614 53.38582 0 53.38582 -27.55906 0 -62.99213 0 -62.99213 708.6614 -27.55906 708.6614 66.92913 14.01575 303.1496 14.01575 27.55906 0 342.5197 0 27.55906 0 303.1496 14.01575 0.9721446 0.9986039 0.02785521 0.9986039 0.02785533 -0.001280605 0.9721448 -0.001280605 342.5197 21.88976 342.5197 0 303.1496 14.01575 307.0866 21.88976 -66.92913 14.01575 -62.99213 21.88976 -27.55906 21.88976 -27.55906 14.01575 -307.0866 0 -342.5197 0 -342.5197 708.6614 -307.0866 708.6614 -307.0866 21.88976 -307.0866 53.38582 -303.1496 53.38582 -303.1496 14.01575 66.92913 14.01575 27.55906 0 27.55906 21.88976 62.99213 21.88976 -342.5197 21.88976 -307.0866 21.88976 -307.0866 14.01575 -342.5197 0 -303.1496 14.01575 -66.92913 14.01575 -27.55906 14.01575 -307.0866 14.01575 -303.1496 14.01575 -27.55906 14.01575 307.0866 21.88976 307.0866 53.38582 303.1496 53.38582 303.1496 14.01575 -66.92913 708.6614 -62.99213 708.6614 -62.99213 0 -66.92913 0 0 21.88976 -708.6614 21.88976 -708.6614 53.38582 0 53.38582 66.92913 53.38582 62.99213 53.38582 62.99213 21.88976 66.92913 14.01575 -342.5197 0 -307.0866 14.01575 -27.55906 14.01575 -27.55906 0</float_array>
+          <technique_common>
+            <accessor source="#Model-mesh-map-0-array" count="102" stride="2">
+              <param name="S" type="float"/>
+              <param name="T" type="float"/>
+            </accessor>
+          </technique_common>
+        </source>
+        <vertices id="Model-mesh-vertices">
+          <input semantic="POSITION" source="#Model-mesh-positions"/>
+        </vertices>
+        <polylist material="FrontCol-material" count="26">
+          <input semantic="VERTEX" source="#Model-mesh-vertices" offset="0"/>
+          <input semantic="NORMAL" source="#Model-mesh-normals" offset="1"/>
+          <input semantic="TEXCOORD" source="#Model-mesh-map-0" offset="2" set="0"/>
+          <vcount>4 4 4 4 4 3 4 4 3 4 4 3 3 4 4 4 4 4 4 3 3 4 4 4 4 4 </vcount>
+          <p>43 0 0 45 0 1 44 0 2 46 0 3 25 1 4 26 1 5 28 1 6 29 1 7 39 2 8 41 2 9 40 2 10 42 2 11 4 3 12 6 3 13 5 3 14 7 3 15 56 4 16 55 4 17 57 4 18 70 4 19 19 5 20 20 5 21 16 5 22 0 6 23 2 6 24 1 6 25 3 6 26 71 7 27 73 7 28 72 7 29 74 7 30 25 8 31 27 8 32 26 8 33 51 9 34 53 9 35 52 9 36 54 9 37 59 10 38 61 10 39 60 10 40 62 10 41 31 11 42 33 11 43 30 11 44 34 12 45 30 12 46 33 12 47 35 14 52 34 14 53 33 14 54 36 14 55 55 15 56 56 15 57 58 15 58 23 15 59 8 16 60 10 16 61 9 16 62 11 16 63 16 17 64 18 17 65 17 17 66 19 17 67 31 18 68 30 18 69 32 18 70 63 18 71 21 19 72 16 19 73 20 19 74 22 19 75 19 20 76 55 20 77 23 20 78 20 21 79 19 21 80 23 21 81 36 22 82 38 22 83 37 22 84 33 22 85 66 23 86 68 23 87 67 23 88 69 23 89 12 24 90 14 24 91 13 24 92 15 24 93 64 25 94 65 25 95 63 25 96 31 25 97 22 26 98 20 26 99 23 26 100 24 26 101</p>
+        </polylist>
+        <polylist material="abcdefg-material" count="1">
+          <input semantic="VERTEX" source="#Model-mesh-vertices" offset="0"/>
+          <input semantic="NORMAL" source="#Model-mesh-normals" offset="1"/>
+          <input semantic="TEXCOORD" source="#Model-mesh-map-0" offset="2" set="0"/>
+          <vcount>4 </vcount>
+          <p>47 13 48 49 13 49 48 13 50 50 13 51</p>
+        </polylist>
+      </mesh>
+    </geometry>
+  </library_geometries>
+  <library_controllers/>
+  <library_visual_scenes>
+    <visual_scene id="Scene" name="Scene">
+      <node id="Model" name="Model" type="NODE">
+        <matrix sid="transform">0.1 0 0 0 0 0.1 0 0 0 0 0.1 0 0 0 0 1</matrix>
+        <instance_geometry url="#Model-mesh">
+          <bind_material>
+            <technique_common>
+              <instance_material symbol="FrontCol-material" target="#FrontCol-material">
+                <bind_vertex_input semantic="UVMap" input_semantic="TEXCOORD" input_set="0"/>
+              </instance_material>
+              <instance_material symbol="abcdefg-material" target="#abcdefg-material">
+                <bind_vertex_input semantic="UVMap" input_semantic="TEXCOORD" input_set="0"/>
+              </instance_material>
+            </technique_common>
+          </bind_material>
+        </instance_geometry>
+        <node id="Group1" name="Group1" type="NODE">
+          <matrix sid="transform">1 0 0 0 0 1 0 0 0 0 1 0 0 0 0 1</matrix>
+          <instance_geometry url="#Group1-mesh">
+            <bind_material>
+              <technique_common>
+                <instance_material symbol="Concrete-material" target="#Concrete-material">
+                  <bind_vertex_input semantic="UVMap" input_semantic="TEXCOORD" input_set="0"/>
+                </instance_material>
+              </technique_common>
+            </bind_material>
+          </instance_geometry>
+        </node>
+      </node>
+    </visual_scene>
+  </library_visual_scenes>
+  <scene>
+    <instance_visual_scene url="#Scene"/>
+  </scene>
+</COLLADA>
