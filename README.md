@@ -14,5 +14,8 @@ Do followings:
 
     $ cd ~
     $ git clone https://github.com/m-shimizu/JVRC_task_models  
-    $ mv JVRC_O* JVRC_R* ~/.gazebo/models  
+		$ cd ~/JVRC_task_models
+    $ mv JVRC_* ~/.gazebo/models  
+		$ cd ~
+		$ \rm -r ~/JVRC_task_models
   
