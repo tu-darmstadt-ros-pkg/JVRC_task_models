@@ -4,8 +4,13 @@
   <version>0.0.0</version>
   <description>The jvrc_task_models package</description>
 
-  <maintainer email="kohlbrecher@todo.todo">kohlbrecher</maintainer>
-
+  <maintainer email="shimizu@todo.todo">Masaru Shimizu</maintainer>
+  
+  <author email="shimizu@todo.todo">Masaru Shimizu</author>
+  
+  <!--Only for ROS integration-->
+  <author email="kohlbrecher@sim.tu-darmstadt.de">Stefan Kohlbrecher</author>
+  
   <license>TODO</license>
 
   <buildtool_depend>catkin</buildtool_depend>
