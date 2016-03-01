@@ -1,6 +1,6 @@
 <?xml version="1.0" ?>
 <sdf version="1.5">
-  <world name="jvrc_o1">
+  <world name="jvrc_r3b">
     <!-- A global light source -->
     <include>
       <uri>model://sun</uri>
@@ -10,8 +10,9 @@
       <uri>model://ground_plane</uri>
     </include>
     <include>
-      <uri>model://JVRC_O1</uri>
+      <uri>model://JVRC_R3B</uri>
       <pose>-3.5 -2 0 0 0 0</pose>
-    </include>    
+      <static>true</static>
+    </include>  
   </world>
 </sdf>
