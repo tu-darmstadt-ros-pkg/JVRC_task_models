@@ -1,0 +1,18 @@
+<?xml version="1.0"?>
+<package>
+  <name>jvrc_task_models</name>
+  <version>0.0.0</version>
+  <description>The jvrc_task_models package</description>
+
+  <maintainer email="kohlbrecher@todo.todo">kohlbrecher</maintainer>
+
+  <license>TODO</license>
+
+  <buildtool_depend>catkin</buildtool_depend>
+  <run_depend>gazebo_ros</run_depend>
+
+  <export>
+    <gazebo_ros gazebo_model_path="${prefix}"/>
+    <gazebo_ros gazebo_media_path="${prefix}"/>
+  </export>
+</package>
